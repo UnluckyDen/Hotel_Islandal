@@ -1,12 +1,12 @@
 using System;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 namespace _Main.Scripts.Services
 {
     public class InputService : MonoBehaviour
     {
         public event Action<Vector2> MovementInput;
+        public event Action<Vector2> LookInput;
         public static InputService Instance { get; private set; }
 
         private void Awake()
@@ -23,18 +23,24 @@ namespace _Main.Scripts.Services
 
         private void Update()
         {
-            var inputVector = new Vector2();
-            if (Input.GetKey(KeyCode.W))
-                inputVector += new Vector2(0, 1);
-            if (Input.GetKey(KeyCode.S))
-                inputVector += new Vector2(0, -1);
-            if (Input.GetKey(KeyCode.A))
-                inputVector += new Vector2(-1, 0);
-            if (Input.GetKey(KeyCode.D))
-                inputVector += new Vector2(1, 0);
+            ReedMoveInputs();
+            ReedLookInputs();
+        }
+
+        private void ReedMoveInputs()
+        {
+            var inputVector = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
 
             if (inputVector.magnitude != 0)
                 MovementInput?.Invoke(inputVector);
+        }
+
+        private void ReedLookInputs()
+        {
+            var inputVector = new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));
+            
+            if (inputVector.magnitude != 0)
+                LookInput?.Invoke(inputVector);
         }
     }
 }
