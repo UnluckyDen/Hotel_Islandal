@@ -1,6 +1,5 @@
 using _Main.Scripts.Services;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace _Main.Scripts.Movement
 {
@@ -17,6 +16,7 @@ namespace _Main.Scripts.Movement
         
         private void Start()
         {
+            Cursor.lockState = CursorLockMode.Locked;
             _inputService = InputService.Instance;
             
             _inputService.LookInput += InputServiceOnLookInput;
@@ -24,6 +24,7 @@ namespace _Main.Scripts.Movement
         
         private void OnDestroy()
         {
+            Cursor.lockState = CursorLockMode.None;
             _inputService.LookInput -= InputServiceOnLookInput;
         }
 

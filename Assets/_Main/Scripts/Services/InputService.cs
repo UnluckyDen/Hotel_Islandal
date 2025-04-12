@@ -7,7 +7,10 @@ namespace _Main.Scripts.Services
     {
         public event Action<Vector2> MovementInput;
         public event Action<Vector2> LookInput;
+        public event Action<bool> Click;
+        
         public static InputService Instance { get; private set; }
+        public bool MouseButtonClicked { get; private set; }
 
         private void Awake()
         {
@@ -25,6 +28,7 @@ namespace _Main.Scripts.Services
         {
             ReedMoveInputs();
             ReedLookInputs();
+            ReedClick();
         }
 
         private void ReedMoveInputs()
@@ -41,6 +45,21 @@ namespace _Main.Scripts.Services
             
             if (inputVector.magnitude != 0)
                 LookInput?.Invoke(inputVector);
+        }
+
+        private void ReedClick()
+        {
+            if (Input.GetButtonDown("Fire1"))
+            {
+                MouseButtonClicked = true;
+                Click?.Invoke(true);
+            }
+
+            if (Input.GetButtonUp("Fire1"))
+            {
+                MouseButtonClicked = false;
+                Click?.Invoke(false);
+            }
         }
     }
 }
