@@ -1,16 +1,20 @@
 using _Main.Scripts.Interfaces;
 using UnityEngine;
 
-namespace _Main.Scripts.Cooking.Food
+namespace _Main.Scripts.Cooking.Foods
 {
-    public class Food : MonoBehaviour, IMovableObject, IInteractable
+    public class Food : MonoBehaviour, IMovableObject
     {
-        public void Take()
+        [SerializeField] private Collider _collider;
+        
+        public virtual void ToNonInteractive()
         {
+            _collider.enabled = false;
         }
 
-        public void Place()
+        public virtual void ToInteractable()
         {
+            _collider.enabled = true;
         }
 
         public void OnHoverEnter()
@@ -21,11 +25,6 @@ namespace _Main.Scripts.Cooking.Food
         public void OnHoverExit()
         {
             transform.localScale = new Vector3(1f, 1f, 1f);
-        }
-
-        public void OnClick()
-        {
-            throw new System.NotImplementedException();
         }
     }
 }

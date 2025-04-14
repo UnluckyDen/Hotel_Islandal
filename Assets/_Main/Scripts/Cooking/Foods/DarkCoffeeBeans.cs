@@ -1,4 +1,4 @@
-namespace _Main.Scripts.Cooking.Food
+namespace _Main.Scripts.Cooking.Foods
 {
     public class DarkCoffeeBeans : Food
     {

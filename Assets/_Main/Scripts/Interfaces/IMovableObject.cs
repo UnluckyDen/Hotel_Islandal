@@ -1,8 +1,8 @@
 namespace _Main.Scripts.Interfaces
 {
-    public interface IMovableObject
+    public interface IMovableObject : IHoverable, ITransformContains
     {
-        public void Take();
-        public void Place();
+        public void ToNonInteractive();
+        public void ToInteractable();
     }
 }

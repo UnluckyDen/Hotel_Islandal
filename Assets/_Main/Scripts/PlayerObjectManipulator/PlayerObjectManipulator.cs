@@ -8,10 +8,13 @@ namespace _Main.Scripts.PlayerObjectManipulator
     {
         [SerializeField] private float _manipulatorDistance;
         [SerializeField] private LayerMask _manipulatorLayerMask;
+        [SerializeField] private PlayerManipulatorPlace _manipulatorPlace;
 
         private Camera _camera;
         private InputService _inputService;
-        private IInteractable _hoverInteractableObject;
+        
+        private IHoverable _hoverableObject;
+        private IMovableObject _movableObject;
 
         private void Awake()
         {
@@ -31,51 +34,79 @@ namespace _Main.Scripts.PlayerObjectManipulator
 
         private void Update()
         {
-            HandleRayCast();
+            HandleHoverable();
         }
 
         private void InputServiceOnClick(bool clicked)
         {
-            if (_hoverInteractableObject != null && clicked)
-                _hoverInteractableObject.OnClick();
+            IHoverable hoverable = GetIHoverable();
+            
+            if (hoverable == null || !clicked) 
+                return;
+            
+            switch (hoverable)
+            {
+                case IInteractable interactable:
+                    interactable.OnClick();
+                    break;
+                
+                case IMovableObject movableObject:
+                    if (_manipulatorPlace.PlaceMovableObject(movableObject))
+                        Debug.Log("Take");
+                    break;
+                
+                case IObjectPlace objectPlace:
+                    if (!_manipulatorPlace.IsEmpty && objectPlace.IsEmpty)
+                    {
+                        objectPlace.PlaceMovableObject(_manipulatorPlace.TakeMovableObject());
+                        Debug.Log("ToObjectPlace");
+                    }
+                    else if (_manipulatorPlace.IsEmpty && !objectPlace.IsEmpty)
+                    {
+                        _manipulatorPlace.PlaceMovableObject(objectPlace.TakeMovableObject());
+                        Debug.Log("ToManipulator");
+                    }
+                    break;
+            }
         }
 
-        private void HandleRayCast()
+        private void HandleHoverable()
+        {
+            var hoverable = GetIHoverable();
+            
+            if (hoverable != null)
+            {
+                if (_hoverableObject == hoverable) 
+                    return;
+                
+                _hoverableObject?.OnHoverExit();
+                _hoverableObject = hoverable;
+                _hoverableObject.OnHoverEnter();
+                
+                return;
+            }
+            
+            ClearCurrentInteractable();
+        }
+
+        private IHoverable GetIHoverable()
         {
             Ray ray = new Ray(_camera.transform.position, _camera.transform.forward);
 
             Debug.DrawRay(ray.origin, ray.direction * _manipulatorDistance, Color.red);
 
-            if (Physics.Raycast(ray, out RaycastHit hit, _manipulatorDistance, _manipulatorLayerMask))
-            {
-                IInteractable interactableObject = hit.collider.GetComponent<IInteractable>();
-
-                if (interactableObject == null)
-                {
-                    ClearCurrentMovable();
-                    return;
-                }
-
-                if (_hoverInteractableObject == interactableObject) 
-                    return;
-                
-                _hoverInteractableObject?.OnHoverExit();
-                _hoverInteractableObject = interactableObject;
-                _hoverInteractableObject.OnHoverEnter();
-
-                return;
-            }
-
-            ClearCurrentMovable();
+            return Physics.Raycast(ray, out RaycastHit hit, _manipulatorDistance, _manipulatorLayerMask) 
+                ? hit.collider.GetComponent<IHoverable>() 
+                : null;
         }
 
-        private void ClearCurrentMovable()
+        private void ClearCurrentInteractable()
         {
-            if (_hoverInteractableObject != null)
-            {
-                _hoverInteractableObject.OnHoverExit();
-                _hoverInteractableObject = null;
-            }
+            if (_hoverableObject == null)
+                return;
+            
+            _hoverableObject.OnHoverExit();
+            _hoverableObject = null;
         }
     }
 }
