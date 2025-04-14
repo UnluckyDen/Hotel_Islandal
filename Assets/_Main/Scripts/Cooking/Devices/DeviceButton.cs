@@ -1,4 +1,6 @@
+using System;
 using System.Collections;
+using System.Collections.Generic;
 using _Main.Scripts.Interfaces;
 using UnityEngine;
 
@@ -13,6 +15,7 @@ namespace _Main.Scripts.Cooking.Devices
 
         private Coroutine _currentCoroutine;
         private ButtonStateType _currentButtonState;
+        private List<Action<bool>> _subscribedActions = new();
 
         private void Start()
         {
@@ -35,6 +38,11 @@ namespace _Main.Scripts.Cooking.Devices
         {
             ChangeState();
         }
+
+        public void Subscribe(Action<bool> action) =>
+            _subscribedActions.Add(action);
+        public void Unsubscribe(Action<bool> action) =>
+            _subscribedActions.Remove(action);
 
         private void ChangeState()
         {
