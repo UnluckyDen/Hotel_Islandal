@@ -60,7 +60,7 @@ namespace _Main.Scripts.Movement.Way
                     
                     if (Vector3.Distance(connectingWayPoint.transform.position, connectableWayPoint.transform.position) <= _pointsLinkDistance)
                     {
-                        Vector3Int direction = (connectableWayPoint.transform.position - connectingWayPoint.transform.position).ToVector3Int();
+                        Vector3Int direction = (connectableWayPoint.transform.position - connectingWayPoint.transform.position).normalized.ToVector3Int();
                         connectingWayPoint.SetNeighboringCell(
                             direction,
                             connectableWayPoint);
