@@ -3,16 +3,22 @@ using UnityEngine;
 
 namespace _Main.Scripts.Cooking.Foods
 {
-    public class Food : MonoBehaviour, IMovableObject
+    public class Food : MonoBehaviour, IMovableObject, ICookable
     {
         [SerializeField] private Collider _collider;
-        
-        public virtual void ToNonInteractive()
+
+        private float _cookingTime;
+
+        public float CurrentCookingTime => _cookingTime;
+
+        public void AddCookingTime(float time) => _cookingTime += time;
+
+        public void ToNonInteractive()
         {
             _collider.enabled = false;
         }
 
-        public virtual void ToInteractable()
+        public void ToInteractable()
         {
             _collider.enabled = true;
         }

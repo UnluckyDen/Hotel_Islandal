@@ -13,9 +13,9 @@ namespace _Main.Scripts.Cooking.Devices
         [SerializeField] private float _pressTime = 0.2f;
         [SerializeField] private ButtonStateType _defaultPressState;
 
+        private readonly List<Action<bool>> _subscribedActions = new();
         private Coroutine _currentCoroutine;
         private ButtonStateType _currentButtonState;
-        private List<Action<bool>> _subscribedActions = new();
 
         private void Start()
         {
@@ -64,6 +64,8 @@ namespace _Main.Scripts.Cooking.Devices
         {
             float factor = 0f;
 
+            TriggerActions(true);
+
             while (factor < 1f)
             {
                 factor += Time.deltaTime / _pressTime;
@@ -81,6 +83,8 @@ namespace _Main.Scripts.Cooking.Devices
         {
             float factor = 0f;
 
+            TriggerActions(false);
+            
             while (factor < 1f)
             {
                 factor += Time.deltaTime / _pressTime;
@@ -90,8 +94,14 @@ namespace _Main.Scripts.Cooking.Devices
 
             transform.localPosition = _defaultPosition;
             _currentButtonState = ButtonStateType.NotPressed;
-            
+
             _currentCoroutine = null;
+        }
+
+        private void TriggerActions(bool press)
+        {
+            foreach (var action in _subscribedActions)
+                action?.Invoke(press);
         }
     }
 
