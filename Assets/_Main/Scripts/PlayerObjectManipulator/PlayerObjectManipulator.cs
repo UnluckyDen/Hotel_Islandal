@@ -56,7 +56,7 @@ namespace _Main.Scripts.PlayerObjectManipulator
                     break;
                 
                 case IObjectPlace objectPlace:
-                    if (!_manipulatorPlace.IsEmpty && objectPlace.IsEmpty)
+                    if (!_manipulatorPlace.IsEmpty && (objectPlace.IsEmpty || objectPlace.MayContainMultipleObjects))
                     {
                         objectPlace.PlaceMovableObject(_manipulatorPlace.TakeMovableObject());
                         Debug.Log("ToObjectPlace");

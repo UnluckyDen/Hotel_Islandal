@@ -7,6 +7,7 @@ namespace _Main.Scripts.ScriptableObjects.Receipts
     [CreateAssetMenu(fileName = "NewCookingDeviceRecipeSettings", menuName = "ScriptableObjects/FoodRecipes/CookingDeviceRecipeSettings", order = 1)]
     public class CookingDeviceRecipeSettings : ScriptableObject
     {
+        [field: SerializeField] public Sprite DeviceIcon { get; private set; }
         [field: SerializeField] public List<FoodRecipeSettings> FoodRecipeSettings { get; private set; }
         [field: SerializeField] public Food DubiousFood { get; private set; }
 

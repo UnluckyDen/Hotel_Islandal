@@ -14,7 +14,7 @@ namespace _Main.Scripts.Cooking.Devices.Cooking
         private Food _foodOut;
         private bool _isCooking;
 
-        public override bool IsEmpty => _foodOut == null;
+        public override bool IsEmpty => _foodIn.Count == 0;
 
         private void Start()
         {
@@ -33,6 +33,7 @@ namespace _Main.Scripts.Cooking.Devices.Cooking
             
             movableObject.ToNonInteractive();
             movableObject.transform.position = transform.position;
+            movableObject.transform.SetParent(transform);
             
             _foodIn.Add(food);
             return true;
@@ -40,7 +41,12 @@ namespace _Main.Scripts.Cooking.Devices.Cooking
 
         public override IMovableObject TakeMovableObject()
         {
-            if (_foodOut == null || _isCooking)
+            if (_isCooking)
+                return null;
+            
+            CombineFood();
+
+            if (_foodOut == null)
                 return null;
             
             var food = _foodOut;
@@ -54,8 +60,7 @@ namespace _Main.Scripts.Cooking.Devices.Cooking
             if (!_isCooking)
                 return;
             
-            if (_foodOut != null)
-                HandleCooking();
+            HandleCooking();
         }
 
         private void CombineFood()
@@ -65,14 +70,15 @@ namespace _Main.Scripts.Cooking.Devices.Cooking
             
             _foodOut = Instantiate(_recipeSettings.GetFoodByIngredients(_foodIn), transform);
             foreach (var food in _foodIn)
-                Destroy(food);
+                Destroy(food.gameObject);
                     
             _foodIn.Clear();
         }
 
         private void HandleCooking()
         {
-            _foodOut.AddCookingTime(Time.deltaTime);
+            foreach (var food in _foodIn)
+                food.AddCookingTime(Time.deltaTime);
         }
 
         private void DeviceButtonOnClick(bool click)
@@ -80,7 +86,6 @@ namespace _Main.Scripts.Cooking.Devices.Cooking
             if (click)
             {
                 _isCooking = true;
-                CombineFood();
                 PlayCookingAnimation(true);
                 return;
             }

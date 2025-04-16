@@ -10,8 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e463f8460c5c496fa983c3e912012671, type: 3}
-  m_Name: BlenderCookingDeviceRecipeSettings
+  m_Name: _CoffeeMachineCookingDeviceRecipeSettings
   m_EditorClassIdentifier: 
+  <DeviceIcon>k__BackingField: {fileID: 0}
   <FoodRecipeSettings>k__BackingField:
-  - {fileID: 11400000, guid: 9a1e2e46cbcbd4bbdbc332827a2d5949, type: 2}
+  - {fileID: 11400000, guid: b06ffb70c74b74d73aadb736e4370010, type: 2}
+  - {fileID: 11400000, guid: 054dc5b1975fe42a7abdff87b8c1e30c, type: 2}
   <DubiousFood>k__BackingField: {fileID: 3797254296594047356, guid: e566b03f35f114bea83a579f71923fc1, type: 3}

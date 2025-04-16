@@ -10,6 +10,7 @@ namespace _Main.Scripts.Cooking.Devices.Cooking
         private IMovableObject _movableObject;
 
         public bool IsEmpty => _movableObject == null;
+        public bool MayContainMultipleObjects => false;
 
         public void OnHoverEnter()
         {

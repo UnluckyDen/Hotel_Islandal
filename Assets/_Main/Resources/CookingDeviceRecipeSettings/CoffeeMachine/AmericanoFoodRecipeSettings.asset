@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ea63b0772c204a19b5b6fb7bee47db5a, type: 3}
-  m_Name: GrindRecipeSettings
+  m_Name: AmericanoFoodRecipeSettings
   m_EditorClassIdentifier: 
-  <DeviceIcon>k__BackingField: {fileID: 0}
   <FoodIn>k__BackingField:
-  - {fileID: 5262758395039784401, guid: 2f16fced2e65c4373a7c82dba18855ee, type: 3}
-  <FoodOut>k__BackingField: {fileID: 1975753105548296753, guid: 4c86f766fd920441eb7fc009c21aed08, type: 3}
-  <CookingTime>k__BackingField: 12
+  - Food: {fileID: 6142685698042969539, guid: 6a200e70c06c34f1fbc273e2f379b810, type: 3}
+    CookingTime: 12
+  <FoodOut>k__BackingField: {fileID: 8320604136278060514, guid: 4288d4998e888479a8e2700eb5ab6eb5, type: 3}
+  <Accuracy>k__BackingField: 2

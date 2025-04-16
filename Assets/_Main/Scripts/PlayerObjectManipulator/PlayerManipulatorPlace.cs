@@ -8,6 +8,7 @@ namespace _Main.Scripts.PlayerObjectManipulator
         private IMovableObject _movableObject;
 
         public bool IsEmpty => _movableObject == null;
+        public bool MayContainMultipleObjects => false;
 
         public bool PlaceMovableObject(IMovableObject movableObject)
         {

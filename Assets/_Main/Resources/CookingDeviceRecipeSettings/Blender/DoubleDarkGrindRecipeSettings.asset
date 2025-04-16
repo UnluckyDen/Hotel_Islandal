@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea63b0772c204a19b5b6fb7bee47db5a, type: 3}
+  m_Name: DoubleDarkGrindRecipeSettings
+  m_EditorClassIdentifier: 
+  <FoodIn>k__BackingField:
+  - Food: {fileID: 5262758395039784401, guid: 2f16fced2e65c4373a7c82dba18855ee, type: 3}
+    CookingTime: 12
+  - Food: {fileID: 5262758395039784401, guid: 2f16fced2e65c4373a7c82dba18855ee, type: 3}
+    CookingTime: 12
+  <FoodOut>k__BackingField: {fileID: 6142685698042969539, guid: 6a200e70c06c34f1fbc273e2f379b810, type: 3}
+  <Accuracy>k__BackingField: 2
