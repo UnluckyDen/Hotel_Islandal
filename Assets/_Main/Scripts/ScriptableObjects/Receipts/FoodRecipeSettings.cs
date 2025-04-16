@@ -11,6 +11,7 @@ namespace _Main.Scripts.ScriptableObjects.Receipts
         [field: SerializeField] public List<Food> FoodIn { get; private set; }
         [field: SerializeField] public Food FoodOut { get; private set; }
         [field: SerializeField] public float CookingTime { get; private set; }
+        [field: SerializeField] public float Accuracy { get; private set; } = 2f;
 
         public bool IngredientsIsMatch(List<Food> foods)
         {
@@ -31,7 +32,7 @@ namespace _Main.Scripts.ScriptableObjects.Receipts
                 for (int i = 0; i < tempList.Count; i++)
                 {
                     if (item.GetType() == tempList[i].GetType() 
-                        && item.CurrentCookingTime == tempList[i].CurrentCookingTime)
+                        && Mathf.Abs(item.CurrentCookingTime - tempList[i].CurrentCookingTime) < Accuracy)
                     {
                         tempList.RemoveAt(i);
                         found = true;

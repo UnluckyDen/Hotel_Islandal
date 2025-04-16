@@ -7,7 +7,7 @@ namespace _Main.Scripts.Cooking.Foods
     {
         [SerializeField] private Collider _collider;
 
-        private float _cookingTime;
+        [SerializeField] private float _cookingTime;
 
         public float CurrentCookingTime => _cookingTime;
 
