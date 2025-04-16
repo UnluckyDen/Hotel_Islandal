@@ -1,6 +1,6 @@
 using _Main.Scripts.Interfaces;
 
-namespace _Main.Scripts.Cooking.Devices
+namespace _Main.Scripts.Cooking.Devices.Cooking
 {
     public class TrashContainerCookingDevice : CookingDevice
     {

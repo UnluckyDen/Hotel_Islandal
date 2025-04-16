@@ -1,7 +1,7 @@
 using _Main.Scripts.Interfaces;
 using UnityEngine;
 
-namespace _Main.Scripts.Cooking.Devices
+namespace _Main.Scripts.Cooking.Devices.Cooking
 {
     public class FoodPlace : MonoBehaviour, IObjectPlace, IHoverable
     {
