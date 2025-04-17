@@ -33,8 +33,6 @@ namespace _Main.Scripts.Cooking.Devices.Cooking
 
             _movableObject.ToNonInteractive();
             
-            Debug.Log("Place to coffee dish");
-
             return true;
         }
 
@@ -49,8 +47,6 @@ namespace _Main.Scripts.Cooking.Devices.Cooking
             movableObject.transform.SetParent(null);
             movableObject.ToInteractable();
             
-            Debug.Log("Take to coffee dish");
-
             return movableObject;
         }
     }
