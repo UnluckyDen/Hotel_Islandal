@@ -20,28 +20,14 @@ namespace _Main.Scripts.Environment.Doors.StateMachine
             _doorRoot = doorRoot;
             _moveSpeed = moveSpeed;
 
-            _closeDoorState = new CloseDoorState(_closeAngle, _openAngle, _doorRoot, _moveSpeed);
-            _openDoorState = new OpenDoorState(_closeAngle, _openAngle, _doorRoot, _moveSpeed);
+            _closeDoorState = new CloseDoorState(this, _closeAngle, _openAngle, _doorRoot, _moveSpeed);
+            _openDoorState = new OpenDoorState(this, _closeAngle, _openAngle, _doorRoot, _moveSpeed);
         }
 
-        public void ChangeState()
+        public void OnClick()
         {
-            var state = (IDoorState)CurrentState;
-            
-            if (state.InProgress)
-                return;
-            
-            if (CurrentState == _closeDoorState)
-            {
-                ToOpen();
-                return;
-            }
-            
-            if (CurrentState == _openDoorState)
-            {
-                ToClose();
-                return;
-            }
+            var doorState = (IDoorState)CurrentState;
+            doorState.OnClick();
         }
         
         public void ToClose() => ToState(_closeDoorState);

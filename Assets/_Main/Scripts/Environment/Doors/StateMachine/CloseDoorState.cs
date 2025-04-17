@@ -8,18 +8,23 @@ namespace _Main.Scripts.Environment.Doors.StateMachine
         private Vector3 _openAngle;
         private Transform _doorRoot;
         private float _rotationSpeed;
+        private DoorStateMachine _doorStateMachine;
 
         private bool _done;
         private float _factor;
-
-        public bool InProgress => !_done;
-
-        public CloseDoorState(Vector3 closedAngle, Vector3 openAngle, Transform doorRoot, float rotationSpeed)
+        
+        public CloseDoorState(DoorStateMachine doorStateMachine, Vector3 closedAngle, Vector3 openAngle, Transform doorRoot, float rotationSpeed)
         {
+            _doorStateMachine = doorStateMachine;
             _closedAngle = closedAngle;
             _openAngle = openAngle;
             _doorRoot = doorRoot;
             _rotationSpeed = rotationSpeed;
+        }
+
+        public void OnClick()
+        {
+            _doorStateMachine.ToOpen();
         }
 
         public void Enter()

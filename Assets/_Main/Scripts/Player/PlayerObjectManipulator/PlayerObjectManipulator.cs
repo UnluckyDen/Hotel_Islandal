@@ -2,7 +2,7 @@ using _Main.Scripts.Interfaces;
 using _Main.Scripts.Services;
 using UnityEngine;
 
-namespace _Main.Scripts.PlayerObjectManipulator
+namespace _Main.Scripts.Player.PlayerObjectManipulator
 {
     public class PlayerObjectManipulator : MonoBehaviour
     {

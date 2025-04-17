@@ -1,7 +1,7 @@
 using _Main.Scripts.Services;
 using UnityEngine;
 
-namespace _Main.Scripts.Movement
+namespace _Main.Scripts.Player.Movement
 {
     public class PlayerLook : MonoBehaviour
     {

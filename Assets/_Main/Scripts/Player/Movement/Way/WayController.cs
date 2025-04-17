@@ -5,7 +5,7 @@ using _Main.Scripts.Utils;
 using UnityEngine;
 using Object = UnityEngine.Object;
 
-namespace _Main.Scripts.Movement.Way
+namespace _Main.Scripts.Player.Movement.Way
 {
     public class WayController : MonoBehaviour
     {

@@ -27,7 +27,7 @@ namespace _Main.Scripts.Environment.Doors
             _doorStateMachine.UpdateStates();
 
         public void OnClick() =>
-            _doorStateMachine.ChangeState();
+            _doorStateMachine.OnClick();
 
         public void OnHoverEnter()
         {

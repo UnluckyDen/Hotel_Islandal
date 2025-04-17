@@ -1,7 +1,7 @@
 using _Main.Scripts.Interfaces;
 using UnityEngine;
 
-namespace _Main.Scripts.PlayerObjectManipulator
+namespace _Main.Scripts.Player.PlayerObjectManipulator
 {
     public class PlayerManipulatorPlace : MonoBehaviour, IObjectPlace
     {

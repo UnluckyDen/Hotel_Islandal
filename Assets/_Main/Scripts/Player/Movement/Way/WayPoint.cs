@@ -1,9 +1,8 @@
-using System;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-namespace _Main.Scripts.Movement.Way
+namespace _Main.Scripts.Player.Movement.Way
 {
     public class WayPoint : MonoBehaviour
     {

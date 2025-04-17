@@ -1,10 +1,10 @@
 using System.Collections;
-using _Main.Scripts.Movement.Way;
+using _Main.Scripts.Player.Movement.Way;
 using _Main.Scripts.Services;
 using _Main.Scripts.Utils;
 using UnityEngine;
 
-namespace _Main.Scripts.Movement
+namespace _Main.Scripts.Player.Movement
 {
     public class PlayerMovement : MonoBehaviour
     {

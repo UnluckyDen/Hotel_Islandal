@@ -4,6 +4,6 @@ namespace _Main.Scripts.Environment.Doors.StateMachine
 {
     public interface IDoorState : IState
     {
-        public bool InProgress { get; }
+        public void OnClick();
     }
 }
