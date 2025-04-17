@@ -13,9 +13,7 @@ namespace _Main.Scripts.Cooking.Devices.Cooking
         private List<Food> _foodIn = new();
         private Food _foodOut;
         private bool _isCooking;
-
-        public override bool IsEmpty => _foodIn.Count == 0;
-
+        
         private void Start()
         {
             _deviceButton.Subscribe(DeviceButtonOnClick);
@@ -26,7 +24,7 @@ namespace _Main.Scripts.Cooking.Devices.Cooking
             _deviceButton.Unsubscribe(DeviceButtonOnClick);
         }
 
-        public override bool PlaceMovableObject(IMovableObject movableObject)
+        public override bool TryPlaceMovableObject(IMovableObject movableObject)
         {
             if (movableObject is not Food food) 
                 return false;
@@ -39,7 +37,7 @@ namespace _Main.Scripts.Cooking.Devices.Cooking
             return true;
         }
 
-        public override IMovableObject TakeMovableObject()
+        public override IMovableObject TryTakeMovableObject()
         {
             if (_isCooking)
                 return null;

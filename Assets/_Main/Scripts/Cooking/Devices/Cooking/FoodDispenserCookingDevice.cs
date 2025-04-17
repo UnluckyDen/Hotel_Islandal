@@ -8,10 +8,8 @@ namespace _Main.Scripts.Cooking.Devices.Cooking
     {
         [SerializeField] private Food _foodPrefab;
         [SerializeField] private Transform _foodTransform;
-
-        public override bool IsEmpty => false;
-
-        public override IMovableObject TakeMovableObject()
+        
+        public override IMovableObject TryTakeMovableObject()
         {
             var food = Instantiate(_foodPrefab, _foodTransform);
             food.transform.SetParent(null);

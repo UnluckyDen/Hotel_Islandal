@@ -11,13 +11,10 @@ namespace _Main.Scripts.Cooking.Devices.Cooking
         
         private static readonly int Cooking1 = Animator.StringToHash("Cooking");
         
-        public virtual bool MayContainMultipleObjects => true;
-        public virtual bool IsEmpty { get; }
-
-        public virtual bool PlaceMovableObject(IMovableObject movableObject) =>
+        public virtual bool TryPlaceMovableObject(IMovableObject movableObject) =>
             false;
 
-        public virtual IMovableObject TakeMovableObject() =>
+        public virtual IMovableObject TryTakeMovableObject() =>
             null;
 
         public void PlayCookingAnimation(bool play)

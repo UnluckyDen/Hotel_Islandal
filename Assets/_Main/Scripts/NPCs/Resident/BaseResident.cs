@@ -8,7 +8,7 @@ namespace _Main.Scripts.NPCs.Resident
 {
     public class BaseResident : MonoBehaviour
     {
-        [SerializeField] private Door _residentDoor;
+        [SerializeField] private ResidentDoor _residentDoor;
         [SerializeField] private PlayerTriggerZone _playerTriggerZone;
         [SerializeField] private ResidentOrderSettings _residentOrderSettings;
         [SerializeField] private Transform _orderPlace;

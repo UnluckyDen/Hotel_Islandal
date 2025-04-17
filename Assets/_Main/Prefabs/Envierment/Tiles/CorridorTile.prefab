@@ -537,7 +537,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 56fd841c304e28b4db01fe5cf048b334, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 8153966249398869825}
+      addedObject: {fileID: 4390827505805257374}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 56fd841c304e28b4db01fe5cf048b334, type: 3}
       insertIndex: -1
       addedObject: {fileID: 656346749288357175}
@@ -555,7 +555,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 56fd841c304e28b4db01fe5cf048b334, type: 3}
   m_PrefabInstance: {fileID: 4728792364565622001}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &8153966249398869825
+--- !u!114 &4390827505805257374
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -564,7 +564,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5575845875416977824}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2de1264b5c1d4e4194f4e9cee4813ac0, type: 3}
+  m_Script: {fileID: 11500000, guid: 62c704172f944e7881f2708f54157e17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _doorSign: {fileID: 5643238035096512052}
@@ -605,7 +605,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9755df4540f5422e88de74283fc9817e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _residentDoor: {fileID: 8153966249398869825}
+  _residentDoor: {fileID: 4390827505805257374}
   _playerTriggerZone: {fileID: 3612017715729597371}
   _residentOrderSettings: {fileID: 11400000, guid: aedcfae2114be4e7c899344233a0ea9b, type: 2}
   _orderPlace: {fileID: 8473019765991927775}

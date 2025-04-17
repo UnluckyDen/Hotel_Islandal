@@ -8,10 +8,7 @@ namespace _Main.Scripts.Cooking.Devices.Cooking
         [SerializeField] private Transform _place;
 
         private IMovableObject _movableObject;
-
-        public bool IsEmpty => _movableObject == null;
-        public bool MayContainMultipleObjects => false;
-
+        
         public void OnHoverEnter()
         {
         }
@@ -20,7 +17,7 @@ namespace _Main.Scripts.Cooking.Devices.Cooking
         {
         }
 
-        public bool PlaceMovableObject(IMovableObject movableObject)
+        public bool TryPlaceMovableObject(IMovableObject movableObject)
         {
             if (_movableObject != null || movableObject == null)
                 return false;
@@ -36,7 +33,7 @@ namespace _Main.Scripts.Cooking.Devices.Cooking
             return true;
         }
 
-        public IMovableObject TakeMovableObject()
+        public IMovableObject TryTakeMovableObject()
         {
             if (_movableObject == null)
                 return null;

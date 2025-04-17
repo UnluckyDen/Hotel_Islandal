@@ -6,11 +6,8 @@ namespace _Main.Scripts.Player.PlayerObjectManipulator
     public class PlayerManipulatorPlace : MonoBehaviour, IObjectPlace
     {
         private IMovableObject _movableObject;
-
-        public bool IsEmpty => _movableObject == null;
-        public bool MayContainMultipleObjects => false;
-
-        public bool PlaceMovableObject(IMovableObject movableObject)
+        
+        public bool TryPlaceMovableObject(IMovableObject movableObject)
         {
             if (_movableObject != null || movableObject == null)
                 return false;
@@ -27,7 +24,7 @@ namespace _Main.Scripts.Player.PlayerObjectManipulator
             return true;
         }
 
-        public IMovableObject TakeMovableObject()
+        public IMovableObject TryTakeMovableObject()
         {
             if (_movableObject == null)
                 return null;

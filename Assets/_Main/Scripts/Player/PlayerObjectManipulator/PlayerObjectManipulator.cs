@@ -51,16 +51,15 @@ namespace _Main.Scripts.Player.PlayerObjectManipulator
                     break;
                 
                 case IMovableObject movableObject:
-                    if (_manipulatorPlace.PlaceMovableObject(movableObject))
+                    if (_manipulatorPlace.TryPlaceMovableObject(movableObject))
                         Debug.Log("Take");
                     break;
                 
                 case IObjectPlace objectPlace:
-                    if (!_manipulatorPlace.IsEmpty && (objectPlace.IsEmpty || objectPlace.MayContainMultipleObjects))
-                        objectPlace.PlaceMovableObject(_manipulatorPlace.TakeMovableObject());
-                    else if (_manipulatorPlace.IsEmpty && !objectPlace.IsEmpty)
-                        _manipulatorPlace.PlaceMovableObject(objectPlace.TakeMovableObject());
-                    
+                    if (objectPlace.TryPlaceMovableObject(_manipulatorPlace.TryTakeMovableObject()))
+                        Debug.Log("Place from manipulator");
+                    else if (_manipulatorPlace.TryPlaceMovableObject(objectPlace.TryTakeMovableObject()))
+                        Debug.Log("Take to manipulator");
                     break;
             }
         }
