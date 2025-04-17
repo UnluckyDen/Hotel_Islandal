@@ -78,7 +78,7 @@ Transform:
   m_GameObject: {fileID: 5875548241462971463}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: 0, y: 1, z: -0.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -202,7 +202,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _mouseSensitivity: {x: 3, y: 3}
   _minAngle: {x: -45, y: -70}
-  _maxAngle: {x: 45, y: 70}
+  _maxAngle: {x: 45, y: 90}
 --- !u!114 &8401339251147536766
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -282,7 +282,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 820042715873920613, guid: f468dfea917268a47a0bab52bd2e1470, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 820042715873920613, guid: f468dfea917268a47a0bab52bd2e1470, type: 3}
       propertyPath: m_LocalRotation.w
