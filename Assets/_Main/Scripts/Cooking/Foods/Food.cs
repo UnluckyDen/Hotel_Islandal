@@ -9,9 +9,11 @@ namespace _Main.Scripts.Cooking.Foods
 
         [SerializeField] private float _cookingTime;
 
+        public bool IsTrashable => true;
         public float CurrentCookingTime => _cookingTime;
 
         public void AddCookingTime(float time) => _cookingTime += time;
+
 
         public void ToNonInteractive()
         {

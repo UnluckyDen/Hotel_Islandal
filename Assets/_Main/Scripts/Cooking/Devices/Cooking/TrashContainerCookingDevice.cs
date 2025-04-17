@@ -8,7 +8,7 @@ namespace _Main.Scripts.Cooking.Devices.Cooking
         
         public override bool PlaceMovableObject(IMovableObject movableObject)
         {
-            if (movableObject == null)
+            if (movableObject == null || !movableObject.IsTrashable)
                 return false;
             
             Destroy(movableObject.transform.gameObject);
