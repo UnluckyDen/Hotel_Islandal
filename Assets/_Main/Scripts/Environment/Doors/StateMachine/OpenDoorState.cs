@@ -37,10 +37,8 @@ namespace _Main.Scripts.Environment.Doors.StateMachine
             {
                 _doorRoot.localEulerAngles = Vector3.Lerp(_closedAngle, _openAngle, _factor);
                 _factor += Time.deltaTime * _rotationSpeed;
-                Debug.Log("Opening");
                 return;
             }
-            Debug.Log("Opened");
             _done = true;
             _doorRoot.localEulerAngles = _openAngle;
         }

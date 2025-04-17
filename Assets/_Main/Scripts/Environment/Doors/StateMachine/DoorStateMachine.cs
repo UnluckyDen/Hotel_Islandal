@@ -5,13 +5,13 @@ namespace _Main.Scripts.Environment.Doors.StateMachine
 {
     public class DoorStateMachine : BaseStateMachine
     {
-        private Vector3 _openAngle;
-        private Vector3 _closeAngle;
-        private Transform _doorRoot;
-        private float _moveSpeed;
+        private readonly Vector3 _openAngle;
+        private readonly Vector3 _closeAngle;
+        private readonly Transform _doorRoot;
+        private readonly float _moveSpeed;
         
-        private CloseDoorState _closeDoorState;
-        private OpenDoorState _openDoorState;
+        private readonly CloseDoorState _closeDoorState;
+        private readonly OpenDoorState _openDoorState;
 
         public DoorStateMachine(Vector3 closeAngle, Vector3 openAngle, Transform doorRoot, float moveSpeed)
         {
