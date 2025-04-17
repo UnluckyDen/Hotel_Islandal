@@ -6,11 +6,14 @@ namespace _Main.Scripts.Player.PlayerObjectManipulator
     public class PlayerManipulatorPlace : MonoBehaviour, IObjectPlace
     {
         private IMovableObject _movableObject;
-        
-        public bool TryPlaceMovableObject(IMovableObject movableObject)
+
+        public bool IsEmpty => _movableObject == null;
+        public bool MayContainMultipleObjects => false;
+
+        public void PlaceMovableObject(IMovableObject movableObject)
         {
             if (_movableObject != null || movableObject == null)
-                return false;
+                return;
 
             _movableObject = movableObject;
             
@@ -20,11 +23,9 @@ namespace _Main.Scripts.Player.PlayerObjectManipulator
             _movableObject.transform.localEulerAngles = Vector3.zero;
             
             _movableObject = movableObject;
-
-            return true;
         }
 
-        public IMovableObject TryTakeMovableObject()
+        public IMovableObject TakeMovableObject()
         {
             if (_movableObject == null)
                 return null;

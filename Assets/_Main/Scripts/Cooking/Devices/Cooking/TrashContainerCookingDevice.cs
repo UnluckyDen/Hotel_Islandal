@@ -4,13 +4,14 @@ namespace _Main.Scripts.Cooking.Devices.Cooking
 {
     public class TrashContainerCookingDevice : CookingDevice
     {
-        public override bool TryPlaceMovableObject(IMovableObject movableObject)
+        public override bool IsEmpty => true;
+
+        public override void PlaceMovableObject(IMovableObject movableObject)
         {
             if (movableObject == null || !movableObject.IsTrashable)
-                return false;
+                return;
             
             Destroy(movableObject.transform.gameObject);
-            return true;
         }
     }
 }

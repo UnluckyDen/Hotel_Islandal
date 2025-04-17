@@ -13,7 +13,10 @@ namespace _Main.Scripts.Environment.Doors
         [SerializeField] private float _rotationSpeed = 4;
 
         private DoorStateMachine _doorStateMachine;
-        
+
+        public bool IsEmpty => true;
+        public bool MayContainMultipleObjects => false;
+
         private void Awake()
         {
             _doorStateMachine = new DoorStateMachine(_closeAngle, _openAngele, _doorRoot, _rotationSpeed);
@@ -25,14 +28,14 @@ namespace _Main.Scripts.Environment.Doors
 
         private void Update() =>
             _doorStateMachine.UpdateStates();
-        
-        public bool TryPlaceMovableObject(IMovableObject movableObject)
+
+        public void PlaceMovableObject(IMovableObject movableObject)
         {
             _doorStateMachine.OnClick();
-            return false;
+            return;
         }
 
-        public IMovableObject TryTakeMovableObject()
+        public IMovableObject TakeMovableObject()
         {
             return null;
         }

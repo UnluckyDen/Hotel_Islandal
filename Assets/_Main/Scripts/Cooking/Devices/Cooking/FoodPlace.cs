@@ -9,6 +9,9 @@ namespace _Main.Scripts.Cooking.Devices.Cooking
 
         private IMovableObject _movableObject;
         
+        public bool IsEmpty => _movableObject == null;
+        public bool MayContainMultipleObjects => false;
+        
         public void OnHoverEnter()
         {
         }
@@ -17,10 +20,10 @@ namespace _Main.Scripts.Cooking.Devices.Cooking
         {
         }
 
-        public bool TryPlaceMovableObject(IMovableObject movableObject)
+        public void PlaceMovableObject(IMovableObject movableObject)
         {
             if (_movableObject != null || movableObject == null)
-                return false;
+                return;
 
             _movableObject = movableObject;
 
@@ -29,11 +32,9 @@ namespace _Main.Scripts.Cooking.Devices.Cooking
             _movableObject.transform.localEulerAngles = Vector3.zero;
 
             _movableObject.ToNonInteractive();
-            
-            return true;
         }
 
-        public IMovableObject TryTakeMovableObject()
+        public IMovableObject TakeMovableObject()
         {
             if (_movableObject == null)
                 return null;

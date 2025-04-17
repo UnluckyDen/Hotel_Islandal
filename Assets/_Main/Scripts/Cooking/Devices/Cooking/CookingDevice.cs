@@ -9,17 +9,20 @@ namespace _Main.Scripts.Cooking.Devices.Cooking
         [SerializeField] protected CookingDeviceRecipeSettings _recipeSettings;
         [SerializeField] private Animator _animator;
         
-        private static readonly int Cooking1 = Animator.StringToHash("Cooking");
+        public virtual bool MayContainMultipleObjects => true;
+        public virtual bool IsEmpty { get; }
         
-        public virtual bool TryPlaceMovableObject(IMovableObject movableObject) =>
-            false;
+        private static readonly int Cooking = Animator.StringToHash("Cooking");
 
-        public virtual IMovableObject TryTakeMovableObject() =>
+        public virtual void PlaceMovableObject(IMovableObject movableObject)
+        { }
+
+        public virtual IMovableObject TakeMovableObject() =>
             null;
 
         public void PlayCookingAnimation(bool play)
         {
-            _animator?.SetBool(Cooking1,play);
+            _animator?.SetBool(Cooking, play);
         }
     }
 }
