@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 963676311c3d46288295b8bdc1fbe1ea, type: 3}
+  m_Name: BaseResidentOrderSettings
+  m_EditorClassIdentifier: 
+  <OrderMethodPairs>k__BackingField:
+  - Food: {fileID: 8320604136278060514, guid: 4288d4998e888479a8e2700eb5ab6eb5, type: 3}
+    Method: {fileID: 5740582760833035270, guid: defb5da6fba8846c691b4f2ce29b0799, type: 3}
+  - Food: {fileID: 5262758395039784401, guid: f2093c8c617884fd29766da548d57c40, type: 3}
+    Method: {fileID: 5740582760833035270, guid: fff1a9d4b58a14f26982bec3fe2153d4, type: 3}

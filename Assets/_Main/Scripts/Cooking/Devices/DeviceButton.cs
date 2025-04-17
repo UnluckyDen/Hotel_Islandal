@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace _Main.Scripts.Cooking.Devices
 {
-    public class DeviceButton : MonoBehaviour, IInteractable
+    public class DeviceButton : MonoBehaviour, IInteractable, IPublisher<bool>
     {
         [SerializeField] private Vector3 _defaultPosition;
         [SerializeField] private Vector3 _pressedPosition;
