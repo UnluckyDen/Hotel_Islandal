@@ -1,19 +1,23 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using _Main.Scripts.Interfaces;
 using UnityEngine;
 
 namespace _Main.Scripts.Cooking.Devices
 {
-    public class DeviceButton : MonoBehaviour, IInteractable, IPublisher<bool>
+    public class DeviceButton : MonoBehaviour, IInteractable
     {
+        public event Action<bool> ButtonPressed;
+        
+        [SerializeField] private GameObject _buttonNonPressed;
+        [SerializeField] private GameObject _buttonPressed;
+        [SerializeField] private Transform _buttonsGroup;
+        
         [SerializeField] private Vector3 _defaultPosition;
         [SerializeField] private Vector3 _pressedPosition;
         [SerializeField] private float _pressTime = 0.2f;
         [SerializeField] private ButtonStateType _defaultPressState;
 
-        private readonly List<Action<bool>> _subscribedActions = new();
         private Coroutine _currentCoroutine;
         private ButtonStateType _currentButtonState;
 
@@ -39,11 +43,6 @@ namespace _Main.Scripts.Cooking.Devices
             ChangeState();
         }
 
-        public void Subscribe(Action<bool> action) =>
-            _subscribedActions.Add(action);
-        public void Unsubscribe(Action<bool> action) =>
-            _subscribedActions.Remove(action);
-
         private void ChangeState()
         {
             if (_currentButtonState == ButtonStateType.Pressed)
@@ -65,15 +64,17 @@ namespace _Main.Scripts.Cooking.Devices
             float factor = 0f;
 
             TriggerActions(true);
+            _buttonPressed.gameObject.SetActive(true);
+            _buttonNonPressed.gameObject.SetActive(false);
 
             while (factor < 1f)
             {
                 factor += Time.deltaTime / _pressTime;
-                transform.localPosition = Vector3.Lerp(_defaultPosition, _pressedPosition, factor);
+                _buttonsGroup.localPosition = Vector3.Lerp(_defaultPosition, _pressedPosition, factor);
                 yield return null;
             }
             
-            transform.localPosition = _pressedPosition;
+            _buttonsGroup.localPosition = _pressedPosition;
             _currentButtonState = ButtonStateType.Pressed;
 
             _currentCoroutine = null;
@@ -84,25 +85,24 @@ namespace _Main.Scripts.Cooking.Devices
             float factor = 0f;
 
             TriggerActions(false);
+            _buttonPressed.gameObject.SetActive(false);
+            _buttonNonPressed.gameObject.SetActive(true);
             
             while (factor < 1f)
             {
                 factor += Time.deltaTime / _pressTime;
-                transform.localPosition = Vector3.Lerp(_pressedPosition, _defaultPosition, factor);
+                _buttonsGroup.localPosition = Vector3.Lerp(_pressedPosition, _defaultPosition, factor);
                 yield return null;
             }
 
-            transform.localPosition = _defaultPosition;
+            _buttonsGroup.localPosition = _defaultPosition;
             _currentButtonState = ButtonStateType.NotPressed;
 
             _currentCoroutine = null;
         }
 
-        private void TriggerActions(bool press)
-        {
-            foreach (var action in _subscribedActions)
-                action?.Invoke(press);
-        }
+        private void TriggerActions(bool press) =>
+            ButtonPressed?.Invoke(press);
     }
 
     public enum ButtonStateType

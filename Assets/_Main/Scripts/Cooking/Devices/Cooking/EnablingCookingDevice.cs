@@ -16,12 +16,12 @@ namespace _Main.Scripts.Cooking.Devices.Cooking
         
         private void Start()
         {
-            _deviceButton.Subscribe(DeviceButtonOnClick);
+            _deviceButton.ButtonPressed += DeviceButtonOnClick;
         }
 
         private void OnDestroy()
         {
-            _deviceButton.Unsubscribe(DeviceButtonOnClick);
+            _deviceButton.ButtonPressed -= DeviceButtonOnClick;
         }
 
         public override bool TryPlaceMovableObject(IMovableObject movableObject)
