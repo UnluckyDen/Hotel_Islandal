@@ -1,0 +1,54 @@
+using _Main.Scripts.Cooking.Foods;
+using _Main.Scripts.Environment.Doors.ResidentDoor.ResidentsDoorStateMachine;
+using _Main.Scripts.Interfaces;
+using UnityEngine;
+
+namespace _Main.Scripts.Environment.Doors.ResidentDoor
+{
+    public class ResidentDoor : MonoBehaviour, IHoverable
+    {
+        [SerializeField] private DoorSign _doorSign;
+        [SerializeField] private Vector3 _closeAngle;
+        [SerializeField] private Vector3 _openAngele;
+        [SerializeField] private Transform _doorRoot;
+        [SerializeField] private float _rotationSpeed = 4;
+
+        [SerializeField] private ResidentDoorKnocker _residentDoorKnocker;
+        [SerializeField] private ResidentObjectPlace _residentObjectPlace;
+
+        private ResidentDoorStateMachine _doorStateMachine;
+
+        private void Awake()
+        {
+            _doorStateMachine = new ResidentDoorStateMachine(_closeAngle, _openAngele, _doorRoot, _rotationSpeed, _residentDoorKnocker, _residentObjectPlace);
+            _doorStateMachine.ToClose();
+            
+            _residentDoorKnocker.Init(this);
+            _residentObjectPlace.Init(this);
+        }
+
+        private void OnDestroy() =>
+            _doorStateMachine.Dispose();
+
+        private void Update() =>
+            _doorStateMachine.UpdateStates();
+
+        public void OpenDoor()
+        {
+            _doorStateMachine.ToOpen();
+        }
+        
+        public void CloseDoor()
+        {
+            _doorStateMachine.ToClose();
+        }
+        
+        public void OnHoverEnter()
+        {
+        }
+
+        public void OnHoverExit()
+        {
+        }
+    }
+}

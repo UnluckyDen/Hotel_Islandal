@@ -1,7 +1,7 @@
 using _Main.Scripts.Utils.StateMachine;
 using UnityEngine;
 
-namespace _Main.Scripts.Environment.Doors.StateMachine
+namespace _Main.Scripts.Environment.Doors.Classic.DoorStateMachine
 {
     public class DoorStateMachine : BaseStateMachine
     {
