@@ -1662,34 +1662,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: CookingZoneTile
       objectReference: {fileID: 0}
-    - target: {fileID: 2620697225663842831, guid: 45bbcd2ea2a564f148784e69f23b27a5, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.15
-      objectReference: {fileID: 0}
-    - target: {fileID: 2712679117124744881, guid: 45bbcd2ea2a564f148784e69f23b27a5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2848415614124758294, guid: 45bbcd2ea2a564f148784e69f23b27a5, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.15
-      objectReference: {fileID: 0}
-    - target: {fileID: 4307159021966982379, guid: 45bbcd2ea2a564f148784e69f23b27a5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.733
-      objectReference: {fileID: 0}
-    - target: {fileID: 4307159021966982379, guid: 45bbcd2ea2a564f148784e69f23b27a5, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.512
-      objectReference: {fileID: 0}
-    - target: {fileID: 5644135546249647562, guid: 45bbcd2ea2a564f148784e69f23b27a5, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5644135546249647562, guid: 45bbcd2ea2a564f148784e69f23b27a5, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8800832902808101834, guid: 45bbcd2ea2a564f148784e69f23b27a5, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1731,8 +1703,7 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects:
-    - {fileID: 6553710808638444521, guid: 45bbcd2ea2a564f148784e69f23b27a5, type: 3}
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 45bbcd2ea2a564f148784e69f23b27a5, type: 3}

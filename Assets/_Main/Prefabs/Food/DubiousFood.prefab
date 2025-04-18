@@ -68,6 +68,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _collider: {fileID: 5128482928951431458}
+  _cookingTime: 0
 --- !u!1 &2649807479531193190
 GameObject:
   m_ObjectHideFlags: 0
@@ -132,7 +133,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a5ad80d411c134396973ac56a7da1ef9, type: 2}
+  - {fileID: 2100000, guid: 4e20eb9d2267140dbbbf271222948b83, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
