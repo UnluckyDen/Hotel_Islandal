@@ -726,7 +726,6 @@ MonoBehaviour:
   _startPoint: {fileID: 7340813497430747827}
   _wayPoints:
   - {fileID: 7340813497430747827}
-  - {fileID: 7340813498969544982}
   - {fileID: 845385612}
   - {fileID: 876782443}
   - {fileID: 599173747}
@@ -737,6 +736,7 @@ MonoBehaviour:
   - {fileID: 1529193099}
   - {fileID: 1294221976}
   - {fileID: 2086444661}
+  - {fileID: 6543555244340809342}
 --- !u!1 &711356838
 GameObject:
   m_ObjectHideFlags: 0
@@ -1639,6 +1639,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 92778504a4dad4c068ff927d430c38c9, type: 3}
+--- !u!114 &6543555244340809342 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7744007592913323075, guid: 45bbcd2ea2a564f148784e69f23b27a5, type: 3}
+  m_PrefabInstance: {fileID: 7170662623875539848}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bce359b9ba2b4bbc84e1a4d64b4737fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7170662623875539848
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1647,6 +1658,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 315217790}
     m_Modifications:
+    - target: {fileID: 4240787070803299, guid: 45bbcd2ea2a564f148784e69f23b27a5, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4240787070803299, guid: 45bbcd2ea2a564f148784e69f23b27a5, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 7c806ea209b34f94f909eae37735e846, type: 2}
+    - target: {fileID: 4240787070803299, guid: 45bbcd2ea2a564f148784e69f23b27a5, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 756f8c14d4c43e24b9534e51ea5080ca, type: 2}
     - target: {fileID: 1187410779249653540, guid: 45bbcd2ea2a564f148784e69f23b27a5, type: 3}
       propertyPath: m_Name
       value: CookingZoneTile
@@ -1700,17 +1723,6 @@ PrefabInstance:
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 62697975686651372, guid: 0cb1702e84e4b4726b09e7ef44e5151f, type: 3}
   m_PrefabInstance: {fileID: 232658503383726974}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bce359b9ba2b4bbc84e1a4d64b4737fe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &7340813498969544982 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7250511902334484111, guid: 45bbcd2ea2a564f148784e69f23b27a5, type: 3}
-  m_PrefabInstance: {fileID: 7170662623875539848}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1

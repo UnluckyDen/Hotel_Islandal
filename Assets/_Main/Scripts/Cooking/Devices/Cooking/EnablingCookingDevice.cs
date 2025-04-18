@@ -8,7 +8,6 @@ namespace _Main.Scripts.Cooking.Devices.Cooking
     public class EnablingCookingDevice : CookingDevice
     {
         [SerializeField] private DeviceButton _deviceButton;
-        [SerializeField] private Transform _visual;
         
         private List<Food> _foodIn = new();
         private Food _foodOut;

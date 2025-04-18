@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: CoffeeMachineAnimator
+  m_Controller: {fileID: 9100000, guid: e6e8403fccd5446bfbbcd9ba373691f5, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 4b21b1614438e462d92378301357902b, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: e1196b2b4556a4474b66d596a9922300, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 63ddcff7bf49845ac813e08638d12556, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: b833944f6057747e4a365f7049ee8f97, type: 2}
