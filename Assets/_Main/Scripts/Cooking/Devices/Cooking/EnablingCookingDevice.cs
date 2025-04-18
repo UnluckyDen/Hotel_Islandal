@@ -8,6 +8,7 @@ namespace _Main.Scripts.Cooking.Devices.Cooking
     public class EnablingCookingDevice : CookingDevice
     {
         [SerializeField] private DeviceButton _deviceButton;
+        [SerializeField] private Transform _foodPlace;
         
         private List<Food> _foodIn = new();
         private Food _foodOut;
@@ -31,8 +32,8 @@ namespace _Main.Scripts.Cooking.Devices.Cooking
                 return;
             
             movableObject.ToNonInteractive();
-            movableObject.transform.position = transform.position;
-            movableObject.transform.SetParent(transform);
+            movableObject.transform.position = _foodPlace.position;
+            movableObject.transform.SetParent(_foodPlace);
             
             _foodIn.Add(food);
         }
