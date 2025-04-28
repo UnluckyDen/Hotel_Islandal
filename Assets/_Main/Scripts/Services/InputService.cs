@@ -8,6 +8,7 @@ namespace _Main.Scripts.Services
         public event Action<Vector2> MovementInput;
         public event Action<Vector2> LookInput;
         public event Action<bool> Click;
+        public event Action OpenBook;
         
         public static InputService Instance { get; private set; }
         public bool MouseButtonClicked { get; private set; }
@@ -29,6 +30,7 @@ namespace _Main.Scripts.Services
             ReedMoveInputs();
             ReedLookInputs();
             ReedClick();
+            ReedBookInput();
         }
 
         private void ReedMoveInputs()
@@ -60,6 +62,12 @@ namespace _Main.Scripts.Services
                 MouseButtonClicked = false;
                 Click?.Invoke(false);
             }
+        }
+
+        private void ReedBookInput()
+        {
+            if (Input.GetKeyDown("e"))
+                OpenBook?.Invoke();
         }
     }
 }
