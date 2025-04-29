@@ -47,7 +47,7 @@ MonoBehaviour:
   _layerMask:
     serializedVersion: 2
     m_Bits: 32768
-  _resultMax: 1
+  _resultMax: 10
   _gizmoColor: {r: 0, g: 0.07727146, b: 1, a: 1}
 --- !u!1 &7077305485201169724
 GameObject:
@@ -120,10 +120,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _collider: {fileID: 2330725642902789594}
   _bar: {fileID: 4254070306475714083}
-  _zeroScale: {x: 1, y: 0.31, z: 1}
-  _maxScale: {x: 1, y: 1, z: 1}
+  _maxScale: {x: 1, y: 0.87, z: 1}
   _minScale: {x: 1, y: 0.07, z: 1}
-  _updateTime: 0.2
+  _accuracy: 2
+  _maxValue: 20
+  _minValue: -10
+  _smoothTime: 0.1
+  _maxSmoothTimeSpeed: 2
   _temperatureOverlapDetector: {fileID: 2657496755011089279}
 --- !u!114 &2657496755011089279
 MonoBehaviour:
