@@ -1,16 +1,16 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace _Main.Scripts.Environment.Systems.Temperature
 {
     public class TemperatureController : MonoBehaviour
     {
-        [SerializeField] private List<TemperaturePoint> _temperaturePoints;
-        [SerializeField] private float _mainTemperature;
+        [SerializeField] private List<TemperaturePoint> _roomAveragePoints;
 
-        public float GetMainTemperature()
+        public TemperaturePoint GetRoomAveragePoint()
         {
-            return _mainTemperature;
+            return _roomAveragePoints.FirstOrDefault();
         }
     }
 }
