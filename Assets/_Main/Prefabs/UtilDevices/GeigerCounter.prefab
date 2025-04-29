@@ -128,6 +128,14 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 756f8c14d4c43e24b9534e51ea5080ca, type: 2}
+    - target: {fileID: -6824285615730184283, guid: a75b4baf3e5d5554a8a7405e79dba445, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -5739321362668113221, guid: a75b4baf3e5d5554a8a7405e79dba445, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -4517416613442246359, guid: a75b4baf3e5d5554a8a7405e79dba445, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -148,11 +156,19 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 35
       objectReference: {fileID: 0}
+    - target: {fileID: 168586577283607941, guid: a75b4baf3e5d5554a8a7405e79dba445, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 756f8c14d4c43e24b9534e51ea5080ca, type: 2}
     - target: {fileID: 919132149155446097, guid: a75b4baf3e5d5554a8a7405e79dba445, type: 3}
       propertyPath: m_Name
       value: GeigerCounter
       objectReference: {fileID: 0}
     - target: {fileID: 6817869050144895830, guid: a75b4baf3e5d5554a8a7405e79dba445, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 756f8c14d4c43e24b9534e51ea5080ca, type: 2}
+    - target: {fileID: 7370090283713868190, guid: a75b4baf3e5d5554a8a7405e79dba445, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 756f8c14d4c43e24b9534e51ea5080ca, type: 2}
