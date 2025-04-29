@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 6786570637055109664}
   - component: {fileID: 5164523610730690554}
   - component: {fileID: 6649947822283752108}
+  - component: {fileID: 4575387899932530090}
   m_Layer: 10
-  m_Name: GeigerCounter
+  m_Name: RadiationCounter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32,6 +33,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4218139957503802417}
+  - {fileID: 5173358587755428608}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5164523610730690554
@@ -48,9 +50,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _collider: {fileID: 6649947822283752108}
   _arrow: {fileID: 5921310095096693971}
-  _angleStart: {x: 0, y: 0, z: 35}
-  _angleEnd: {x: 0, y: 0, z: 135}
-  _updateTime: 0.2
+  _maxAngle: {x: 0, y: 0, z: 135}
+  _minAngle: {x: 0, y: 0, z: 40}
+  _accuracy: 0.3
+  _maxValue: 5
+  _minValue: 1
+  _smoothTime: 0.1
+  _maxSmoothTimeSpeed: 10
+  _radiationOverlapDetector: {fileID: 4575387899932530090}
 --- !u!65 &6649947822283752108
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -72,6 +79,68 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.21, y: 0.37, z: 0.1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &4575387899932530090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 250194288120539238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3db7ae6418af40f487ed9a1c5e9b46e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _overlapDetector: {fileID: 3578194889107138732}
+--- !u!1 &6766627638453588131
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5173358587755428608}
+  - component: {fileID: 3578194889107138732}
+  m_Layer: 10
+  m_Name: RadiationOverlap
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5173358587755428608
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6766627638453588131}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6786570637055109664}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3578194889107138732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6766627638453588131}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fe9834fafe4d48a1be48d7f28ae6adc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _layerMask:
+    serializedVersion: 2
+    m_Bits: 65536
+  _resultMax: 1
+  _gizmoColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1001 &4396479209578978266
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -142,7 +211,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 756f8c14d4c43e24b9534e51ea5080ca, type: 2}
     - target: {fileID: -1211513772285092087, guid: a75b4baf3e5d5554a8a7405e79dba445, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.953717
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -1211513772285092087, guid: a75b4baf3e5d5554a8a7405e79dba445, type: 3}
       propertyPath: m_LocalRotation.y
@@ -150,11 +219,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -1211513772285092087, guid: a75b4baf3e5d5554a8a7405e79dba445, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.30070576
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -1211513772285092087, guid: a75b4baf3e5d5554a8a7405e79dba445, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 35
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 168586577283607941, guid: a75b4baf3e5d5554a8a7405e79dba445, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
