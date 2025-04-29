@@ -227,6 +227,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ResidentWall2
       objectReference: {fileID: 0}
+    - target: {fileID: 5519813890907721586, guid: f6aff25ec3d494403b295c00ab8d2dec, type: 3}
+      propertyPath: m_LocalScale.z
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 5535384502735289231, guid: f6aff25ec3d494403b295c00ab8d2dec, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.85
