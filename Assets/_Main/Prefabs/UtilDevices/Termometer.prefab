@@ -104,7 +104,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.1, y: 0.4, z: 0.03}
+  m_Size: {x: 0.12, y: 0.37, z: 0.03}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &5193205100928933784
 MonoBehaviour:
@@ -120,11 +120,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _collider: {fileID: 2330725642902789594}
   _bar: {fileID: 1848719993807118590}
-  _maxScale: {x: 1, y: 0.875, z: 1}
-  _minScale: {x: 1, y: 0.08, z: 1}
+  _maxScale: {x: 1, y: 0.86, z: 1}
+  _minScale: {x: 1, y: 0.041, z: 1}
   _accuracy: 2
   _maxValue: 30
-  _minValue: -30
+  _minValue: -20
   _smoothTime: 0.1
   _maxSmoothTimeSpeed: 2
   _temperatureOverlapDetector: {fileID: 2657496755011089279}
@@ -207,7 +207,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 756f8c14d4c43e24b9534e51ea5080ca, type: 2}
     - target: {fileID: 5163263401264232490, guid: d990ab3658b25e14295e6e8281eea2df, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.08
+      value: 0.86
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
