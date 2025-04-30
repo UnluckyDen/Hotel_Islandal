@@ -1,5 +1,3 @@
-using System.Collections.Generic;
-using System.Linq;
 using _Main.Scripts.Cooking.Foods;
 using _Main.Scripts.Interfaces;
 using _Main.Scripts.NPCs.Resident;
@@ -69,14 +67,10 @@ namespace _Main.Scripts.Environment.Doors.ResidentDoor
             return movableObject;
         }
 
-        public void OnHoverEnter()
-        {
+        public void OnHoverEnter() => 
             _residentDoor.OnHoverEnter();
-        }
 
-        public void OnHoverExit()
-        {
+        public void OnHoverExit() => 
             _residentDoor.OnHoverExit();
-        }
     }
 }

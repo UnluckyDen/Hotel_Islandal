@@ -1,12 +1,13 @@
-using _Main.Scripts.Cooking.Foods;
 using _Main.Scripts.Environment.Doors.ResidentDoor.ResidentsDoorStateMachine;
 using _Main.Scripts.Interfaces;
+using _Main.Scripts.Utils;
 using UnityEngine;
 
 namespace _Main.Scripts.Environment.Doors.ResidentDoor
 {
     public class ResidentDoor : MonoBehaviour, IHoverable
     {
+        [SerializeField] private BaseHoverGroup _hoverGroup;
         [SerializeField] private DoorSign _doorSign;
         [SerializeField] private Vector3 _closeAngle;
         [SerializeField] private Vector3 _openAngele;
@@ -45,10 +46,12 @@ namespace _Main.Scripts.Environment.Doors.ResidentDoor
         
         public void OnHoverEnter()
         {
+            _hoverGroup.OnHoverEnter();
         }
 
         public void OnHoverExit()
         {
+            _hoverGroup.OnHoverExit();
         }
     }
 }

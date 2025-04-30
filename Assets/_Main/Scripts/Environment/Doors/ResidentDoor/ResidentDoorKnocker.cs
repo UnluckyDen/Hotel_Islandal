@@ -16,7 +16,7 @@ namespace _Main.Scripts.Environment.Doors.ResidentDoor
             _residentDoor.OnHoverEnter();
 
         public void OnHoverExit() => 
-            _residentDoor.OnHoverEnter();
+            _residentDoor.OnHoverExit();
 
         public void OnClick()
         {
