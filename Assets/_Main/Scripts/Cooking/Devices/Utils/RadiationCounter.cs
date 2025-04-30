@@ -1,4 +1,3 @@
-using System.Collections;
 using _Main.Scripts.Environment.Systems.Radiation;
 using _Main.Scripts.Interfaces;
 using UnityEngine;
@@ -6,9 +5,12 @@ using Random = UnityEngine.Random;
 
 namespace _Main.Scripts.Cooking.Devices.Utils
 {
-    public class RadiationCounter : Device, IMovableObject
+    public class RadiationCounter : Device, IMovableObject, IActivatingObject
     {
-          [SerializeField] private Collider _collider;
+        [SerializeField] private Collider _collider;
+        [Space] 
+        [SerializeField] private GameObject _activeLamp;
+        [SerializeField] private GameObject _inactiveLamp;
         [Space]
         [SerializeField] private Transform _arrow;
         [SerializeField] private Vector3 _maxAngle;
@@ -24,26 +26,43 @@ namespace _Main.Scripts.Cooking.Devices.Utils
 
         private float _currentDisplayedTemperature;
         
-        float _smoothDampVelocity = 0.0f; 
+        private float _smoothDampVelocity = 0.0f;
+        private bool _countingActive;
         
         public bool IsTrashable => false;
+        public bool CurrentActivity => _countingActive;
 
         private void Start()
         {
             _radiationOverlapDetector.Init(FindAnyObjectByType<RadiationController>());
             SetCurrentTemperature(_radiationOverlapDetector.GetCurrentRadiation());
+            Deactivate();
         }
 
         private void Update()
         {
-            float currentTemperature = _radiationOverlapDetector.GetCurrentRadiation() + Random.Range(-_accuracy, _accuracy);
-            float smoothedTemperature = Mathf.SmoothDamp(_currentDisplayedTemperature, 
-                currentTemperature,
-                ref _smoothDampVelocity, 
+            if (!_countingActive && Mathf.Approximately(_currentDisplayedTemperature, 1f))
+                return;
+            
+            float smoothedRadiation =
+                Mathf.SmoothDamp(_currentDisplayedTemperature,
+                1,
+                ref _smoothDampVelocity,
                 _smoothTime,
                 _maxSmoothTimeSpeed);
             
-            SetCurrentTemperature(smoothedTemperature);
+            if (_countingActive)
+            {
+                float currentRadiation = _radiationOverlapDetector.GetCurrentRadiation() +
+                                           Random.Range(-_accuracy, _accuracy); 
+                smoothedRadiation = Mathf.SmoothDamp(_currentDisplayedTemperature,
+                    currentRadiation,
+                    ref _smoothDampVelocity,
+                    _smoothTime,
+                    _maxSmoothTimeSpeed);
+            }
+
+            SetCurrentTemperature(smoothedRadiation);
         }
 
         private void SetCurrentTemperature(float currentTemperature)
@@ -56,8 +75,29 @@ namespace _Main.Scripts.Cooking.Devices.Utils
             
             _arrow.localEulerAngles = result;
         }
-        
-            
+
+        public void SwitchActive()
+        {
+            if (!_countingActive)
+                Activate();
+            else
+                Deactivate();
+        }
+
+        public void Activate()
+        {
+            _countingActive = true;
+            _activeLamp.SetActive(_countingActive);
+            _inactiveLamp.SetActive(!_countingActive);
+        }
+
+        public void Deactivate()
+        {
+            _countingActive = false;
+            _activeLamp.SetActive(_countingActive);
+            _inactiveLamp.SetActive(!_countingActive);
+        }
+
         public void ToNonInteractive()
         {
             _collider.enabled = false;
@@ -65,6 +105,7 @@ namespace _Main.Scripts.Cooking.Devices.Utils
 
         public void ToInteractable()
         {
+            Deactivate();
             _collider.enabled = true;
         }
     }

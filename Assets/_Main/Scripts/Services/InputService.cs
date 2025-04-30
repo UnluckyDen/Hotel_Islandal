@@ -8,9 +8,11 @@ namespace _Main.Scripts.Services
         public event Action<Vector2> MovementInput;
         public event Action<Vector2> LookInput;
         public event Action<bool> Click;
+        public event Action<bool> RightClick;
         
         public static InputService Instance { get; private set; }
         public bool MouseButtonClicked { get; private set; }
+        public bool MouseButtonRightClicked { get; private set; }
 
         private void Awake()
         {
@@ -29,6 +31,7 @@ namespace _Main.Scripts.Services
             ReedMoveInputs();
             ReedLookInputs();
             ReedClick();
+            ReedRightClick();
         }
 
         private void ReedMoveInputs()
@@ -49,16 +52,31 @@ namespace _Main.Scripts.Services
 
         private void ReedClick()
         {
-            if (Input.GetButtonDown("Fire1"))
+            if (Input.GetMouseButtonDown(0))
             {
                 MouseButtonClicked = true;
-                Click?.Invoke(true);
+                Click?.Invoke(MouseButtonClicked);
             }
 
-            if (Input.GetButtonUp("Fire1"))
+            if (Input.GetMouseButtonDown(0))
             {
                 MouseButtonClicked = false;
-                Click?.Invoke(false);
+                Click?.Invoke(MouseButtonClicked);
+            }
+        }
+        
+        private void ReedRightClick()
+        {
+            if (Input.GetMouseButtonDown(1))
+            {
+                MouseButtonRightClicked = true;
+                RightClick?.Invoke(MouseButtonRightClicked);
+            }
+
+            if (Input.GetMouseButtonDown(1))
+            {
+                MouseButtonRightClicked = false;
+                RightClick?.Invoke(MouseButtonRightClicked);
             }
         }
     }

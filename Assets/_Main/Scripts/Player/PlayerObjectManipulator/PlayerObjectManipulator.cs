@@ -25,11 +25,13 @@ namespace _Main.Scripts.Player.PlayerObjectManipulator
         {
             _inputService = InputService.Instance;
             _inputService.Click += InputServiceOnClick;
+            _inputService.RightClick += InputServiceOnRightClick;
         }
 
         private void OnDestroy()
         {
             _inputService.Click -= InputServiceOnClick;
+            _inputService.RightClick -= InputServiceOnRightClick;
         }
 
         private void Update()
@@ -63,6 +65,12 @@ namespace _Main.Scripts.Player.PlayerObjectManipulator
                     
                     break;
             }
+        }
+
+        private void InputServiceOnRightClick(bool rightClick)
+        {
+            if (rightClick && _manipulatorPlace.CurrentMovableObject is IActivatingObject activatingObject)
+                activatingObject.SwitchActive();
         }
 
         private void HandleHoverable()
