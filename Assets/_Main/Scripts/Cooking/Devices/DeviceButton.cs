@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using _Main.Scripts.Interfaces;
+using _Main.Scripts.Utils;
 using UnityEngine;
 
 namespace _Main.Scripts.Cooking.Devices
@@ -17,6 +18,7 @@ namespace _Main.Scripts.Cooking.Devices
         [SerializeField] private Vector3 _pressedPosition;
         [SerializeField] private float _pressTime = 0.2f;
         [SerializeField] private ButtonStateType _defaultPressState;
+        [SerializeField] private BaseHoverGroup _hoverGroup;
 
         private Coroutine _currentCoroutine;
         private ButtonStateType _currentButtonState;
@@ -32,10 +34,12 @@ namespace _Main.Scripts.Cooking.Devices
 
         public void OnHoverEnter()
         {
+            _hoverGroup.OnHoverEnter();
         }
 
         public void OnHoverExit()
         {
+            _hoverGroup.OnHoverExit();
         }
 
         public void OnClick()
