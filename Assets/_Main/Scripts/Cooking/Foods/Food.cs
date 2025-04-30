@@ -9,7 +9,7 @@ namespace _Main.Scripts.Cooking.Foods
         [SerializeField] private Collider _collider;
 
         [SerializeField] private float _cookingTime;
-        [SerializeField] private HoverGroup _hoverGroup;
+        [SerializeField] private BaseHoverGroup _hoverGroup;
 
         public bool IsTrashable => true;
         public float CurrentCookingTime => _cookingTime;

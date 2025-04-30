@@ -687,10 +687,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: CoffeeMachine
       objectReference: {fileID: 0}
-    - target: {fileID: 4350589040917898504, guid: 27eddb7ad1611438ea4a3d3f9957c587, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.114
-      objectReference: {fileID: 0}
     - target: {fileID: 6157216469965144114, guid: 27eddb7ad1611438ea4a3d3f9957c587, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.15
@@ -701,7 +697,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6157216469965144114, guid: 27eddb7ad1611438ea4a3d3f9957c587, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.85
+      value: 0.758
       objectReference: {fileID: 0}
     - target: {fileID: 6157216469965144114, guid: 27eddb7ad1611438ea4a3d3f9957c587, type: 3}
       propertyPath: m_LocalRotation.w

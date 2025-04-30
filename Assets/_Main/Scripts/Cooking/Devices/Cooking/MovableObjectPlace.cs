@@ -7,7 +7,7 @@ namespace _Main.Scripts.Cooking.Devices.Cooking
     public class MovableObjectPlace : MonoBehaviour, IObjectPlace, IHoverable
     {
         [SerializeField] private Transform _place;
-        [SerializeField] private HoverGroup _hoverGroup;
+        [SerializeField] private BaseHoverGroup _hoverGroup;
 
         private IMovableObject _movableObject;
 

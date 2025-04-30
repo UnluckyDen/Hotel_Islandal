@@ -63,6 +63,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4350589040917898504}
+  - {fileID: 4916434969129608762}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &7610819535609968490
@@ -98,6 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 735395587fed4499911d65e6d7146a7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _hoverGroup: {fileID: 6407911664445174944}
   _recipeSettings: {fileID: 11400000, guid: ba3703fb9d71643ffb21aa1591d293b1, type: 2}
   _animator: {fileID: 7656754366282155880}
   _deviceButton: {fileID: 4231930230544570354}
@@ -240,6 +242,14 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 756f8c14d4c43e24b9534e51ea5080ca, type: 2}
+    - target: {fileID: -5189808350597639399, guid: 26cd5cd1544d61842ba92ddcb7213584, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 756f8c14d4c43e24b9534e51ea5080ca, type: 2}
+    - target: {fileID: -350278014410918715, guid: 26cd5cd1544d61842ba92ddcb7213584, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 756f8c14d4c43e24b9534e51ea5080ca, type: 2}
     - target: {fileID: 919132149155446097, guid: 26cd5cd1544d61842ba92ddcb7213584, type: 3}
       propertyPath: m_Name
       value: CoffeeMachine
@@ -293,6 +303,95 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 26cd5cd1544d61842ba92ddcb7213584, type: 3}
   m_PrefabInstance: {fileID: 4317505995160093411}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &4877423630029029841
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 6157216469965144114}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 26cd5cd1544d61842ba92ddcb7213584, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 26cd5cd1544d61842ba92ddcb7213584, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 26cd5cd1544d61842ba92ddcb7213584, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 26cd5cd1544d61842ba92ddcb7213584, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 26cd5cd1544d61842ba92ddcb7213584, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 26cd5cd1544d61842ba92ddcb7213584, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 26cd5cd1544d61842ba92ddcb7213584, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 26cd5cd1544d61842ba92ddcb7213584, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 26cd5cd1544d61842ba92ddcb7213584, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 26cd5cd1544d61842ba92ddcb7213584, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 26cd5cd1544d61842ba92ddcb7213584, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: ef2b4695b5e7046a597e66b9f093191b, type: 2}
+    - target: {fileID: 919132149155446097, guid: 26cd5cd1544d61842ba92ddcb7213584, type: 3}
+      propertyPath: m_Name
+      value: CoffeeMachine (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects:
+    - {fileID: -6666185984900719997, guid: 26cd5cd1544d61842ba92ddcb7213584, type: 3}
+    - {fileID: 1244638378909098329, guid: 26cd5cd1544d61842ba92ddcb7213584, type: 3}
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 26cd5cd1544d61842ba92ddcb7213584, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6407911664445174944}
+  m_SourcePrefab: {fileID: 100100000, guid: 26cd5cd1544d61842ba92ddcb7213584, type: 3}
+--- !u!4 &4916434969129608762 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 26cd5cd1544d61842ba92ddcb7213584, type: 3}
+  m_PrefabInstance: {fileID: 4877423630029029841}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5724496388641209472 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 26cd5cd1544d61842ba92ddcb7213584, type: 3}
+  m_PrefabInstance: {fileID: 4877423630029029841}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6407911664445174944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5724496388641209472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf483e73efb54a9daaf94860de741061, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _startEnabled: 0
 --- !u!1001 &8072076214491447279
 PrefabInstance:
   m_ObjectHideFlags: 0

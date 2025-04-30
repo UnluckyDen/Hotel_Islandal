@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace _Main.Scripts.Utils
 {
-    public class HoverGroup : MonoBehaviour
+    public class BaseHoverGroup : MonoBehaviour
     {
         [SerializeField] private bool _startEnabled = false;
         
@@ -11,12 +11,12 @@ namespace _Main.Scripts.Utils
             gameObject.SetActive(_startEnabled);
         }
 
-        public void OnHoverEnter()
+        public virtual void OnHoverEnter()
         {
             gameObject.SetActive(true);
         }
 
-        public void OnHoverExit()
+        public virtual void OnHoverExit()
         {
             gameObject.SetActive(false);
         }
