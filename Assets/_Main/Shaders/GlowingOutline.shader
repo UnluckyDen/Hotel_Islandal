@@ -59,15 +59,10 @@ Shader "Custom/GlowingOutline"
             fixed4 frag (v2f i) : SV_Target
             {
                 // Эффект мягких краев через градиент прозрачности
-                float2 screenUV = i.screenPos.xy / i.screenPos.w;
                 float outlineFactor = saturate(_OutlineSoftness * 2);
                 
-                // Градиент от центра к краям
-                float gradient = length(screenUV - 0.5) * 2;
-                float alpha = smoothstep(1 - outlineFactor, 1, gradient);
-                
                 fixed4 col = _OutlineColor;
-                col.a = alpha * _OutlineColor.a;
+                col.a = outlineFactor * _OutlineColor.a;
                 return col;
             }
             ENDCG
