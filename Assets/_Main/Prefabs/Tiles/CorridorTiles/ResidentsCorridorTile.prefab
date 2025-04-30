@@ -487,6 +487,10 @@ PrefabInstance:
       propertyPath: _playerTriggerZone
       value: 
       objectReference: {fileID: 3612017715729597371}
+    - target: {fileID: 3300865201536510140, guid: 2d94e2ec4e47b4a14b7e18c6b90ac7bb, type: 3}
+      propertyPath: _playerTriggerZone
+      value: 
+      objectReference: {fileID: 3612017715729597371}
     - target: {fileID: 5949325914708720804, guid: 2d94e2ec4e47b4a14b7e18c6b90ac7bb, type: 3}
       propertyPath: m_Name
       value: ResidentWall1

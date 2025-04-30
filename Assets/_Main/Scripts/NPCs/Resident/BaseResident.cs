@@ -38,7 +38,12 @@ namespace _Main.Scripts.NPCs.Resident
             _playerTriggerZone.PlayerEnterTriggerZone -= PlayerTriggerZoneOnPlayerEnterTriggerZone;
         }
 
-        public bool TryAcceptOrder(Food food)
+        public virtual void InstantiateClues()
+        {
+            
+        }
+
+        public virtual bool TryAcceptOrder(Food food)
         {
             if (food.GetType() == _orderedFood.GetType())
             {
@@ -54,7 +59,7 @@ namespace _Main.Scripts.NPCs.Resident
             return false;
         }
 
-        public void HandleKnock()
+        public virtual void HandleKnock()
         {
             if (_conditionHintPair.Condition == ResidentConditionType.HaveOrder && _playerInZone)
             {
@@ -64,12 +69,12 @@ namespace _Main.Scripts.NPCs.Resident
             }
         }
 
-        private void GenerateCondition()
+        protected virtual void GenerateCondition()
         {
             _conditionHintPair = _residentConditionHintSettings.GetRandomPair();
         }
 
-        private void CreateOrder()
+        protected virtual void CreateOrder()
         {
             _orderMethodPair = _residentOrderSettings.GetRandomPair();
             _orderedFood = _orderMethodPair.Food;

@@ -108,7 +108,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5fb7346b85a45d9b6c71f5276782e58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _resident: {fileID: 158193219780389977}
+  _resident: {fileID: 3300865201536510140}
 --- !u!65 &3944710096523423631
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -207,7 +207,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _objectPlace: {fileID: 2199909613370704617}
-  _resident: {fileID: 158193219780389977}
+  _resident: {fileID: 3300865201536510140}
 --- !u!65 &7772294529899052101
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -305,7 +305,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6891572737796560698, guid: ae3b7c682a14dc24f94c8737af497cc4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.03
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 6891572737796560698, guid: ae3b7c682a14dc24f94c8737af497cc4, type: 3}
       propertyPath: m_LocalPosition.y
@@ -425,7 +425,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 4793cef424adfd14babf742e89ce6030, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 158193219780389977}
+      addedObject: {fileID: 3300865201536510140}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 4793cef424adfd14babf742e89ce6030, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2074048276279066898}
@@ -445,7 +445,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 4793cef424adfd14babf742e89ce6030, type: 3}
   m_PrefabInstance: {fileID: 5049927408737614320}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &158193219780389977
+--- !u!114 &3300865201536510140
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -454,7 +454,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5392387554401928353}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9755df4540f5422e88de74283fc9817e, type: 3}
+  m_Script: {fileID: 11500000, guid: 61ab29ac857d4e7a9adc26ea41f422ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _residentDoor: {fileID: 2074048276279066898}
@@ -463,6 +463,11 @@ MonoBehaviour:
   _residentConditionHintSettings: {fileID: 11400000, guid: 6635857dcd2024a0db09db4dfa9018b4, type: 2}
   _orderPlace: {fileID: 2199909613370704617}
   _orderedFood: {fileID: 0}
+  _residentClues:
+  - {fileID: -8800923729839936505, guid: 370c0821fe62b2e478771eb88503d7f5, type: 3}
+  - {fileID: 1506785972623479129, guid: f4da32ae66a43f6438f9ceaae3cd7303, type: 3}
+  - {fileID: 3514540055256765805, guid: 7d4bd8d1d8b9646829c63aca16580a77, type: 3}
+  _cluePlace: {fileID: 3230881177778301481}
 --- !u!114 &2074048276279066898
 MonoBehaviour:
   m_ObjectHideFlags: 0
