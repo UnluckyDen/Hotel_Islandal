@@ -1,4 +1,5 @@
 using _Main.Scripts.Interfaces;
+using _Main.Scripts.Utils;
 using UnityEngine;
 
 namespace _Main.Scripts.Cooking.Foods
@@ -8,10 +9,11 @@ namespace _Main.Scripts.Cooking.Foods
         [SerializeField] private Collider _collider;
 
         [SerializeField] private float _cookingTime;
+        [SerializeField] private HoverGroup _hoverGroup;
 
         public bool IsTrashable => true;
         public float CurrentCookingTime => _cookingTime;
-
+        
         public void AddCookingTime(float time) => _cookingTime += time;
 
 
@@ -27,12 +29,12 @@ namespace _Main.Scripts.Cooking.Foods
 
         public void OnHoverEnter()
         {
-            transform.localScale = new Vector3(1.1f, 1.1f, 1.1f);
+            _hoverGroup.OnHoverEnter();
         }
 
         public void OnHoverExit()
         {
-            transform.localScale = new Vector3(1f, 1f, 1f);
+            _hoverGroup.OnHoverExit();
         }
     }
 }
