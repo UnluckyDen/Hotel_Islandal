@@ -8,9 +8,9 @@ namespace _Main.Scripts.Cooking.Devices.Cooking
     {
         [SerializeField] private Food _foodPrefab;
         [SerializeField] private Transform _foodTransform;
-        
-        public override bool IsEmpty => false;
-        public override bool MayContainMultipleObjects => false;
+
+        public override IMovableObject CurrentMovableObject => _foodPrefab;
+        public override bool CanApply(IMovableObject movableObject) => false;
 
         public override IMovableObject TakeMovableObject()
         {

@@ -8,10 +8,10 @@ namespace _Main.Scripts.Cooking.Devices.Cooking
         [SerializeField] private Transform _place;
 
         private IMovableObject _movableObject;
-        
-        public bool IsEmpty => _movableObject == null;
-        public bool MayContainMultipleObjects => false;
-        
+
+        public IMovableObject CurrentMovableObject => _movableObject;
+        public bool CanApply(IMovableObject movableObject) => _movableObject == null;
+
         public void OnHoverEnter()
         {
         }

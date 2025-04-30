@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using _Main.Scripts.Cooking.Foods;
 using _Main.Scripts.Interfaces;
 using UnityEngine;
@@ -13,9 +14,9 @@ namespace _Main.Scripts.Cooking.Devices.Cooking
         private List<Food> _foodIn = new();
         private Food _foodOut;
         private bool _isCooking;
-        
-        public override bool IsEmpty => _foodIn.Count == 0;
-        
+
+        public override IMovableObject CurrentMovableObject => _foodIn.FirstOrDefault();
+
         private void Start()
         {
             _deviceButton.ButtonPressed += DeviceButtonOnClick;

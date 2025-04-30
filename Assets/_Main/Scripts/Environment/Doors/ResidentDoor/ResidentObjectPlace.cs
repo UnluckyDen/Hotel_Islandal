@@ -15,16 +15,18 @@ namespace _Main.Scripts.Environment.Doors.ResidentDoor
         private ResidentDoor _residentDoor;
         private Food _food;
         
-        private readonly List<IMovableObject> _movableObjects = new();
+        private IMovableObject _movableObject;
 
-        public bool IsEmpty => _movableObjects.Count == 0;
-        public bool MayContainMultipleObjects => true;
+        public IMovableObject CurrentMovableObject => _movableObject;
+
+        public bool CanApply(IMovableObject movableObject) =>
+            _movableObject == null && movableObject is Food;
 
         public void Init(ResidentDoor residentDoor)
         {
             _residentDoor = residentDoor;
         }
-        
+
         public void PlaceMovableObject(IMovableObject movableObject)
         {
             if (movableObject == null) 
@@ -51,16 +53,16 @@ namespace _Main.Scripts.Environment.Doors.ResidentDoor
             movableObject.transform.localPosition = Vector3.zero;
             movableObject.transform.localEulerAngles = Vector3.zero;
             
-            _movableObjects.Add(movableObject);
+            _movableObject = movableObject;
         }
 
         public IMovableObject TakeMovableObject()
         {
-            if (_movableObjects.Count <= 0)
+            if (_movableObject == null)
                 return null;
             
-            IMovableObject movableObject = _movableObjects.Last();
-            _movableObjects.Remove(movableObject);
+            IMovableObject movableObject = _movableObject;
+            _movableObject = null;
             
             movableObject.transform.SetParent(null);
             movableObject.ToInteractable();
