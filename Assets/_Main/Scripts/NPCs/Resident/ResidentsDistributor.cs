@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using _Main.Scripts.NPCs.Resident.ResidentRealizations;
 using UnityEngine;
 
 namespace _Main.Scripts.NPCs.Resident

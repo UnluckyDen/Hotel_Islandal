@@ -1,5 +1,6 @@
 using _Main.Scripts.Interfaces;
 using _Main.Scripts.NPCs.Resident;
+using _Main.Scripts.NPCs.Resident.ResidentRealizations;
 using UnityEngine;
 
 namespace _Main.Scripts.Environment.Doors.ResidentDoor

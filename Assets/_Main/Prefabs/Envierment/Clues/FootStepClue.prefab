@@ -737,7 +737,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5978924229870045742}
-  - component: {fileID: -8800923729839936505}
+  - component: {fileID: 2182014185722845574}
   m_Layer: 0
   m_Name: FootStepClue
   m_TagString: Untagged
@@ -780,7 +780,7 @@ Transform:
   - {fileID: 4269762532512429393}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &-8800923729839936505
+--- !u!114 &2182014185722845574
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -789,7 +789,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5212653513161402502}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd220d4588fa4aae84a6e4acd2965f3f, type: 3}
+  m_Script: {fileID: 11500000, guid: fc237386e3fd4b2484257f250e07a633, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _residentClueType: 1

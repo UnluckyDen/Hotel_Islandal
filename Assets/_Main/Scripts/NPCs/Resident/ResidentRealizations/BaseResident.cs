@@ -1,13 +1,16 @@
+using System.Collections.Generic;
 using _Main.Scripts.Cooking.Foods;
 using _Main.Scripts.Environment;
 using _Main.Scripts.Environment.Doors.ResidentDoor;
+using _Main.Scripts.NPCs.Resident.Clues;
 using _Main.Scripts.ScriptableObjects;
 using UnityEngine;
 
-namespace _Main.Scripts.NPCs.Resident
+namespace _Main.Scripts.NPCs.Resident.ResidentRealizations
 {
     public class BaseResident : MonoBehaviour
     {
+        [SerializeField] private List<BaseResidentClue> _residentClues;
         [SerializeField] private ResidentOrderSettings _residentOrderSettings;
         [SerializeField] private ResidentConditionHintSettings _residentConditionHintSettings;
 
@@ -15,6 +18,7 @@ namespace _Main.Scripts.NPCs.Resident
         
         private ResidentDoor _residentDoor;
         private PlayerTriggerZone _playerTriggerZone;
+        private ResidentCluesController _residentCluesController;
 
         private ConditionHintPair _conditionHintPair;
         private OrderMethodPair _orderMethodPair;
@@ -24,21 +28,21 @@ namespace _Main.Scripts.NPCs.Resident
         private GameObject _tempOrderGameObject;
 
         private bool _playerInZone;
-
-        public Transform CluePlace { get; private set; }
-
-        public virtual void Init(ResidentDoor residentDoor, PlayerTriggerZone playerTriggerZone, Transform hintPlace, Transform cluesPlace)
+        
+        public virtual void Init(ResidentDoor residentDoor, PlayerTriggerZone playerTriggerZone, Transform hintPlace, ResidentCluesController residentCluesController)
         {
             _residentDoor = residentDoor;
             _playerTriggerZone = playerTriggerZone;
             _hintPlace = hintPlace;
-            CluePlace = cluesPlace;
+            _residentCluesController = residentCluesController;
             
             _playerTriggerZone.PlayerEnterTriggerZone += PlayerTriggerZoneOnPlayerEnterTriggerZone;
             GenerateCondition();
             
             if (_conditionHintPair.Condition == ResidentConditionType.HaveOrder)
                 CreateOrder();
+            
+            _residentCluesController.InstantiateClue(_residentClues);
         }
 
         public void Destruct()

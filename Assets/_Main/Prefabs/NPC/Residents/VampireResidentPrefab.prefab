@@ -44,8 +44,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61ab29ac857d4e7a9adc26ea41f422ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _residentClues:
+  - {fileID: 2182014185722845574, guid: 370c0821fe62b2e478771eb88503d7f5, type: 3}
+  - {fileID: 5798659549918323006, guid: 7d4bd8d1d8b9646829c63aca16580a77, type: 3}
   _residentOrderSettings: {fileID: 11400000, guid: aedcfae2114be4e7c899344233a0ea9b, type: 2}
   _residentConditionHintSettings: {fileID: 11400000, guid: 6635857dcd2024a0db09db4dfa9018b4, type: 2}
   _orderedFood: {fileID: 0}
-  _residentClues:
-  - {fileID: 3514540055256765805, guid: 7d4bd8d1d8b9646829c63aca16580a77, type: 3}

@@ -138,6 +138,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3230881177778301481}
+  - component: {fileID: 2937630656968569649}
   m_Layer: 0
   m_Name: Clues
   m_TagString: Untagged
@@ -160,6 +161,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 6474928089176303134}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2937630656968569649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5412673948274394709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b08a2c1421a54db797cef3f5b206ffd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cluePlace: {fileID: 3230881177778301481}
 --- !u!1 &5622470301942665156
 GameObject:
   m_ObjectHideFlags: 0
@@ -275,9 +289,9 @@ MonoBehaviour:
   _residentDoorKnocker: {fileID: 7992154479522389114}
   _residentObjectPlace: {fileID: 3656383476774702355}
   _doorSign: {fileID: 2921565441145372829}
+  _residentCluesController: {fileID: 2937630656968569649}
   _residentPlace: {fileID: 3190880056019107840}
   _hintPlace: {fileID: 2199909613370704617}
-  _cluesPlace: {fileID: 3230881177778301481}
   _playerTriggerZone: {fileID: 0}
 --- !u!1001 &3110008646934493958
 PrefabInstance:
