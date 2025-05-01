@@ -8,24 +8,32 @@ namespace _Main.Scripts.NPCs.Resident
 {
     public class BaseResident : MonoBehaviour
     {
-        [SerializeField] private ResidentDoor _residentDoor;
-        [SerializeField] private PlayerTriggerZone _playerTriggerZone;
         [SerializeField] private ResidentOrderSettings _residentOrderSettings;
         [SerializeField] private ResidentConditionHintSettings _residentConditionHintSettings;
-        [SerializeField] private Transform _orderPlace;
 
         [SerializeField] private Food _orderedFood;
+        
+        private ResidentDoor _residentDoor;
+        private PlayerTriggerZone _playerTriggerZone;
 
         private ConditionHintPair _conditionHintPair;
         private OrderMethodPair _orderMethodPair;
 
+        private Transform _hintPlace;
         private GameObject _tempConditionGameObject;
         private GameObject _tempOrderGameObject;
 
         private bool _playerInZone;
 
-        private void Awake()
+        public Transform CluePlace { get; private set; }
+
+        public virtual void Init(ResidentDoor residentDoor, PlayerTriggerZone playerTriggerZone, Transform hintPlace, Transform cluesPlace)
         {
+            _residentDoor = residentDoor;
+            _playerTriggerZone = playerTriggerZone;
+            _hintPlace = hintPlace;
+            CluePlace = cluesPlace;
+            
             _playerTriggerZone.PlayerEnterTriggerZone += PlayerTriggerZoneOnPlayerEnterTriggerZone;
             GenerateCondition();
             
@@ -33,14 +41,9 @@ namespace _Main.Scripts.NPCs.Resident
                 CreateOrder();
         }
 
-        private void OnDestroy()
+        public void Destruct()
         {
             _playerTriggerZone.PlayerEnterTriggerZone -= PlayerTriggerZoneOnPlayerEnterTriggerZone;
-        }
-
-        public virtual void InstantiateClues()
-        {
-            
         }
 
         public virtual bool TryAcceptOrder(Food food)
@@ -82,7 +85,7 @@ namespace _Main.Scripts.NPCs.Resident
 
         private void MakeOrder()
         {
-            _tempOrderGameObject = Instantiate(_orderMethodPair.Method, _orderPlace);
+            _tempOrderGameObject = Instantiate(_orderMethodPair.Method, _hintPlace);
         }
 
         private void DestroyOrderHint()
@@ -93,7 +96,7 @@ namespace _Main.Scripts.NPCs.Resident
 
         private void ShowConditionHint()
         {
-            _tempConditionGameObject = Instantiate(_conditionHintPair.Method, _orderPlace);
+            _tempConditionGameObject = Instantiate(_conditionHintPair.Method, _hintPlace);
         }
 
         private void DestroyConditionHint()

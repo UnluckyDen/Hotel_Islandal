@@ -739,7 +739,7 @@ GameObject:
   - component: {fileID: 5978924229870045742}
   - component: {fileID: -8800923729839936505}
   m_Layer: 0
-  m_Name: DirtClues
+  m_Name: FootStepClue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -8,9 +8,9 @@ namespace _Main.Scripts.Environment.Doors.ResidentDoor
     public class ResidentObjectPlace : MonoBehaviour, IObjectPlace, IHoverable
     {
         [SerializeField] private Transform _objectPlace;
-        [SerializeField] BaseResident _resident;
 
         private ResidentDoor _residentDoor;
+        private BaseResident _resident;
         private Food _food;
         
         private IMovableObject _movableObject;
@@ -20,9 +20,10 @@ namespace _Main.Scripts.Environment.Doors.ResidentDoor
         public bool CanApply(IMovableObject movableObject) =>
             _movableObject == null && movableObject is Food;
 
-        public void Init(ResidentDoor residentDoor)
+        public void Init(ResidentDoor residentDoor, BaseResident resident)
         {
             _residentDoor = residentDoor;
+            _resident = resident;
         }
 
         public void PlaceMovableObject(IMovableObject movableObject)
