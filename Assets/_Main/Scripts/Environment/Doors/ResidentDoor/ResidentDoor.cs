@@ -14,25 +14,27 @@ namespace _Main.Scripts.Environment.Doors.ResidentDoor
         [SerializeField] private Transform _doorRoot;
         [SerializeField] private float _rotationSpeed = 4;
 
-        [SerializeField] private ResidentDoorKnocker _residentDoorKnocker;
-        [SerializeField] private ResidentObjectPlace _residentObjectPlace;
-
         private ResidentDoorStateMachine _doorStateMachine;
 
-        private void Awake()
+        private bool _inited;
+
+        public void Init(ResidentDoorKnocker residentDoorKnocker, ResidentObjectPlace residentObjectPlace)
         {
-            _doorStateMachine = new ResidentDoorStateMachine(_closeAngle, _openAngele, _doorRoot, _rotationSpeed, _residentDoorKnocker, _residentObjectPlace);
+            _doorStateMachine = new ResidentDoorStateMachine(_closeAngle, _openAngele, _doorRoot, _rotationSpeed, residentDoorKnocker, residentObjectPlace);
             _doorStateMachine.ToClose();
-            
-            _residentDoorKnocker.Init(this);
-            _residentObjectPlace.Init(this);
+            _inited = true;
         }
 
-        private void OnDestroy() =>
+        public void Destruct() =>
             _doorStateMachine.Dispose();
 
-        private void Update() =>
+        private void Update()
+        {
+            if (!_inited)
+                return;
+            
             _doorStateMachine.UpdateStates();
+        }
 
         public void OpenDoor()
         {

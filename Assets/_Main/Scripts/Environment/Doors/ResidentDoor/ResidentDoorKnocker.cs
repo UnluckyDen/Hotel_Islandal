@@ -1,16 +1,20 @@
 using _Main.Scripts.Interfaces;
 using _Main.Scripts.NPCs.Resident;
+using _Main.Scripts.NPCs.Resident.ResidentRealizations;
 using UnityEngine;
 
 namespace _Main.Scripts.Environment.Doors.ResidentDoor
 {
     public class ResidentDoorKnocker : MonoBehaviour, IInteractable
     {
-        [SerializeField] private BaseResident _resident;
         private ResidentDoor _residentDoor;
+        private BaseResident _resident;
 
-        public void Init(ResidentDoor residentDoor) =>
+        public void Init(ResidentDoor residentDoor, BaseResident baseResident)
+        {
             _residentDoor = residentDoor;
+            _resident = baseResident;
+        }
 
         public void OnHoverEnter() =>
             _residentDoor.OnHoverEnter();
