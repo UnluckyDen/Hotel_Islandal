@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _residentClueType: 2
+  _replaceObjectType: 1
 --- !u!1001 &3225822021864302153
 PrefabInstance:
   m_ObjectHideFlags: 0

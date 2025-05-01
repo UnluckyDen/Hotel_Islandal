@@ -174,6 +174,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cluePlace: {fileID: 3230881177778301481}
+  _replaceObjectsList:
+  - ReplaceObjectType: 1
+    ReplaceGameObject: {fileID: 7218014256546308479}
+  - ReplaceObjectType: 2
+    ReplaceGameObject: {fileID: 5329988410228097823}
 --- !u!1 &5622470301942665156
 GameObject:
   m_ObjectHideFlags: 0
@@ -301,6 +306,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2293731550548286142}
     m_Modifications:
+    - target: {fileID: 7124435517410916377, guid: e631dd9b777190245a79812da90a2588, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8529262871686328779, guid: e631dd9b777190245a79812da90a2588, type: 3}
       propertyPath: m_Name
       value: Room 1
@@ -350,6 +359,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e631dd9b777190245a79812da90a2588, type: 3}
+--- !u!1 &5329988410228097823 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7124435517410916377, guid: e631dd9b777190245a79812da90a2588, type: 3}
+  m_PrefabInstance: {fileID: 3110008646934493958}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6766371427377799922 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8560782783534373364, guid: e631dd9b777190245a79812da90a2588, type: 3}
@@ -415,6 +429,11 @@ PrefabInstance:
 --- !u!4 &6996031141189794597 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6891572737796560698, guid: ae3b7c682a14dc24f94c8737af497cc4, type: 3}
+  m_PrefabInstance: {fileID: 4518567991923797023}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7218014256546308479 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6529836952939957600, guid: ae3b7c682a14dc24f94c8737af497cc4, type: 3}
   m_PrefabInstance: {fileID: 4518567991923797023}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5049927408737614320
