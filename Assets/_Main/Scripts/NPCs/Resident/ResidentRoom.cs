@@ -23,9 +23,10 @@ namespace _Main.Scripts.NPCs.Resident
 
         private BaseResident _resident;
 
-        public void Init(BaseResident resident)
+        public void Init(BaseResident resident, int roomNumber)
         {
             _resident = resident;
+            _doorSign.SetNumber(roomNumber);
             
             _residentCluesController.Init();
             

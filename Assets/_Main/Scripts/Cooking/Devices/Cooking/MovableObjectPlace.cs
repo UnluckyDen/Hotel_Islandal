@@ -1,5 +1,7 @@
+using System;
 using _Main.Scripts.Interfaces;
 using _Main.Scripts.Utils;
+using JetBrains.Annotations;
 using UnityEngine;
 
 namespace _Main.Scripts.Cooking.Devices.Cooking
@@ -8,11 +10,23 @@ namespace _Main.Scripts.Cooking.Devices.Cooking
     {
         [SerializeField] private Transform _place;
         [SerializeField] private BaseHoverGroup _hoverGroup;
+        [CanBeNull]
+        [SerializeField] private GameObject _startObject;
 
         private IMovableObject _movableObject;
 
         public IMovableObject CurrentMovableObject => _movableObject;
         public bool CanApply(IMovableObject movableObject) => _movableObject == null;
+
+        private void Start()
+        {
+            if (_startObject == null)
+                return;
+            
+            var movableObject = _startObject.GetComponent<IMovableObject>();
+            PlaceMovableObject(movableObject);
+            OnHoverExit();
+        }
 
         public void OnHoverEnter()
         {

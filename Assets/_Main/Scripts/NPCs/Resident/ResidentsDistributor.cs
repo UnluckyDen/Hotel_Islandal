@@ -14,7 +14,7 @@ namespace _Main.Scripts.NPCs.Resident
             foreach (ResidentRoom residentRoom in _residentRooms)
             {
                 BaseResident randomResident = InstantiateRandomResident(residentRoom.ResidentPlace);
-                residentRoom.Init(randomResident);
+                residentRoom.Init(randomResident, _residentRooms.IndexOf(residentRoom) + 1);
             }
         }
 

@@ -275,6 +275,10 @@ PrefabInstance:
       propertyPath: _playerTriggerZone
       value: 
       objectReference: {fileID: 3612017715729597371}
+    - target: {fileID: 9124375131047027766, guid: f6aff25ec3d494403b295c00ab8d2dec, type: 3}
+      propertyPath: _playerTriggerZone
+      value: 
+      objectReference: {fileID: 3612017715729597371}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
