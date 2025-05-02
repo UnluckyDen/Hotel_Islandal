@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace _Main.Scripts.Player.Movement.Commands
 {
-    public class RotateAsyncCommand : IAsyncCommand
+    public class RotateAsyncCommand : IMoveCommand
     {
         public CommandStatus Status { get; private set; }
         public int CommandNumber { get; private set; }

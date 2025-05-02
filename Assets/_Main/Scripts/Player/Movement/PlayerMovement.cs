@@ -49,15 +49,25 @@ namespace _Main.Scripts.Player.Movement
         private void Update()
         {
             if (_movementAsyncCommandQuery.IsRunning)
+            {
+                if (!_moveInput.Pressed && _moveInput.RepeatCount > 1 && _moveInput.Input.y != 0)
+                {
+                    if (_movementAsyncCommandQuery.RunningCommand.MoveInput == _moveInput.Input)
+                        _movementAsyncCommandQuery.RunningCommand.Undo();
+                }
+                
                 return;
-            
+            }
+
             if (_moveInput.Pressed && _moveInput.Input.y != 0)
             {
-                WayPoint wayPoint = _wayController.GetNextWayPoint((transform.forward * Mathf.Sign(_moveInput.Input.y)).ToVector3Int());
-                if (wayPoint != null)
+                WayPoint currentWayPoint = _wayController.CurrentWayPoint;
+                WayPoint nextWayPoint = _wayController.GetNextWayPoint((transform.forward * Mathf.Sign(_moveInput.Input.y)).ToVector3Int());
+                if (nextWayPoint != null)
                 {
-                    _movementAsyncCommandQuery.Append(new MoveAsyncCommand(_moveInput.Input, transform, _movementSpeed, wayPoint));
+                    _movementAsyncCommandQuery.Append(new MoveAsyncCommand(_moveInput.Input, transform, _movementSpeed, _canUndoFactor, currentWayPoint, nextWayPoint, _wayController));
                     _movementAsyncCommandQuery.StartQueue();
+                    _moveInput.IncreaseRepeatCount();
                 }
                 
                 return;

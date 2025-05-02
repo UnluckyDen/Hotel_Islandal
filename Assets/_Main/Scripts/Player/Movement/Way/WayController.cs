@@ -29,9 +29,12 @@ namespace _Main.Scripts.Player.Movement.Way
             if (nextWayPoint == null) 
                 return null;
             
-            _currentWayPoint = nextWayPoint;
-            return _currentWayPoint;
+            return nextWayPoint;
+        }
 
+        public void UpdateCurrentWayPoint(WayPoint currentWayPoint)
+        {
+            _currentWayPoint = currentWayPoint;
         }
 
         [ContextMenu("CollectWayPointsAtScene")]
