@@ -154,8 +154,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.13161793, y: 0.11464198, z: 0.0832901}
-  m_Center: {x: 0.0095490515, y: 0.022679009, z: 0.011936188}
+  m_Size: {x: 0.15, y: 0.15, z: 0.15}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &3797254296594047356
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -170,7 +170,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _collider: {fileID: 5128482928951431458}
   _cookingTime: 0
-  _hoverGroup: {fileID: 2064422032894800712}
+  _hoverGroup: {fileID: 6931824249304814758}
 --- !u!1 &2649807479531193190
 GameObject:
   m_ObjectHideFlags: 0

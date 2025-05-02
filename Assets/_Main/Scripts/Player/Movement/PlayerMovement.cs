@@ -15,21 +15,18 @@ namespace _Main.Scripts.Player.Movement
         private Coroutine _currentMoveCoroutine;
         private WayController _wayController;
 
-        private void Awake()
+        public void Init(WayController wayController, InputService inputService)
         {
-            _wayController = FindAnyObjectByType<WayController>();
-        }
-
-        private void Start()
-        {
-            _inputService = InputService.Instance;
+            _wayController = wayController;
+            
+            _inputService = inputService;
             
             _inputService.MovementInput += InputServiceOnMovementInput;
             transform.position = _wayController.CurrentWayPoint.transform.position;
             transform.rotation = _wayController.CurrentWayPoint.transform.rotation;
         }
 
-        private void OnDestroy()
+        public void Destruct()
         {
             _inputService.MovementInput -= InputServiceOnMovementInput;
         }
