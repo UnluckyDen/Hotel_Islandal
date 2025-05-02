@@ -5,7 +5,7 @@ namespace _Main.Scripts.Services
 {
     public class InputService : MonoBehaviour
     {
-        public event Action<Vector2> MovementInput;
+        public event Action<Vector2, bool> MovementInput;
         public event Action<Vector2> LookInput;
         public event Action<bool> Click;
         public event Action<bool> RightClick;
@@ -38,8 +38,29 @@ namespace _Main.Scripts.Services
         {
             var inputVector = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
 
-            if (inputVector.magnitude != 0)
-                MovementInput?.Invoke(inputVector);
+            if (Input.GetKeyDown("w"))
+                MovementInput?.Invoke(new Vector2(0, 1), true);
+
+            if (Input.GetKeyUp("w"))
+                MovementInput?.Invoke(new Vector2(0, 1), false);
+
+            if (Input.GetKeyDown("s"))
+                MovementInput?.Invoke(new Vector2(0, -1), true);
+
+            if (Input.GetKeyUp("s"))
+                MovementInput?.Invoke(new Vector2(0, -1), false);
+
+            if (Input.GetKeyDown("a"))
+                MovementInput?.Invoke(new Vector2(-1, 0), true);
+
+            if (Input.GetKeyUp("a"))
+                MovementInput?.Invoke(new Vector2(-1, 0), false);
+
+            if (Input.GetKeyDown("d"))
+                MovementInput?.Invoke(new Vector2(1, 0), true);
+
+            if (Input.GetKeyUp("d"))
+                MovementInput?.Invoke(new Vector2(1, 0), false);
         }
 
         private void ReedLookInputs()

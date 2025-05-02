@@ -2028,6 +2028,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 330100366588666850, guid: 92778504a4dad4c068ff927d430c38c9, type: 3}
+      propertyPath: m_Resource
+      value: 
+      objectReference: {fileID: 8300000, guid: cb32c756177764ba2b3d036cd8303f53, type: 3}
+    - target: {fileID: 330100366588666850, guid: 92778504a4dad4c068ff927d430c38c9, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: cb32c756177764ba2b3d036cd8303f53, type: 3}
     - target: {fileID: 5788081001657955669, guid: 92778504a4dad4c068ff927d430c38c9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

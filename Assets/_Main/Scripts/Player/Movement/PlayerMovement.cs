@@ -1,4 +1,4 @@
-using System.Collections;
+using _Main.Scripts.Player.Movement.Commands;
 using _Main.Scripts.Player.Movement.Way;
 using _Main.Scripts.Services;
 using _Main.Scripts.Utils;
@@ -6,20 +6,26 @@ using UnityEngine;
 
 namespace _Main.Scripts.Player.Movement
 {
-    public class PlayerMovement : MonoBehaviour
+    public class PlayerMovement : MonoBehaviour, ICoroutineRunner
     {
         [SerializeField] private float _movementSpeed = 1f;
-        [SerializeField] private float _rotateSpeed = 3f;
-        
-        private InputService _inputService;
-        private Coroutine _currentMoveCoroutine;
-        private WayController _wayController;
+        [SerializeField] private float _rotateSpeed = 1f;
+        [SerializeField] private float _canUndoFactor = 0.2f;
+        [SerializeField] private MovementSound _movementSound;
 
+        private InputService _inputService;
+        private WayController _wayController;
+        private MovementAsyncCommandQuery _movementAsyncCommandQuery;
+
+        private MoveInput _moveInput;
+        
         public void Init(WayController wayController, InputService inputService)
         {
             _wayController = wayController;
-            
             _inputService = inputService;
+            
+            _movementAsyncCommandQuery = new MovementAsyncCommandQuery(this);
+            _moveInput = new MoveInput();
             
             _inputService.MovementInput += InputServiceOnMovementInput;
             transform.position = _wayController.CurrentWayPoint.transform.position;
@@ -29,72 +35,53 @@ namespace _Main.Scripts.Player.Movement
         public void Destruct()
         {
             _inputService.MovementInput -= InputServiceOnMovementInput;
+            _movementAsyncCommandQuery.DiscardAllCommands();
         }
 
-        private void InputServiceOnMovementInput(Vector2 inputDirection)
+        private void InputServiceOnMovementInput(Vector2 inputDirection, bool press)
         {
-            if (_currentMoveCoroutine != null)
+            if (inputDirection != _moveInput.Input && !press)
                 return;
             
-            _currentMoveCoroutine = StartCoroutine(MovementCoroutine(inputDirection));
+            _moveInput.UpdateInput(inputDirection, press);
         }
 
-        private IEnumerator MovementCoroutine(Vector2 inputDirection)
+        private void Update()
         {
-            WayPoint nextWayPoint = null;
-            if (inputDirection.y > 0)
-                nextWayPoint = _wayController.GetNextWayPoint(transform.forward.ToVector3Int());
-            
-            if (inputDirection.y < 0)
-                nextWayPoint = _wayController.GetNextWayPoint(-transform.forward.ToVector3Int());
+            if (_movementAsyncCommandQuery.IsRunning)
+                return;
 
-            if (nextWayPoint != null)
+            if (_moveInput.Pressed && _moveInput.Input.y != 0)
             {
-                yield return MoveCoroutine(nextWayPoint);
-                _currentMoveCoroutine = null;
-                yield break;
+                WayPoint wayPoint = _wayController.GetNextWayPoint((transform.forward * Mathf.Sign(_moveInput.Input.y)).ToVector3Int());
+                if (wayPoint != null)
+                {
+                    _movementAsyncCommandQuery.Append(new MoveAsyncCommand(_moveInput, transform, _movementSpeed, wayPoint));
+                    _movementAsyncCommandQuery.StartQueue();
+                }
+                
+                return;
             }
 
-            if (inputDirection.x > 0)
-                yield return RotateCoroutine(transform.eulerAngles + new Vector3(0,+90,0));
-            
-            if (inputDirection.x < 0)
-                yield return RotateCoroutine(transform.eulerAngles + new Vector3(0,-90,0));
-
-            _currentMoveCoroutine = null;
-        }
-        
-        private IEnumerator MoveCoroutine(WayPoint nextWayPoint)
-        {
-            float factor = 0f;
-
-            Vector3 currentPosition = transform.position;
-            Vector3 targetPosition = nextWayPoint.transform.position;
-
-            while (factor < 1f)
+            if (_moveInput.Pressed && _moveInput.Input.x != 0)
             {
-                transform.position = Vector3.Lerp(currentPosition, targetPosition, factor);
-                factor += Time.deltaTime * _movementSpeed;
-                yield return null;
+                Vector3 targetRotation = Vector3.zero;
+
+                if (_moveInput.Input.x > 0)
+                    targetRotation = transform.eulerAngles + new Vector3(0, +90, 0);
+
+                if (_moveInput.Input.x < 0)
+                    targetRotation = transform.eulerAngles + new Vector3(0, -90, 0);
+
+                Rotate(targetRotation);
             }
-            
-            transform.position = targetPosition;
         }
 
-        private IEnumerator RotateCoroutine(Vector3 targetRotation)
+        private void Rotate(Vector3 targetRotation)
         {
-            float factor = 0f;
-
-            Vector3 currentPosition = transform.eulerAngles;
-
-            while (factor < 1f)
-            {
-                transform.eulerAngles = Vector3.Lerp(currentPosition, targetRotation, factor);
-                factor += Time.deltaTime * _rotateSpeed;
-                yield return null;
-            }
-            
-            transform.eulerAngles = targetRotation;
+            _movementAsyncCommandQuery.Append(new RotateAsyncCommand(_moveInput, transform, _rotateSpeed,
+                targetRotation));
+            _movementAsyncCommandQuery.StartQueue();
         }
     }
 }
