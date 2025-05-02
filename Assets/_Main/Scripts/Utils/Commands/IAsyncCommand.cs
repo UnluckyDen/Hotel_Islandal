@@ -3,7 +3,7 @@ using System.Collections;
 
 namespace _Main.Scripts.Utils.Commands
 {
-    public interface IAsyncCommand<T>
+    public interface IAsyncCommand
     {
         public CommandStatus Status { get; }
         public int CommandNumber { get; }

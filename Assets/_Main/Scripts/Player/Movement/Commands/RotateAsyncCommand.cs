@@ -4,17 +4,18 @@ using UnityEngine;
 
 namespace _Main.Scripts.Player.Movement.Commands
 {
-    public class RotateAsyncCommand : IAsyncCommand<MoveInput>
+    public class RotateAsyncCommand : IAsyncCommand
     {
         public CommandStatus Status { get; private set; }
         public int CommandNumber { get; private set; }
+        public Vector2 MoveInput => _moveInput;
 
-        private MoveInput _moveInput;
+        private Vector2 _moveInput;
         private Transform _playerTransform;
         private float _rotateSpeed;
         private Vector3 _targetRotation;
 
-        public RotateAsyncCommand(MoveInput moveInput, Transform playerTransform, float rotateSpeed, Vector3 targetRotation)
+        public RotateAsyncCommand(Vector2 moveInput, Transform playerTransform, float rotateSpeed, Vector3 targetRotation)
         {
             _moveInput = moveInput;
             _playerTransform = playerTransform;

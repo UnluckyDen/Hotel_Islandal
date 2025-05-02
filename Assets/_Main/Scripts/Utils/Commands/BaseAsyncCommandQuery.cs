@@ -7,18 +7,18 @@ namespace _Main.Scripts.Utils.Commands
 {
     public class BaseAsyncCommandQuery<T>
     {
-        public event Action<IAsyncCommand<T>> CommandSucceeded;
-        public event Action<IAsyncCommand<T>> CommandFailure;
-        public event Action<IAsyncCommand<T>> CommandInterrupted;
-        public event Action<IAsyncCommand<T>> CommandRemoved;
+        public event Action<IAsyncCommand> CommandSucceeded;
+        public event Action<IAsyncCommand> CommandFailure;
+        public event Action<IAsyncCommand> CommandInterrupted;
+        public event Action<IAsyncCommand> CommandRemoved;
         public event Action CommandsDiscarded;
         
-        private readonly List<IAsyncCommand<T>> _commands = new();
+        private readonly List<IAsyncCommand> _commands = new();
         private readonly ICoroutineRunner _coroutineRunner;
         private StopFlag _stopFlag;
         
-        public IAsyncCommand<T> RunningCommand {get; private set; }
-        public IReadOnlyCollection<IAsyncCommand<T>> Commands => _commands;
+        public IAsyncCommand RunningCommand {get; private set; }
+        public IReadOnlyCollection<IAsyncCommand> Commands => _commands;
         public bool IsRunning => RunningCommand != null;
 
         public BaseAsyncCommandQuery(ICoroutineRunner coroutineRunner)
@@ -34,19 +34,19 @@ namespace _Main.Scripts.Utils.Commands
             _coroutineRunner.StartCoroutine(Loop());
         }
         
-        public void Append(IAsyncCommand<T> command)
+        public void Append(IAsyncCommand command)
         {
             _commands.Add(command);
             UpdateCommandNumbers();
         }
         
-        public void Prepend(IAsyncCommand<T> command)
+        public void Prepend(IAsyncCommand command)
         {
             _commands.Insert(0, command);
             UpdateCommandNumbers();
         }
         
-        public void Remove(IAsyncCommand<T> command)
+        public void Remove(IAsyncCommand command)
         {
             _commands.Remove(command);
             UpdateCommandNumbers();
@@ -91,7 +91,7 @@ namespace _Main.Scripts.Utils.Commands
             yield break;
         }
         
-        private void CallEvent(IAsyncCommand<T> command)
+        private void CallEvent(IAsyncCommand command)
         {
             switch (command.Status)
             {

@@ -50,13 +50,13 @@ namespace _Main.Scripts.Player.Movement
         {
             if (_movementAsyncCommandQuery.IsRunning)
                 return;
-
+            
             if (_moveInput.Pressed && _moveInput.Input.y != 0)
             {
                 WayPoint wayPoint = _wayController.GetNextWayPoint((transform.forward * Mathf.Sign(_moveInput.Input.y)).ToVector3Int());
                 if (wayPoint != null)
                 {
-                    _movementAsyncCommandQuery.Append(new MoveAsyncCommand(_moveInput, transform, _movementSpeed, wayPoint));
+                    _movementAsyncCommandQuery.Append(new MoveAsyncCommand(_moveInput.Input, transform, _movementSpeed, wayPoint));
                     _movementAsyncCommandQuery.StartQueue();
                 }
                 
@@ -79,8 +79,7 @@ namespace _Main.Scripts.Player.Movement
 
         private void Rotate(Vector3 targetRotation)
         {
-            _movementAsyncCommandQuery.Append(new RotateAsyncCommand(_moveInput, transform, _rotateSpeed,
-                targetRotation));
+            _movementAsyncCommandQuery.Append(new RotateAsyncCommand(_moveInput.Input, transform, _rotateSpeed, targetRotation));
             _movementAsyncCommandQuery.StartQueue();
         }
     }

@@ -5,17 +5,18 @@ using UnityEngine;
 
 namespace _Main.Scripts.Player.Movement.Commands
 {
-    public class MoveAsyncCommand : IAsyncCommand<MoveInput>
+    public class MoveAsyncCommand : IAsyncCommand
     {
         public CommandStatus Status { get; private set; }
         public int CommandNumber { get; private set; }
+        public Vector2 MoveInput => _moveInput;
 
-        private MoveInput _moveInput;
+        private Vector2 _moveInput;
         private Transform _playerTransform;
         private float _movementSpeed;
         private WayPoint _nextWayPoint;
 
-        public MoveAsyncCommand(MoveInput moveInput, Transform playerTransform, float movementSpeed, WayPoint nextWayPoint)
+        public MoveAsyncCommand(Vector2 moveInput, Transform playerTransform, float movementSpeed, WayPoint nextWayPoint)
         {
             _moveInput = moveInput;
             _playerTransform = playerTransform;
