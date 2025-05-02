@@ -62,7 +62,7 @@ GameObject:
   - component: {fileID: 5193205100928933784}
   - component: {fileID: 2657496755011089279}
   m_Layer: 10
-  m_Name: Termometer
+  m_Name: Thermometer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
