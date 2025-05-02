@@ -2028,14 +2028,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 2775395773062287709, guid: 92778504a4dad4c068ff927d430c38c9, type: 3}
-      propertyPath: _maxAngle.x
-      value: 40
-      objectReference: {fileID: 0}
-    - target: {fileID: 2775395773062287709, guid: 92778504a4dad4c068ff927d430c38c9, type: 3}
-      propertyPath: _minAngle.x
-      value: -40
-      objectReference: {fileID: 0}
     - target: {fileID: 5788081001657955669, guid: 92778504a4dad4c068ff927d430c38c9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
