@@ -133,7 +133,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 282a7e80f63f02e49bc97f617cc026e1, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 756f8c14d4c43e24b9534e51ea5080ca, type: 2}
+      objectReference: {fileID: 2100000, guid: 6a090203990a8fb498fc97cc0de8c050, type: 2}
     - target: {fileID: 919132149155446097, guid: 282a7e80f63f02e49bc97f617cc026e1, type: 3}
       propertyPath: m_Name
       value: Env_Down
@@ -273,7 +273,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 1d597ae6bd1ec574781db7a5abcad98b, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 756f8c14d4c43e24b9534e51ea5080ca, type: 2}
+      objectReference: {fileID: 2100000, guid: 6a090203990a8fb498fc97cc0de8c050, type: 2}
     - target: {fileID: 919132149155446097, guid: 1d597ae6bd1ec574781db7a5abcad98b, type: 3}
       propertyPath: m_Name
       value: CorridorBaseTile (1)
@@ -545,7 +545,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: c894c5122ac8b4c45b9825bbbb9b3c99, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 756f8c14d4c43e24b9534e51ea5080ca, type: 2}
+      objectReference: {fileID: 2100000, guid: 6a090203990a8fb498fc97cc0de8c050, type: 2}
     - target: {fileID: 919132149155446097, guid: c894c5122ac8b4c45b9825bbbb9b3c99, type: 3}
       propertyPath: m_Name
       value: CorridorShortTile
@@ -611,7 +611,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 1d597ae6bd1ec574781db7a5abcad98b, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 756f8c14d4c43e24b9534e51ea5080ca, type: 2}
+      objectReference: {fileID: 2100000, guid: 6a090203990a8fb498fc97cc0de8c050, type: 2}
     - target: {fileID: 919132149155446097, guid: 1d597ae6bd1ec574781db7a5abcad98b, type: 3}
       propertyPath: m_Name
       value: CorridorBaseTile
@@ -751,7 +751,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: f99915e4163b62a4f8293e8b5268f560, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 756f8c14d4c43e24b9534e51ea5080ca, type: 2}
+      objectReference: {fileID: 2100000, guid: 6a090203990a8fb498fc97cc0de8c050, type: 2}
     - target: {fileID: 919132149155446097, guid: f99915e4163b62a4f8293e8b5268f560, type: 3}
       propertyPath: m_Name
       value: Env_Top
