@@ -10,7 +10,8 @@ namespace _Main.Scripts.Player.Movement
     {
         [SerializeField] private float _movementSpeed = 1f;
         [SerializeField] private float _rotateSpeed = 1f;
-        [SerializeField] private float _canUndoFactor = 0.2f;
+        [SerializeField] private float _canUndoMoveFactor = 0.5f;
+        [SerializeField] private float _canUndoRotateFactor = 0.2f;
         [SerializeField] private MovementSound _movementSound;
 
         private InputService _inputService;
@@ -50,7 +51,7 @@ namespace _Main.Scripts.Player.Movement
         {
             if (_movementAsyncCommandQuery.IsRunning)
             {
-                if (!_moveInput.Pressed && _moveInput.RepeatCount > 1 && _moveInput.Input.y != 0)
+                if (!_moveInput.Pressed && _moveInput.RepeatCount > 1)
                 {
                     if (_movementAsyncCommandQuery.RunningCommand.MoveInput == _moveInput.Input)
                         _movementAsyncCommandQuery.RunningCommand.Undo();
@@ -65,7 +66,7 @@ namespace _Main.Scripts.Player.Movement
                 WayPoint nextWayPoint = _wayController.GetNextWayPoint((transform.forward * Mathf.Sign(_moveInput.Input.y)).ToVector3Int());
                 if (nextWayPoint != null)
                 {
-                    _movementAsyncCommandQuery.Append(new MoveAsyncCommand(_moveInput.Input, transform, _movementSpeed, _canUndoFactor, currentWayPoint, nextWayPoint, _wayController));
+                    _movementAsyncCommandQuery.Append(new MoveAsyncCommand(_moveInput.Input, transform, _movementSpeed, _canUndoMoveFactor, currentWayPoint, nextWayPoint, _wayController));
                     _movementAsyncCommandQuery.StartQueue();
                     _moveInput.IncreaseRepeatCount();
                 }
@@ -89,8 +90,9 @@ namespace _Main.Scripts.Player.Movement
 
         private void Rotate(Vector3 targetRotation)
         {
-            _movementAsyncCommandQuery.Append(new RotateAsyncCommand(_moveInput.Input, transform, _rotateSpeed, targetRotation));
+            _movementAsyncCommandQuery.Append(new RotateAsyncCommand(_moveInput.Input, transform, _rotateSpeed, _canUndoRotateFactor, targetRotation));
             _movementAsyncCommandQuery.StartQueue();
+            _moveInput.IncreaseRepeatCount();
         }
     }
 }
