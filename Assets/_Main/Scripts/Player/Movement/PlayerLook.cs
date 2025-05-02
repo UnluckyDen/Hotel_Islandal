@@ -14,15 +14,15 @@ namespace _Main.Scripts.Player.Movement
 
         private InputService _inputService;
         
-        private void Start()
+        public void Init(InputService inputService)
         {
             Cursor.lockState = CursorLockMode.Locked;
-            _inputService = InputService.Instance;
+            _inputService = inputService;
             
             _inputService.LookInput += InputServiceOnLookInput;
         }
         
-        private void OnDestroy()
+        public void Destruct()
         {
             Cursor.lockState = CursorLockMode.None;
             _inputService.LookInput -= InputServiceOnLookInput;

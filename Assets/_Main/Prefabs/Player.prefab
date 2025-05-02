@@ -63,6 +63,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86f740045bfb488c93fb2a7766552d4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerMovement: {fileID: 1061213946003470037}
+  _playerLook: {fileID: 2775395773062287709}
 --- !u!136 &4420505582903245596
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -266,8 +268,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mouseSensitivity: {x: 3, y: 3}
-  _minAngle: {x: -45, y: -70}
-  _maxAngle: {x: 45, y: 90}
+  _minAngle: {x: -40, y: -70}
+  _maxAngle: {x: 40, y: 90}
 --- !u!114 &8401339251147536766
 MonoBehaviour:
   m_ObjectHideFlags: 0
