@@ -15,7 +15,6 @@ namespace _Main.Scripts.NPCs.Resident
         [SerializeField] private ResidentCluesController _residentCluesController;
 
         [SerializeField] private Transform _residentPlace;
-        [SerializeField] private Transform _hintPlace;
 
         [SerializeField] private PlayerTriggerZone _playerTriggerZone;
 
@@ -35,7 +34,7 @@ namespace _Main.Scripts.NPCs.Resident
 
             _residentDoor.Init(_residentDoorKnocker, _residentObjectPlace);
             
-            _resident.Init(_residentDoor, _playerTriggerZone, _hintPlace, _residentCluesController);
+            _resident.Init(_residentDoor, _playerTriggerZone, _residentCluesController);
         }
 
         public void Destruct()

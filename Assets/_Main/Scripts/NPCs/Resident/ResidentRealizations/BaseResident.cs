@@ -10,36 +10,31 @@ namespace _Main.Scripts.NPCs.Resident.ResidentRealizations
 {
     public class BaseResident : MonoBehaviour
     {
+        [SerializeField] private ResidentConditionHintSettings _residentConditionHintSettings;
         [SerializeField] private List<BaseResidentClue> _residentClues;
         [SerializeField] private ResidentOrderSettings _residentOrderSettings;
-        [SerializeField] private ResidentConditionHintSettings _residentConditionHintSettings;
+        [SerializeField] private ResidentSound _residentSound;
 
         [SerializeField] private Food _orderedFood;
         
         private ResidentDoor _residentDoor;
         private PlayerTriggerZone _playerTriggerZone;
         private ResidentCluesController _residentCluesController;
-
-        private ConditionHintPair _conditionHintPair;
-        private OrderMethodPair _orderMethodPair;
-
-        private Transform _hintPlace;
-        private GameObject _tempConditionGameObject;
-        private GameObject _tempOrderGameObject;
-
+        
+        private ResidentConditionType _currentCondition;
+        
         private bool _playerInZone;
         
-        public virtual void Init(ResidentDoor residentDoor, PlayerTriggerZone playerTriggerZone, Transform hintPlace, ResidentCluesController residentCluesController)
+        public virtual void Init(ResidentDoor residentDoor, PlayerTriggerZone playerTriggerZone, ResidentCluesController residentCluesController)
         {
             _residentDoor = residentDoor;
             _playerTriggerZone = playerTriggerZone;
-            _hintPlace = hintPlace;
             _residentCluesController = residentCluesController;
             
             _playerTriggerZone.PlayerEnterTriggerZone += PlayerTriggerZoneOnPlayerEnterTriggerZone;
             GenerateCondition();
             
-            if (_conditionHintPair.Condition == ResidentConditionType.HaveOrder)
+            if (_currentCondition == ResidentConditionType.HaveOrder)
                 CreateOrder();
             
             _residentCluesController.InstantiateClue(_residentClues);
@@ -56,8 +51,7 @@ namespace _Main.Scripts.NPCs.Resident.ResidentRealizations
             {
                 Debug.Log("Is ordered food");
                 _residentDoor.CloseDoor();
-                _conditionHintPair = _residentConditionHintSettings.GetPair(ResidentConditionType.NonActive);
-                DestroyOrderHint();
+                _currentCondition = ResidentConditionType.NonActive;
                 
                 return true;
             }
@@ -68,45 +62,21 @@ namespace _Main.Scripts.NPCs.Resident.ResidentRealizations
 
         public virtual void HandleKnock()
         {
-            if (_conditionHintPair.Condition == ResidentConditionType.HaveOrder && _playerInZone)
+            if (_currentCondition == ResidentConditionType.HaveOrder && _playerInZone)
             {
                 _residentDoor.OpenDoor();
-                DestroyConditionHint();
-                MakeOrder();
+                _residentSound.MakeOrder(_orderedFood);
             }
         }
 
         protected virtual void GenerateCondition()
         {
-            _conditionHintPair = _residentConditionHintSettings.GetRandomPair();
+            _currentCondition = _residentConditionHintSettings.GetRandomPair().Condition;
         }
 
         protected virtual void CreateOrder()
         {
-            _orderMethodPair = _residentOrderSettings.GetRandomPair();
-            _orderedFood = _orderMethodPair.Food;
-        }
-
-        private void MakeOrder()
-        {
-            _tempOrderGameObject = Instantiate(_orderMethodPair.Method, _hintPlace);
-        }
-
-        private void DestroyOrderHint()
-        {
-            if (_tempOrderGameObject != null)
-                Destroy(_tempOrderGameObject.gameObject);
-        }
-
-        private void ShowConditionHint()
-        {
-            _tempConditionGameObject = Instantiate(_conditionHintPair.Method, _hintPlace);
-        }
-
-        private void DestroyConditionHint()
-        {
-            if (_tempConditionGameObject != null)
-                Destroy(_tempConditionGameObject.gameObject);
+            _orderedFood = _residentOrderSettings.GetRandomPair().Food;
         }
 
         private void PlayerTriggerZoneOnPlayerEnterTriggerZone(Player.Player player, bool playerIn)
@@ -123,15 +93,13 @@ namespace _Main.Scripts.NPCs.Resident.ResidentRealizations
         private void OnPlayerZoneIn()
         {
             _playerInZone = true;
-            ShowConditionHint();
+            _residentSound.ShowConditionHint(_currentCondition);
         }
 
         private void OnPlayerZoneOut()
         {
             _playerInZone = false;
             _residentDoor.CloseDoor();
-            DestroyConditionHint();
-            DestroyOrderHint();
         }
     }
 }

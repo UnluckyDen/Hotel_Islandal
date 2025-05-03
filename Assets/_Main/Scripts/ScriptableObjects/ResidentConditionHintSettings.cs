@@ -24,6 +24,6 @@ namespace _Main.Scripts.ScriptableObjects
     public struct ConditionHintPair
     {
         public ResidentConditionType Condition;
-        public GameObject Method;
+        public AudioClip AudioClip;
     }
 }
