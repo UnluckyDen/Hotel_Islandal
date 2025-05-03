@@ -10,6 +10,9 @@ namespace _Main.Scripts.Cooking.Devices.Utils
         [SerializeField] private Transform _notchArrow;
         [SerializeField] private int _segmentsCount;
         [SerializeField] private float _interval = 1f;
+        [Space]
+        [SerializeField] private AudioSource _audioSource;
+        [SerializeField] private AudioClip _audioClip;
 
         private float _anglePerSegment = 0f;
         private float _timer = 0f;
@@ -34,6 +37,7 @@ namespace _Main.Scripts.Cooking.Devices.Utils
         {
             float angle = DateTime.Now.Second % _segmentsCount * _anglePerSegment;
             _mainArrow.localRotation = Quaternion.Euler(0f, angle, 0f);
+            _audioSource.PlayOneShot(_audioClip);
         }
         
         public void OnClick() =>
