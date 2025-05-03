@@ -9,6 +9,7 @@ namespace _Main.Scripts.Cooking.Devices.Cooking
     {
         [SerializeField] protected CookingDeviceRecipeSettings _recipeSettings;
         [SerializeField] private Animator _animator;
+        [SerializeField] private AudioSource _audioSource;
 
         private static readonly int Cooking = Animator.StringToHash("Cooking");
 
@@ -26,6 +27,14 @@ namespace _Main.Scripts.Cooking.Devices.Cooking
         public void PlayCookingAnimation(bool play)
         {
             _animator?.SetBool(Cooking, play);
+        }
+        
+        public void PlayCookingSound(bool play)
+        {
+            if (play)
+                _audioSource?.Play();
+            else
+                _audioSource?.Stop();
         }
     }
 }

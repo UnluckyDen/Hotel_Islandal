@@ -87,10 +87,12 @@ namespace _Main.Scripts.Cooking.Devices.Cooking
             {
                 _isCooking = true;
                 PlayCookingAnimation(true);
+                PlayCookingSound(true);
                 return;
             }
             
             PlayCookingAnimation(false);
+            PlayCookingSound(false);
             _isCooking = false;
         }
     }
