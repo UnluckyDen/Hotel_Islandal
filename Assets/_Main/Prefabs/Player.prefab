@@ -52,7 +52,7 @@ MonoBehaviour:
   _movementSpeed: 1
   _rotateSpeed: 1
   _canUndoMoveFactor: 0.5
-  _canUndoRotateFactor: 0.5
+  _canUndoRotateFactor: 0.3
   _movementSound: {fileID: 3581843646349616106}
 --- !u!114 &4524126244907849935
 MonoBehaviour:

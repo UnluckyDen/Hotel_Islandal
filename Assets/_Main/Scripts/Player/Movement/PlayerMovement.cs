@@ -51,48 +51,56 @@ namespace _Main.Scripts.Player.Movement
         {
             if (_movementAsyncCommandQuery.IsRunning)
             {
-                if (!_moveInput.Pressed && _moveInput.RepeatCount > 1)
-                {
-                    if (_movementAsyncCommandQuery.RunningCommand.MoveInput == _moveInput.Input)
-                        _movementAsyncCommandQuery.RunningCommand.Undo();
-                }
-                
+                HandleUndo();
                 return;
             }
-
+            _movementSound.StopPlayMoveSound();
             if (_moveInput.Pressed && _moveInput.Input.y != 0)
             {
-                WayPoint currentWayPoint = _wayController.CurrentWayPoint;
-                WayPoint nextWayPoint = _wayController.GetNextWayPoint((transform.forward * Mathf.Sign(_moveInput.Input.y)).ToVector3Int());
-                if (nextWayPoint != null)
-                {
-                    _movementAsyncCommandQuery.Append(new MoveAsyncCommand(_moveInput.Input, transform, _movementSpeed, _canUndoMoveFactor, currentWayPoint, nextWayPoint, _wayController));
-                    _movementAsyncCommandQuery.StartQueue();
-                    _moveInput.IncreaseRepeatCount();
-                }
-                
+                HandleMove();
                 return;
             }
 
             if (_moveInput.Pressed && _moveInput.Input.x != 0)
+                HandleRotate();
+        }
+
+        private void HandleUndo()
+        {
+            if (!_moveInput.Pressed && _moveInput.RepeatCount > 1)
             {
-                Vector3 targetRotation = Vector3.zero;
-
-                if (_moveInput.Input.x > 0)
-                    targetRotation = transform.eulerAngles + new Vector3(0, +90, 0);
-
-                if (_moveInput.Input.x < 0)
-                    targetRotation = transform.eulerAngles + new Vector3(0, -90, 0);
-
-                Rotate(targetRotation);
+                if (_movementAsyncCommandQuery.RunningCommand.MoveInput == _moveInput.Input)
+                    _movementAsyncCommandQuery.RunningCommand.Undo();
             }
         }
 
-        private void Rotate(Vector3 targetRotation)
+        private void HandleMove()
         {
+            WayPoint currentWayPoint = _wayController.CurrentWayPoint;
+            WayPoint nextWayPoint = _wayController.GetNextWayPoint((transform.forward * Mathf.Sign(_moveInput.Input.y)).ToVector3Int());
+            if (nextWayPoint != null)
+            {
+                _movementAsyncCommandQuery.Append(new MoveAsyncCommand(_moveInput.Input, transform, _movementSpeed, _canUndoMoveFactor, currentWayPoint, nextWayPoint, _wayController));
+                _movementAsyncCommandQuery.StartQueue();
+                _moveInput.IncreaseRepeatCount();
+                _movementSound.PlayMoveSound();
+            }
+        }
+
+        private void HandleRotate()
+        {
+            Vector3 targetRotation = Vector3.zero;
+
+            if (_moveInput.Input.x > 0)
+                targetRotation = transform.eulerAngles + new Vector3(0, +90, 0);
+
+            if (_moveInput.Input.x < 0)
+                targetRotation = transform.eulerAngles + new Vector3(0, -90, 0);
+            
             _movementAsyncCommandQuery.Append(new RotateAsyncCommand(_moveInput.Input, transform, _rotateSpeed, _canUndoRotateFactor, targetRotation));
             _movementAsyncCommandQuery.StartQueue();
             _moveInput.IncreaseRepeatCount();
+            _movementSound.PlayTurnSound();
         }
     }
 }
