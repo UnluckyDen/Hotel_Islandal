@@ -415,7 +415,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _audioSource: {fileID: 330100366588666850}
-  _moveAudioClip: {fileID: 8300000, guid: d90c94350c12c44f1b16c9e79fdbcbff, type: 3}
+  _moveAudioClip: {fileID: 8300000, guid: 921dc3348f0394d49ac6a6de4ebb7d62, type: 3}
+  _turnClip: {fileID: 8300000, guid: 0b564c92acf1247e984674cda9b08210, type: 3}
 --- !u!82 &330100366588666850
 AudioSource:
   m_ObjectHideFlags: 0

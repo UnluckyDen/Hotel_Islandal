@@ -7,8 +7,6 @@ namespace _Main.Scripts.Player.Movement
         [SerializeField] private AudioSource _audioSource;
         [SerializeField] private AudioClip _moveAudioClip;
         [SerializeField] private AudioClip _turnClip;
-
-        [SerializeField] private float _fadeDuration;
         
         public void PlayMoveSound()
         {
