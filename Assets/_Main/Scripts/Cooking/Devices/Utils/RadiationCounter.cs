@@ -21,7 +21,9 @@ namespace _Main.Scripts.Cooking.Devices.Utils
         [SerializeField] private float _minValue;
         [SerializeField] private float _smoothTime;
         [SerializeField] private float _maxSmoothTimeSpeed;
-        
+
+        [Space] 
+        [SerializeField] private RadiationCounterSound _radiationCounterSound;
         [SerializeField] private RadiationOverlapDetector _radiationOverlapDetector;
 
         private float _currentDisplayedTemperature;
@@ -35,7 +37,7 @@ namespace _Main.Scripts.Cooking.Devices.Utils
         private void Start()
         {
             _radiationOverlapDetector.Init(FindAnyObjectByType<RadiationController>());
-            SetCurrentTemperature(_radiationOverlapDetector.GetCurrentRadiation());
+            SetCurrentRadiation(_radiationOverlapDetector.GetCurrentRadiation());
             Deactivate();
         }
 
@@ -62,14 +64,15 @@ namespace _Main.Scripts.Cooking.Devices.Utils
                     _maxSmoothTimeSpeed);
             }
 
-            SetCurrentTemperature(smoothedRadiation);
+            SetCurrentRadiation(smoothedRadiation);
         }
 
-        private void SetCurrentTemperature(float currentTemperature)
+        private void SetCurrentRadiation(float currentRadiation)
         {
-            _currentDisplayedTemperature = currentTemperature;
+            _radiationCounterSound.SetRadiationLevel(currentRadiation);
+            _currentDisplayedTemperature = currentRadiation;
             
-            float normalized = (currentTemperature - _minValue) / (_maxValue - _minValue);
+            float normalized = (currentRadiation - _minValue) / (_maxValue - _minValue);
             
             Vector3 result = Vector3.LerpUnclamped(_minAngle, _maxAngle, normalized);
             
@@ -89,6 +92,7 @@ namespace _Main.Scripts.Cooking.Devices.Utils
             _countingActive = true;
             _activeLamp.SetActive(_countingActive);
             _inactiveLamp.SetActive(!_countingActive);
+            _radiationCounterSound.Activate();
         }
 
         public void Deactivate()
@@ -96,6 +100,7 @@ namespace _Main.Scripts.Cooking.Devices.Utils
             _countingActive = false;
             _activeLamp.SetActive(_countingActive);
             _inactiveLamp.SetActive(!_countingActive);
+            _radiationCounterSound.Deactivate();
         }
 
         public void ToNonInteractive()
