@@ -653,7 +653,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _bookSpreads:
-  - {fileID: 8603934414288678685, guid: 03ceb275ca40841bebac283d66b3ea12, type: 3}
-  - {fileID: 8603934414288678685, guid: 362ceebeddf2041d3918cffa0a6c5a4b, type: 3}
+  - {fileID: 8603934414288678685, guid: 83b5d797004a44102a7cd25421297892, type: 3}
+  - {fileID: 8603934414288678685, guid: fc68eac3596e94a67abf9c03d4321c37, type: 3}
+  - {fileID: 8603934414288678685, guid: 65b04b0192687474794ccef5a312d931, type: 3}
   _buttonRight: {fileID: 3048478199188498585}
   _buttonLeft: {fileID: 510789358526426537}

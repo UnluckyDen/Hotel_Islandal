@@ -29,7 +29,7 @@ namespace _Main.Scripts.UI.Book
             if (_currentBookSpread != null)
                 _currentBookSpread.Init();
 
-            InstantiateBookSpread(_bookPageCollection.GetCurrentBookPage());
+            _currentBookSpread = InstantiateBookSpread(_bookPageCollection.GetCurrentBookPage());
         }
 
         public void Destruct()
