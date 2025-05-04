@@ -15,6 +15,8 @@ namespace _Main.Scripts.Services
         public bool MouseButtonClicked { get; private set; }
         public bool MouseButtonRightClicked { get; private set; }
 
+        private bool _inUiMode;
+
         private void Awake()
         {
             if (Instance == null)
@@ -27,8 +29,19 @@ namespace _Main.Scripts.Services
             Destroy(gameObject);
         }
 
+        public void ToUiMode(bool toUiMode)
+        {
+            _inUiMode = toUiMode;
+        }
+
         private void Update()
         {
+            if (_inUiMode)
+            {
+                ReedBookInput();
+                return;
+            }
+            
             ReedMoveInputs();
             ReedLookInputs();
             ReedClick();
