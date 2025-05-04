@@ -5,13 +5,15 @@ namespace _Main.Scripts.Services
 {
     public class InputService : MonoBehaviour
     {
-        public event Action<Vector2> MovementInput;
+        public event Action<Vector2, bool> MovementInput;
         public event Action<Vector2> LookInput;
         public event Action<bool> Click;
+        public event Action<bool> RightClick;
         public event Action OpenBook;
         
         public static InputService Instance { get; private set; }
         public bool MouseButtonClicked { get; private set; }
+        public bool MouseButtonRightClicked { get; private set; }
 
         private void Awake()
         {
@@ -30,6 +32,7 @@ namespace _Main.Scripts.Services
             ReedMoveInputs();
             ReedLookInputs();
             ReedClick();
+            ReedRightClick();
             ReedBookInput();
         }
 
@@ -37,8 +40,29 @@ namespace _Main.Scripts.Services
         {
             var inputVector = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
 
-            if (inputVector.magnitude != 0)
-                MovementInput?.Invoke(inputVector);
+            if (Input.GetKeyDown("w"))
+                MovementInput?.Invoke(new Vector2(0, 1), true);
+
+            if (Input.GetKeyUp("w"))
+                MovementInput?.Invoke(new Vector2(0, 1), false);
+
+            if (Input.GetKeyDown("s"))
+                MovementInput?.Invoke(new Vector2(0, -1), true);
+
+            if (Input.GetKeyUp("s"))
+                MovementInput?.Invoke(new Vector2(0, -1), false);
+
+            if (Input.GetKeyDown("a"))
+                MovementInput?.Invoke(new Vector2(-1, 0), true);
+
+            if (Input.GetKeyUp("a"))
+                MovementInput?.Invoke(new Vector2(-1, 0), false);
+
+            if (Input.GetKeyDown("d"))
+                MovementInput?.Invoke(new Vector2(1, 0), true);
+
+            if (Input.GetKeyUp("d"))
+                MovementInput?.Invoke(new Vector2(1, 0), false);
         }
 
         private void ReedLookInputs()
@@ -51,16 +75,31 @@ namespace _Main.Scripts.Services
 
         private void ReedClick()
         {
-            if (Input.GetButtonDown("Fire1"))
+            if (Input.GetMouseButtonDown(0))
             {
                 MouseButtonClicked = true;
-                Click?.Invoke(true);
+                Click?.Invoke(MouseButtonClicked);
             }
 
-            if (Input.GetButtonUp("Fire1"))
+            if (Input.GetMouseButtonDown(0))
             {
                 MouseButtonClicked = false;
-                Click?.Invoke(false);
+                Click?.Invoke(MouseButtonClicked);
+            }
+        }
+        
+        private void ReedRightClick()
+        {
+            if (Input.GetMouseButtonDown(1))
+            {
+                MouseButtonRightClicked = true;
+                RightClick?.Invoke(MouseButtonRightClicked);
+            }
+
+            if (Input.GetMouseButtonDown(1))
+            {
+                MouseButtonRightClicked = false;
+                RightClick?.Invoke(MouseButtonRightClicked);
             }
         }
 

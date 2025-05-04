@@ -1,8 +1,7 @@
-using System.Collections.Generic;
-using System.Linq;
 using _Main.Scripts.Cooking.Foods;
 using _Main.Scripts.Interfaces;
 using _Main.Scripts.NPCs.Resident;
+using _Main.Scripts.NPCs.Resident.ResidentRealizations;
 using UnityEngine;
 
 namespace _Main.Scripts.Environment.Doors.ResidentDoor
@@ -10,21 +9,24 @@ namespace _Main.Scripts.Environment.Doors.ResidentDoor
     public class ResidentObjectPlace : MonoBehaviour, IObjectPlace, IHoverable
     {
         [SerializeField] private Transform _objectPlace;
-        [SerializeField] BaseResident _resident;
 
         private ResidentDoor _residentDoor;
+        private BaseResident _resident;
         private Food _food;
         
-        private readonly List<IMovableObject> _movableObjects = new();
+        private IMovableObject _movableObject;
 
-        public bool IsEmpty => _movableObjects.Count == 0;
-        public bool MayContainMultipleObjects => true;
+        public IMovableObject CurrentMovableObject => _movableObject;
 
-        public void Init(ResidentDoor residentDoor)
+        public bool CanApply(IMovableObject movableObject) =>
+            _movableObject == null && movableObject is Food;
+
+        public void Init(ResidentDoor residentDoor, BaseResident resident)
         {
             _residentDoor = residentDoor;
+            _resident = resident;
         }
-        
+
         public void PlaceMovableObject(IMovableObject movableObject)
         {
             if (movableObject == null) 
@@ -51,30 +53,26 @@ namespace _Main.Scripts.Environment.Doors.ResidentDoor
             movableObject.transform.localPosition = Vector3.zero;
             movableObject.transform.localEulerAngles = Vector3.zero;
             
-            _movableObjects.Add(movableObject);
+            _movableObject = movableObject;
         }
 
         public IMovableObject TakeMovableObject()
         {
-            if (_movableObjects.Count <= 0)
+            if (_movableObject == null)
                 return null;
             
-            IMovableObject movableObject = _movableObjects.Last();
-            _movableObjects.Remove(movableObject);
+            IMovableObject movableObject = _movableObject;
+            _movableObject = null;
             
             movableObject.transform.SetParent(null);
             movableObject.ToInteractable();
             return movableObject;
         }
 
-        public void OnHoverEnter()
-        {
+        public void OnHoverEnter() => 
             _residentDoor.OnHoverEnter();
-        }
 
-        public void OnHoverExit()
-        {
+        public void OnHoverExit() => 
             _residentDoor.OnHoverExit();
-        }
     }
 }

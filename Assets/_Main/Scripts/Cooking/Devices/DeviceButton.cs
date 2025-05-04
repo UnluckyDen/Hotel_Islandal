@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using _Main.Scripts.Interfaces;
+using _Main.Scripts.Utils;
 using UnityEngine;
 
 namespace _Main.Scripts.Cooking.Devices
@@ -17,6 +18,11 @@ namespace _Main.Scripts.Cooking.Devices
         [SerializeField] private Vector3 _pressedPosition;
         [SerializeField] private float _pressTime = 0.2f;
         [SerializeField] private ButtonStateType _defaultPressState;
+        [SerializeField] private BaseHoverGroup _hoverGroup;
+        [Space] 
+        [SerializeField] private AudioSource _audioSource;
+        [SerializeField] private AudioClip _buttonDown;
+        [SerializeField] private AudioClip _buttonUp;
 
         private Coroutine _currentCoroutine;
         private ButtonStateType _currentButtonState;
@@ -32,10 +38,12 @@ namespace _Main.Scripts.Cooking.Devices
 
         public void OnHoverEnter()
         {
+            _hoverGroup.OnHoverEnter();
         }
 
         public void OnHoverExit()
         {
+            _hoverGroup.OnHoverExit();
         }
 
         public void OnClick()
@@ -63,6 +71,8 @@ namespace _Main.Scripts.Cooking.Devices
         {
             float factor = 0f;
 
+            _audioSource.PlayOneShot(_buttonDown);
+
             TriggerActions(true);
             _buttonPressed.gameObject.SetActive(true);
             _buttonNonPressed.gameObject.SetActive(false);
@@ -83,7 +93,9 @@ namespace _Main.Scripts.Cooking.Devices
         private IEnumerator PlayUpAnimation()
         {
             float factor = 0f;
-
+            
+            _audioSource.PlayOneShot(_buttonUp);
+            
             TriggerActions(false);
             _buttonPressed.gameObject.SetActive(false);
             _buttonNonPressed.gameObject.SetActive(true);

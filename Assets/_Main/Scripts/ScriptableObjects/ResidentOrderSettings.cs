@@ -12,7 +12,7 @@ namespace _Main.Scripts.ScriptableObjects
     {
         [field: SerializeField] public List<OrderMethodPair> OrderMethodPairs { get; private set; }
 
-        public GameObject GetMethod(Food food) =>
+        public string GetSpellString(Food food) =>
             OrderMethodPairs.FirstOrDefault(p => p.Food.GetType() == food.GetType()).Method;
 
         public OrderMethodPair GetRandomPair() =>
@@ -23,6 +23,6 @@ namespace _Main.Scripts.ScriptableObjects
     public struct OrderMethodPair
     {
         public Food Food;
-        public GameObject Method;
+        public string Method;
     }
 }

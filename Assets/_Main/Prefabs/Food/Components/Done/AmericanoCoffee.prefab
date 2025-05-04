@@ -31,7 +31,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 7220928789397869652}
+  - {fileID: 1345125392637726831}
+  - {fileID: 2069833372829860049}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &5128482928951431458
@@ -69,7 +70,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _collider: {fileID: 5128482928951431458}
   _cookingTime: 0
---- !u!1001 &3678011736842879826
+  _hoverGroup: {fileID: 1276619043089685530}
+--- !u!1001 &1522323427748935556
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -77,57 +79,148 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3199445849784977624}
     m_Modifications:
-    - target: {fileID: 5488246328364600607, guid: 39553c476c5afc7489f3582b510951da, type: 3}
-      propertyPath: m_Name
-      value: CupAmericano
-      objectReference: {fileID: 0}
-    - target: {fileID: 6286752718187878150, guid: 39553c476c5afc7489f3582b510951da, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 5fd4592932531844f8f68b6832bdba3a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6286752718187878150, guid: 39553c476c5afc7489f3582b510951da, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 5fd4592932531844f8f68b6832bdba3a, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6286752718187878150, guid: 39553c476c5afc7489f3582b510951da, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 5fd4592932531844f8f68b6832bdba3a, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6286752718187878150, guid: 39553c476c5afc7489f3582b510951da, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 5fd4592932531844f8f68b6832bdba3a, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 6286752718187878150, guid: 39553c476c5afc7489f3582b510951da, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 5fd4592932531844f8f68b6832bdba3a, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 6286752718187878150, guid: 39553c476c5afc7489f3582b510951da, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 5fd4592932531844f8f68b6832bdba3a, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 6286752718187878150, guid: 39553c476c5afc7489f3582b510951da, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 5fd4592932531844f8f68b6832bdba3a, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 6286752718187878150, guid: 39553c476c5afc7489f3582b510951da, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 5fd4592932531844f8f68b6832bdba3a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6286752718187878150, guid: 39553c476c5afc7489f3582b510951da, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 5fd4592932531844f8f68b6832bdba3a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6286752718187878150, guid: 39553c476c5afc7489f3582b510951da, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 5fd4592932531844f8f68b6832bdba3a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 5fd4592932531844f8f68b6832bdba3a, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 756f8c14d4c43e24b9534e51ea5080ca, type: 2}
+    - target: {fileID: 919132149155446097, guid: 5fd4592932531844f8f68b6832bdba3a, type: 3}
+      propertyPath: m_Name
+      value: CupAmericano
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 39553c476c5afc7489f3582b510951da, type: 3}
---- !u!4 &7220928789397869652 stripped
+  m_SourcePrefab: {fileID: 100100000, guid: 5fd4592932531844f8f68b6832bdba3a, type: 3}
+--- !u!4 &1345125392637726831 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 6286752718187878150, guid: 39553c476c5afc7489f3582b510951da, type: 3}
-  m_PrefabInstance: {fileID: 3678011736842879826}
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 5fd4592932531844f8f68b6832bdba3a, type: 3}
+  m_PrefabInstance: {fileID: 1522323427748935556}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1959979536589825850
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 3199445849784977624}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 5fd4592932531844f8f68b6832bdba3a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 5fd4592932531844f8f68b6832bdba3a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 5fd4592932531844f8f68b6832bdba3a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 5fd4592932531844f8f68b6832bdba3a, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 5fd4592932531844f8f68b6832bdba3a, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 5fd4592932531844f8f68b6832bdba3a, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 5fd4592932531844f8f68b6832bdba3a, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 5fd4592932531844f8f68b6832bdba3a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 5fd4592932531844f8f68b6832bdba3a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 5fd4592932531844f8f68b6832bdba3a, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 5fd4592932531844f8f68b6832bdba3a, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: ef2b4695b5e7046a597e66b9f093191b, type: 2}
+    - target: {fileID: 919132149155446097, guid: 5fd4592932531844f8f68b6832bdba3a, type: 3}
+      propertyPath: m_Name
+      value: CupAmericano (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 5fd4592932531844f8f68b6832bdba3a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1276619043089685530}
+  m_SourcePrefab: {fileID: 100100000, guid: 5fd4592932531844f8f68b6832bdba3a, type: 3}
+--- !u!1 &1725537062506306155 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 5fd4592932531844f8f68b6832bdba3a, type: 3}
+  m_PrefabInstance: {fileID: 1959979536589825850}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1276619043089685530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1725537062506306155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf483e73efb54a9daaf94860de741061, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _startEnabled: 0
+--- !u!4 &2069833372829860049 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 5fd4592932531844f8f68b6832bdba3a, type: 3}
+  m_PrefabInstance: {fileID: 1959979536589825850}
   m_PrefabAsset: {fileID: 0}

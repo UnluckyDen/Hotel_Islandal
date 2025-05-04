@@ -4,7 +4,8 @@ namespace _Main.Scripts.Cooking.Devices.Cooking
 {
     public class TrashContainerCookingDevice : CookingDevice
     {
-        public override bool IsEmpty => true;
+        public override bool CanApply(IMovableObject movableObject) =>
+            movableObject.IsTrashable;
 
         public override void PlaceMovableObject(IMovableObject movableObject)
         {

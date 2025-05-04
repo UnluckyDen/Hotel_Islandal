@@ -61,8 +61,10 @@ namespace _Main.Scripts.Environment.Doors.ResidentDoor.ResidentsDoorStateMachine
 
         public void Dispose()
         {
-            _residentDoorKnocker.gameObject.SetActive(false);
-            _residentObjectPlace.gameObject.SetActive(true);
+            if (_residentDoorKnocker)
+                _residentDoorKnocker.gameObject.SetActive(false);
+            if (_residentObjectPlace)
+                _residentObjectPlace.gameObject.SetActive(true);
         }
     }
 }
