@@ -1,9 +1,11 @@
+using System;
 using System.Collections.Generic;
 using _Main.Scripts.Cooking.Foods;
 using _Main.Scripts.Environment;
 using _Main.Scripts.Environment.Doors.ResidentDoor;
 using _Main.Scripts.NPCs.Resident.Clues;
 using _Main.Scripts.ScriptableObjects;
+using _Main.Scripts.UI;
 using UnityEngine;
 
 namespace _Main.Scripts.NPCs.Resident.ResidentRealizations
@@ -57,15 +59,27 @@ namespace _Main.Scripts.NPCs.Resident.ResidentRealizations
             }
 
             Debug.Log("In not ordered food");
+            WindowController.Instance.ShowScreamerWindow();
             return false;
         }
 
         public virtual void HandleKnock()
         {
-            if (_currentCondition == ResidentConditionType.HaveOrder && _playerInZone)
+            switch (_currentCondition)
             {
-                _residentDoor.OpenDoor();
-                _residentSound.MakeOrder(_orderedFood);
+                case ResidentConditionType.HaveOrder when _playerInZone:
+                    _residentDoor.OpenDoor();
+                    _residentSound.MakeOrder(_orderedFood);
+                    return;
+                
+                case ResidentConditionType.Aggressive when _playerInZone:
+                    WindowController.Instance.ShowScreamerWindow();
+                    break;
+                
+                case ResidentConditionType.NonActive:
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException();
             }
         }
 
