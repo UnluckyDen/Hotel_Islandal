@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6843937549708594557}
   - component: {fileID: 217584005299892009}
+  - component: {fileID: 2035872377386226373}
+  - component: {fileID: 6744941038969726792}
   m_Layer: 0
   m_Name: DecalClow (5)
   m_TagString: Untagged
@@ -56,6 +58,36 @@ MonoBehaviour:
   m_Offset: {x: 0, y: 0, z: 0}
   m_Size: {x: 0.25, y: 0.25, z: 0.1}
   m_FadeFactor: 0.7
+--- !u!114 &2035872377386226373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 917492977847432711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19c0c1c872e744c884bf944d22e56144, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayOnAwake: 1
+  _asLocal: 1
+  _positionOffsetBound: {x: 0, y: 0.1, z: 0.1}
+--- !u!114 &6744941038969726792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 917492977847432711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50bf156e447d43398372d6eea5909b99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayOnAwake: 1
+  _asLocal: 1
+  _rotationOffsetBound: {x: 0, y: 0, z: 15}
 --- !u!1 &2493398661671503773
 GameObject:
   m_ObjectHideFlags: 0
@@ -66,6 +98,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4778505251421185125}
   - component: {fileID: 1136596628032271649}
+  - component: {fileID: 6145217959496783894}
+  - component: {fileID: 4877579768489883467}
   m_Layer: 0
   m_Name: DecalClow
   m_TagString: Untagged
@@ -112,6 +146,36 @@ MonoBehaviour:
   m_Offset: {x: 0, y: 0, z: 0}
   m_Size: {x: 0.5, y: 0.5, z: 0.1}
   m_FadeFactor: 1
+--- !u!114 &6145217959496783894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2493398661671503773}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19c0c1c872e744c884bf944d22e56144, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayOnAwake: 1
+  _asLocal: 1
+  _positionOffsetBound: {x: 0, y: 0.1, z: 0.1}
+--- !u!114 &4877579768489883467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2493398661671503773}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50bf156e447d43398372d6eea5909b99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayOnAwake: 1
+  _asLocal: 1
+  _rotationOffsetBound: {x: 0, y: 0, z: 15}
 --- !u!1 &3836091268595439832
 GameObject:
   m_ObjectHideFlags: 0
@@ -122,6 +186,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2481207486205425546}
   - component: {fileID: 6699385367383351584}
+  - component: {fileID: 3645822925501180790}
+  - component: {fileID: 5387529102002267165}
   m_Layer: 0
   m_Name: DecalClow (3)
   m_TagString: Untagged
@@ -168,6 +234,36 @@ MonoBehaviour:
   m_Offset: {x: 0, y: 0, z: 0}
   m_Size: {x: 0.25, y: 0.25, z: 0.1}
   m_FadeFactor: 0.7
+--- !u!114 &3645822925501180790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3836091268595439832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19c0c1c872e744c884bf944d22e56144, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayOnAwake: 1
+  _asLocal: 1
+  _positionOffsetBound: {x: 0, y: 0.1, z: 0.1}
+--- !u!114 &5387529102002267165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3836091268595439832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50bf156e447d43398372d6eea5909b99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayOnAwake: 1
+  _asLocal: 1
+  _rotationOffsetBound: {x: 0, y: 0, z: 15}
 --- !u!1 &4750736191837729148
 GameObject:
   m_ObjectHideFlags: 0
@@ -178,6 +274,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5997891010098444858}
   - component: {fileID: 4844175806507118257}
+  - component: {fileID: 3834209590793695773}
+  - component: {fileID: 9221732906240361338}
   m_Layer: 0
   m_Name: DecalClow (2)
   m_TagString: Untagged
@@ -224,6 +322,36 @@ MonoBehaviour:
   m_Offset: {x: 0, y: 0, z: 0}
   m_Size: {x: 0.4, y: 0.4, z: 0.1}
   m_FadeFactor: 1
+--- !u!114 &3834209590793695773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4750736191837729148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19c0c1c872e744c884bf944d22e56144, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayOnAwake: 1
+  _asLocal: 1
+  _positionOffsetBound: {x: 0, y: 0.1, z: 0.1}
+--- !u!114 &9221732906240361338
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4750736191837729148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50bf156e447d43398372d6eea5909b99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayOnAwake: 1
+  _asLocal: 1
+  _rotationOffsetBound: {x: 0, y: 0, z: 15}
 --- !u!1 &5689166360121059055
 GameObject:
   m_ObjectHideFlags: 0
@@ -276,6 +404,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _residentClueType: 1
+  _replaceObjectType: 0
 --- !u!1 &6323704385460450526
 GameObject:
   m_ObjectHideFlags: 0
@@ -286,6 +415,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3533300856915200791}
   - component: {fileID: 8681106417071088223}
+  - component: {fileID: 7835465360860149522}
+  - component: {fileID: 946861601768391068}
   m_Layer: 0
   m_Name: DecalClow (1)
   m_TagString: Untagged
@@ -332,6 +463,36 @@ MonoBehaviour:
   m_Offset: {x: 0, y: 0, z: 0}
   m_Size: {x: 0.4, y: 0.4, z: 0.1}
   m_FadeFactor: 0.7
+--- !u!114 &7835465360860149522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6323704385460450526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19c0c1c872e744c884bf944d22e56144, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayOnAwake: 1
+  _asLocal: 1
+  _positionOffsetBound: {x: 0, y: 0.1, z: 0.1}
+--- !u!114 &946861601768391068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6323704385460450526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50bf156e447d43398372d6eea5909b99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayOnAwake: 1
+  _asLocal: 1
+  _rotationOffsetBound: {x: 0, y: 0, z: 15}
 --- !u!1 &7642516229886082802
 GameObject:
   m_ObjectHideFlags: 0
@@ -342,6 +503,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1070454760731443456}
   - component: {fileID: 6869433517668578435}
+  - component: {fileID: 2435182423119098720}
+  - component: {fileID: 4799926925939339313}
   m_Layer: 0
   m_Name: DecalClow
   m_TagString: Untagged
@@ -388,6 +551,36 @@ MonoBehaviour:
   m_Offset: {x: 0, y: 0, z: 0}
   m_Size: {x: 0.5, y: 0.5, z: 0.1}
   m_FadeFactor: 1
+--- !u!114 &2435182423119098720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7642516229886082802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19c0c1c872e744c884bf944d22e56144, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayOnAwake: 1
+  _asLocal: 1
+  _positionOffsetBound: {x: 0, y: 0.1, z: 0.1}
+--- !u!114 &4799926925939339313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7642516229886082802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50bf156e447d43398372d6eea5909b99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayOnAwake: 1
+  _asLocal: 1
+  _rotationOffsetBound: {x: 0, y: 0, z: 15}
 --- !u!1 &8523174719731180379
 GameObject:
   m_ObjectHideFlags: 0
@@ -398,6 +591,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7147978033598519745}
   - component: {fileID: 6315087081764746217}
+  - component: {fileID: 8324668076117757471}
+  - component: {fileID: 3921986339540645719}
   m_Layer: 0
   m_Name: DecalClow (4)
   m_TagString: Untagged
@@ -444,3 +639,33 @@ MonoBehaviour:
   m_Offset: {x: 0, y: 0, z: 0}
   m_Size: {x: 0.25, y: 0.25, z: 0.1}
   m_FadeFactor: 1
+--- !u!114 &8324668076117757471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8523174719731180379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19c0c1c872e744c884bf944d22e56144, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayOnAwake: 1
+  _asLocal: 1
+  _positionOffsetBound: {x: 0, y: 0.1, z: 0.1}
+--- !u!114 &3921986339540645719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8523174719731180379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50bf156e447d43398372d6eea5909b99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayOnAwake: 1
+  _asLocal: 1
+  _rotationOffsetBound: {x: 0, y: 0, z: 15}
