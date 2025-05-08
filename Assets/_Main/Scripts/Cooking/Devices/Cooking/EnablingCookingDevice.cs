@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using _Main.Scripts.Cooking.Foods;
@@ -8,6 +9,8 @@ namespace _Main.Scripts.Cooking.Devices.Cooking
 {
     public class EnablingCookingDevice : CookingDevice
     {
+        public event Action<EnablingCookingDevice, bool> DeviceActivation;
+        
         [SerializeField] private DeviceButton _deviceButton;
         [SerializeField] private Transform _foodPlace;
         
@@ -88,12 +91,15 @@ namespace _Main.Scripts.Cooking.Devices.Cooking
                 _isCooking = true;
                 PlayCookingAnimation(true);
                 PlayCookingSound(true);
+
+                DeviceActivation?.Invoke(this, _isCooking);
                 return;
             }
-            
+
             PlayCookingAnimation(false);
             PlayCookingSound(false);
             _isCooking = false;
+            DeviceActivation?.Invoke(this, _isCooking);
         }
     }
 }
