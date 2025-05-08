@@ -9,6 +9,7 @@ namespace _Main.Scripts.Cooking.Devices.Cooking
         [SerializeField] private Transform _root;
         [SerializeField] private Vector3 _offsetPosition;
         [SerializeField] private Vector3 _offsetRotation;
+        [SerializeField] private int _maxNumber = 1;
 
         private List<IMovableObject> _objectList = new List<IMovableObject>();
         
@@ -36,10 +37,14 @@ namespace _Main.Scripts.Cooking.Devices.Cooking
         {
             for (int i = 0; i < _objectList.Count; i++)
             {
+                int current = 0;
+                if (_maxNumber != 0) 
+                    current = i % _maxNumber;
+                
                 _objectList[i].transform.localPosition = Vector3.zero;
-                _objectList[i].transform.localPosition += _offsetPosition * i;
+                _objectList[i].transform.localPosition += _offsetPosition * current;
                 _objectList[i].transform.localEulerAngles = Vector3.zero;
-                _objectList[i].transform.localEulerAngles += _offsetRotation * i;
+                _objectList[i].transform.localEulerAngles += _offsetRotation * current;
 
             }
         }

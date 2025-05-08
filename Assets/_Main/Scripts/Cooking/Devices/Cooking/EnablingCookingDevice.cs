@@ -18,7 +18,7 @@ namespace _Main.Scripts.Cooking.Devices.Cooking
         private Food _foodOut;
         private bool _isCooking;
 
-        public override IMovableObject CurrentMovableObject => _foodIn.FirstOrDefault();
+        public override IMovableObject CurrentMovableObject => _foodOut;
 
         private void Start()
         {
@@ -46,15 +46,12 @@ namespace _Main.Scripts.Cooking.Devices.Cooking
             if (_isCooking)
                 return null;
             
-            CombineFood();
-
             if (_foodOut == null)
                 return null;
             
             var food = _foodOut;
             _foodOut = null;
             return food;
-
         }
 
         private void Update()
@@ -70,7 +67,7 @@ namespace _Main.Scripts.Cooking.Devices.Cooking
             if (_foodIn == null || _foodIn.Count == 0)
                 return;
             
-            _foodOut = Instantiate(_recipeSettings.GetFoodByIngredients(_foodIn), transform);
+            _foodOut = Instantiate(_recipeSettings.GetFoodByIngredients(_foodIn), _foodGroup.transform);
             foreach (var food in _foodIn)
             {
                 _foodGroup.OutGroup(food);
@@ -93,7 +90,6 @@ namespace _Main.Scripts.Cooking.Devices.Cooking
                 _isCooking = true;
                 PlayCookingAnimation(true);
                 PlayCookingSound(true);
-
                 DeviceActivation?.Invoke(this, _isCooking);
                 return;
             }
@@ -101,6 +97,7 @@ namespace _Main.Scripts.Cooking.Devices.Cooking
             PlayCookingAnimation(false);
             PlayCookingSound(false);
             _isCooking = false;
+            CombineFood();
             DeviceActivation?.Invoke(this, _isCooking);
         }
     }

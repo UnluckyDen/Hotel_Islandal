@@ -45,7 +45,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _root: {fileID: 7508618396890779507}
-  _offset: {x: 0, y: 0, z: 0}
+  _offsetPosition: {x: 0, y: 0, z: 0}
+  _offsetRotation: {x: 0, y: 0, z: 0}
+  _maxNumber: 1
 --- !u!1 &4129836385001341849
 GameObject:
   m_ObjectHideFlags: 0
