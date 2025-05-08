@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7508618396890779507}
+  - component: {fileID: 1653446652136386079}
   m_Layer: 0
   m_Name: FoodPlace
   m_TagString: Untagged
@@ -31,6 +32,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4350589040917898504}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1653446652136386079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1794893254474276753}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79a5f55a7fa34e2d9f937e2df0086500, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _root: {fileID: 7508618396890779507}
+  _offset: {x: 0, y: 0, z: 0}
 --- !u!1 &4129836385001341849
 GameObject:
   m_ObjectHideFlags: 0
@@ -105,7 +120,7 @@ MonoBehaviour:
   _animator: {fileID: 7656754366282155880}
   _audioSource: {fileID: 6890127742156114448}
   _deviceButton: {fileID: 4231930230544570354}
-  _foodPlace: {fileID: 7508618396890779507}
+  _foodGroup: {fileID: 1653446652136386079}
 --- !u!82 &6890127742156114448
 AudioSource:
   m_ObjectHideFlags: 0

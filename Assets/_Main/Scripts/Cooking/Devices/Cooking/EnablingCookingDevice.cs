@@ -12,7 +12,7 @@ namespace _Main.Scripts.Cooking.Devices.Cooking
         public event Action<EnablingCookingDevice, bool> DeviceActivation;
         
         [SerializeField] private DeviceButton _deviceButton;
-        [SerializeField] private Transform _foodPlace;
+        [SerializeField] private DeviceIngredientGroupPlace _foodGroup;
         
         private List<Food> _foodIn = new();
         private Food _foodOut;
@@ -36,8 +36,7 @@ namespace _Main.Scripts.Cooking.Devices.Cooking
                 return;
             
             movableObject.ToNonInteractive();
-            movableObject.transform.position = _foodPlace.position;
-            movableObject.transform.SetParent(_foodPlace);
+            _foodGroup.InGroup(movableObject);
             
             _foodIn.Add(food);
         }
@@ -73,8 +72,11 @@ namespace _Main.Scripts.Cooking.Devices.Cooking
             
             _foodOut = Instantiate(_recipeSettings.GetFoodByIngredients(_foodIn), transform);
             foreach (var food in _foodIn)
+            {
+                _foodGroup.OutGroup(food);
                 Destroy(food.gameObject);
-                    
+            }
+
             _foodIn.Clear();
         }
 

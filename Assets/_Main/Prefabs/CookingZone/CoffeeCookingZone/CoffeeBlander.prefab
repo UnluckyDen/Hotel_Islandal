@@ -96,6 +96,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 792364894967960136}
+  - component: {fileID: 689373554133620472}
   m_Layer: 0
   m_Name: FoodPlace
   m_TagString: Untagged
@@ -112,12 +113,27 @@ Transform:
   m_GameObject: {fileID: 1902015637568892280}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.092, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: 0, y: 0.02, z: 0}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 3879182406746038473}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &689373554133620472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1902015637568892280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79a5f55a7fa34e2d9f937e2df0086500, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _root: {fileID: 792364894967960136}
+  _offsetPosition: {x: 0, y: 0.05, z: 0}
+  _offsetRotation: {x: 0, y: 15, z: 0}
 --- !u!1 &2300300747697818292
 GameObject:
   m_ObjectHideFlags: 0
@@ -271,7 +287,7 @@ MonoBehaviour:
   _animator: {fileID: 7582431317463463925}
   _audioSource: {fileID: 3809336727089235708}
   _deviceButton: {fileID: 9103472529137137315}
-  _foodPlace: {fileID: 792364894967960136}
+  _foodGroup: {fileID: 689373554133620472}
 --- !u!136 &602068566612257925
 CapsuleCollider:
   m_ObjectHideFlags: 0
