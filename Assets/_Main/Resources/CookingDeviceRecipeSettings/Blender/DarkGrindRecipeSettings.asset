@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <FoodIn>k__BackingField:
   - Food: {fileID: 5262758395039784401, guid: 2f16fced2e65c4373a7c82dba18855ee, type: 3}
-    CookingTime: 24
+    CookingTime: 12
   <FoodOut>k__BackingField: {fileID: 1975753105548296753, guid: 4c86f766fd920441eb7fc009c21aed08, type: 3}
   <Accuracy>k__BackingField: 2
