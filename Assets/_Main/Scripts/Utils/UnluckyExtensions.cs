@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace _Main.Scripts.Utils
@@ -8,5 +9,8 @@ namespace _Main.Scripts.Utils
             new(Mathf.RoundToInt(vector3.x),
                 Mathf.RoundToInt(vector3.y),
                 Mathf.RoundToInt(vector3.z));
+
+        public static T RandomElementFromList<T>(this List<T> listToRandom) =>
+            listToRandom[Random.Range(0, listToRandom.Count)];
     }
 }

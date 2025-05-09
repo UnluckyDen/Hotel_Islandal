@@ -13,6 +13,7 @@ namespace _Main.Scripts.NPCs.Resident.ResidentRealizations
     public class BaseResident : MonoBehaviour
     {
         [SerializeField] private ResidentConditionHintSettings _residentConditionHintSettings;
+        [SerializeField] private ResidentSoundsSettings _residentSoundsSettings;
         [SerializeField] private List<BaseResidentClue> _residentClues;
         [SerializeField] private ResidentOrderSettings _residentOrderSettings;
         [SerializeField] private ResidentSound _residentSound;
@@ -33,6 +34,8 @@ namespace _Main.Scripts.NPCs.Resident.ResidentRealizations
             _playerTriggerZone = playerTriggerZone;
             _residentCluesController = residentCluesController;
             
+            _residentSound.Init(_residentSoundsSettings);
+            
             _playerTriggerZone.PlayerEnterTriggerZone += PlayerTriggerZoneOnPlayerEnterTriggerZone;
             GenerateCondition();
             
@@ -44,6 +47,8 @@ namespace _Main.Scripts.NPCs.Resident.ResidentRealizations
 
         public void Destruct()
         {
+            _residentSound.Destruct();
+            
             _playerTriggerZone.PlayerEnterTriggerZone -= PlayerTriggerZoneOnPlayerEnterTriggerZone;
         }
 
@@ -73,7 +78,7 @@ namespace _Main.Scripts.NPCs.Resident.ResidentRealizations
                     return;
                 
                 case ResidentConditionType.Aggressive when _playerInZone:
-                    WindowController.Instance.ShowScreamerWindow();
+                    ShowScreamer();
                     break;
                 
                 case ResidentConditionType.NonActive:
@@ -91,6 +96,11 @@ namespace _Main.Scripts.NPCs.Resident.ResidentRealizations
         protected virtual void CreateOrder()
         {
             _orderedFood = _residentOrderSettings.GetRandomPair().Food;
+        }
+
+        protected virtual void ShowScreamer()
+        {
+            WindowController.Instance.ShowScreamerWindow();
         }
 
         private void PlayerTriggerZoneOnPlayerEnterTriggerZone(Player.Player player, bool playerIn)

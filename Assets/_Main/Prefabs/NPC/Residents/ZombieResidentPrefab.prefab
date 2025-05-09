@@ -47,6 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _residentConditionHintSettings: {fileID: 11400000, guid: 6635857dcd2024a0db09db4dfa9018b4, type: 2}
+  _residentSoundsSettings: {fileID: 11400000, guid: 77675571813ce404fbc729c5152cc4c9, type: 2}
   _residentClues:
   - {fileID: 2182014185722845574, guid: 370c0821fe62b2e478771eb88503d7f5, type: 3}
   - {fileID: -102728839203505149, guid: 314521a32ee224a66837399d67da7e36, type: 3}
@@ -67,8 +68,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _audioSource: {fileID: 5758948522237802764}
-  _short: {fileID: 8300000, guid: c06c95fefda22404d9f65b65930a4249, type: 3}
-  _long: {fileID: 8300000, guid: 99b0aa3b0eea040769fe8e8ee75259ac, type: 3}
   _residentConditionHintSettings: {fileID: 11400000, guid: 6635857dcd2024a0db09db4dfa9018b4, type: 2}
   _residentOrderSettings: {fileID: 11400000, guid: aedcfae2114be4e7c899344233a0ea9b, type: 2}
   _delayBetweenClips: 0.05

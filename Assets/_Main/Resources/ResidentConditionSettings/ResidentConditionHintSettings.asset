@@ -14,8 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <ConditionPairs>k__BackingField:
   - Condition: 1
-    AudioClip: {fileID: 0}
+    AudioClips: []
   - Condition: 2
-    AudioClip: {fileID: 8300000, guid: c1dddb0889a074832871ccb3fad5d565, type: 3}
+    AudioClips:
+    - {fileID: 8300000, guid: 5e5eaa392f3e94e41991c1bff7aff1c8, type: 3}
+    - {fileID: 8300000, guid: 1009229b821a043978e4b16f8e26bb82, type: 3}
   - Condition: 3
-    AudioClip: {fileID: 8300000, guid: 1fb3952f462d04e238e134131bd912c2, type: 3}
+    AudioClips:
+    - {fileID: 8300000, guid: f8b69be3f465b4346a3de93a19336724, type: 3}
+    - {fileID: 8300000, guid: cf129b9adcb4647aabc2da932497b29e, type: 3}
+    - {fileID: 8300000, guid: 1863bbbc575e0422abd06230e3a28a4a, type: 3}
+    - {fileID: 8300000, guid: c76e6e76768214adebe945b4410e413d, type: 3}

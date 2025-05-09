@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using _Main.Scripts.Cooking.Foods;
 using _Main.Scripts.ScriptableObjects;
+using _Main.Scripts.Utils;
 using UnityEngine;
 
 namespace _Main.Scripts.NPCs.Resident
@@ -9,24 +10,28 @@ namespace _Main.Scripts.NPCs.Resident
     public class ResidentSound : MonoBehaviour
     {
         [SerializeField] private AudioSource _audioSource;
-
-        [SerializeField] private AudioClip _short;
-        [SerializeField] private AudioClip _long;
+        
         [SerializeField] private ResidentConditionHintSettings _residentConditionHintSettings;
         [SerializeField] private ResidentOrderSettings _residentOrderSettings;
         [SerializeField] private float _delayBetweenClips = 0;
 
+        private ResidentSoundsSettings _residentSoundsSettings;
+        
+        public void Init(ResidentSoundsSettings residentSoundsSettings) =>
+            _residentSoundsSettings = residentSoundsSettings;
+        
+        public void Destruct(){}
+
         public void ShowConditionHint(ResidentConditionType residentCondition)
         {
-            if (_residentConditionHintSettings.GetPair(residentCondition).AudioClip != null)
-                _audioSource.PlayOneShot(_residentConditionHintSettings.GetPair(residentCondition).AudioClip);
+            if (_residentConditionHintSettings.GetPair(residentCondition).AudioClips.Count> 0)
+                _audioSource.PlayOneShot(_residentConditionHintSettings.GetPair(residentCondition).AudioClips.RandomElementFromList());
         }
 
         public void MakeOrder(Food food)
         {
             StartCoroutine(SpellOrder(PrepareSpell(food)));
         }
-
 
         private List<AudioClip> PrepareSpell(Food food)
         {
@@ -36,9 +41,9 @@ namespace _Main.Scripts.NPCs.Resident
             foreach (var charSound in spell)
             {
                 if (charSound == '*' || charSound == '.')
-                    audioClips.Add(_short);
+                    audioClips.Add(_residentSoundsSettings.ShortSounds.RandomElementFromList());
                 if (charSound == '-' || charSound == '_')
-                    audioClips.Add(_long);
+                    audioClips.Add(_residentSoundsSettings.LongSounds.RandomElementFromList());
             }
 
             return audioClips;

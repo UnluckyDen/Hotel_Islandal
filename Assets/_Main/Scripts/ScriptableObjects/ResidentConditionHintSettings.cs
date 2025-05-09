@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using _Main.Scripts.Cooking.Foods;
 using _Main.Scripts.NPCs.Resident;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -24,6 +23,6 @@ namespace _Main.Scripts.ScriptableObjects
     public struct ConditionHintPair
     {
         public ResidentConditionType Condition;
-        public AudioClip AudioClip;
+        public List<AudioClip> AudioClips;
     }
 }
