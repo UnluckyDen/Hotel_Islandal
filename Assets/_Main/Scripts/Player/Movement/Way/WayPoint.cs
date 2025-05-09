@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 namespace _Main.Scripts.Player.Movement.Way
@@ -13,9 +12,12 @@ namespace _Main.Scripts.Player.Movement.Way
 
         public void SetNeighboringCell(KeyValuePair<Vector3Int, WayPoint> directionWaypointPair) =>
             _wayPoints.Add(directionWaypointPair.Key, directionWaypointPair.Value);
-        
-        public void SetNeighboringCell(List<KeyValuePair<Vector3Int, WayPoint>> directionWaypointPairs) => 
-            _wayPoints.AddRange(directionWaypointPairs);
+
+        public void SetNeighboringCell(List<KeyValuePair<Vector3Int, WayPoint>> directionWaypointPairs)
+        {
+            foreach (var pair in directionWaypointPairs)
+                _wayPoints.Add(pair.Key,pair.Value);
+        }
 
         public WayPoint GetNextWayPoint(Vector3Int direction) => 
             _wayPoints.GetValueOrDefault(direction);
