@@ -405,11 +405,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1995533685222401410, guid: 7623d5a53828f4a1685889cb489cd41a, type: 3}
       propertyPath: m_text
-      value: "\u042F\u0437\u044B\u043A \u043D\u0435\u0436\u0438\u0442\u0438"
+      value: Undead`s language
       objectReference: {fileID: 0}
     - target: {fileID: 2100921554877042507, guid: 7623d5a53828f4a1685889cb489cd41a, type: 3}
       propertyPath: m_text
-      value: "\u042D\u0441\u043F\u0440\u0435\u0441\u0441\u043E: *\n"
+      value: 'Espresso: *
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 2100921554877042507, guid: 7623d5a53828f4a1685889cb489cd41a, type: 3}
       propertyPath: m_fontSize
@@ -529,7 +531,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4470626668697530966, guid: 7623d5a53828f4a1685889cb489cd41a, type: 3}
       propertyPath: m_text
-      value: "\u0410\u043C\u0435\u0440\u0438\u043A\u0430\u043D\u043E: *-"
+      value: 'Americano: *-'
       objectReference: {fileID: 0}
     - target: {fileID: 4470626668697530966, guid: 7623d5a53828f4a1685889cb489cd41a, type: 3}
       propertyPath: m_fontSize
@@ -631,21 +633,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1995533685222401410, guid: 7623d5a53828f4a1685889cb489cd41a, type: 3}
       propertyPath: m_text
-      value: "\u0421\u043E\u043C\u043D\u0438\u0442\u0435\u043B\u044C\u043D\u043E\u0435
-        \u0431\u043B\u044E\u0434\u043E"
+      value: Dubious food
       objectReference: {fileID: 0}
     - target: {fileID: 2100921554877042507, guid: 7623d5a53828f4a1685889cb489cd41a, type: 3}
       propertyPath: m_text
-      value: "\u0415\u0441\u043B\u0438 \u0441\u043B\u0438\u0448\u043A\u043E\u043C
-        \u0441\u0438\u043B\u044C\u043D\u043E \u043E\u0442\u0445\u043E\u0434\u0438\u0442\u044C
-        \u043E\u0442 \u0440\u0435\u0446\u0435\u043F\u0442\u0430 \u0438\u043B\u0438
-        \u0438\u0441\u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u044C
-        \u043D\u0435\u043F\u0440\u0430\u0432\u0438\u043B\u044C\u043D\u044B\u0435
-        \u0438\u043D\u0433\u0440\u0435\u0434\u0438\u0435\u043D\u0442\u044B, \u0442\u044B
-        \u043D\u0435\u0438\u0437\u0431\u0435\u0436\u043D\u043E \u043F\u043E\u043B\u0443\u0447\u0438\u0448\u044C
-        \u0441\u043E\u043C\u043D\u0438\u0442\u0435\u043B\u044C\u043D\u043E\u0435
-        \u0431\u043B\u044E\u0434\u043E (\u0441\u043E\u043C\u043D\u0438\u0442\u0435\u043B\u044C\u043D\u044B\u0439
-        \u043F\u043E\u043C\u043E\u043B/\u043D\u0430\u043F\u0438\u0442\u043E\u043A)"
+      value: If you stray too far from the recipe or use the wrong ingredients, you'll
+        inevitably end up with a dubious dish (dubious grind/drink).
       objectReference: {fileID: 0}
     - target: {fileID: 2136114897269988598, guid: 7623d5a53828f4a1685889cb489cd41a, type: 3}
       propertyPath: m_Pivot.x
@@ -754,6 +747,26 @@ PrefabInstance:
     - target: {fileID: 3318197535425575440, guid: 7623d5a53828f4a1685889cb489cd41a, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -158.91501
+      objectReference: {fileID: 0}
+    - target: {fileID: 6931584149048985582, guid: 7623d5a53828f4a1685889cb489cd41a, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1670476717, guid: 1051ff7cae99947ba9b41494022664fe, type: 3}
+    - target: {fileID: 6931584149048985582, guid: 7623d5a53828f4a1685889cb489cd41a, type: 3}
+      propertyPath: m_Color.a
+      value: 0.70980394
+      objectReference: {fileID: 0}
+    - target: {fileID: 6931584149048985582, guid: 7623d5a53828f4a1685889cb489cd41a, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6931584149048985582, guid: 7623d5a53828f4a1685889cb489cd41a, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6931584149048985582, guid: 7623d5a53828f4a1685889cb489cd41a, type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8727272497212442441, guid: 7623d5a53828f4a1685889cb489cd41a, type: 3}
       propertyPath: m_AnchorMax.y

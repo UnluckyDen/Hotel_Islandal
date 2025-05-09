@@ -144,7 +144,7 @@ TextureImporter:
         width: 179
         height: 173
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -166,7 +166,7 @@ TextureImporter:
         width: 172
         height: 198
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -188,7 +188,7 @@ TextureImporter:
         width: 185
         height: 137
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -210,7 +210,7 @@ TextureImporter:
         width: 169
         height: 135
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -232,7 +232,7 @@ TextureImporter:
         width: 204
         height: 122
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -241,6 +241,28 @@ TextureImporter:
       bones: []
       spriteID: bd72dc8ba9f4d4f28bcaf566ec1e12a5
       internalID: -1412959637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AtlasFood_DubiousFood
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 154
+        width: 211
+        height: 205
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa694cd4b8dfa46da8cfac04043f7791
+      internalID: -1670476717
       vertices: []
       indices: 
       edges: []
@@ -263,6 +285,7 @@ TextureImporter:
       AtlasFood_DarkBeens: 1222317751
       AtlasFood_DarkGrind: -1802248398
       AtlasFood_DoubleDarkGrind: -1412959637
+      AtlasFood_DubiousFood: -1670476717
       AtlasFood_Espresso: -1164449188
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
