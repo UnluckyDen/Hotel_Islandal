@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using _Main.Scripts.NPCs.Resident.ResidentRealizations;
 using UnityEngine;
 
@@ -8,6 +9,7 @@ namespace _Main.Scripts.NPCs.Resident
     {
         [SerializeField] private List<BaseResident> _residents;
         [SerializeField] private List<ResidentRoom> _residentRooms;
+        [SerializeField] private Transform _startPoint;
         
         public void Init()
         {
@@ -30,6 +32,14 @@ namespace _Main.Scripts.NPCs.Resident
 
             var resident = Instantiate(randomResident, parent.position, parent.rotation, parent);
             return resident;
+        }
+
+        [ContextMenu("Sort rooms")]
+        private void SortRooms()
+        {
+            _residentRooms = _residentRooms.OrderBy(residentRoom => 
+                Vector3.Distance(_startPoint.position, residentRoom.transform.position)).ToList();
+
         }
     }
 }

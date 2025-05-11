@@ -865,7 +865,7 @@ Transform:
   m_GameObject: {fileID: 767399766}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 1, y: 0, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -888,26 +888,27 @@ MonoBehaviour:
   - {fileID: 6621101100979772481, guid: 13b4e58d4860b46778e5beb14d688f0a, type: 3}
   - {fileID: 8576505542648893586, guid: 9fa495dc66dee4145b9494a1f40bba68, type: 3}
   _residentRooms:
+  - {fileID: 845385613}
   - {fileID: 845385614}
-  - {fileID: 1294221977}
-  - {fileID: 1294221978}
-  - {fileID: 1529193100}
-  - {fileID: 1529193101}
-  - {fileID: 279201140}
-  - {fileID: 279201141}
-  - {fileID: 143916563}
-  - {fileID: 143916564}
-  - {fileID: 1741438313}
-  - {fileID: 1741438314}
-  - {fileID: 294382335}
-  - {fileID: 294382336}
-  - {fileID: 599173748}
-  - {fileID: 599173749}
   - {fileID: 876782444}
   - {fileID: 876782445}
-  - {fileID: 845385613}
-  - {fileID: 2086444663}
+  - {fileID: 599173748}
+  - {fileID: 599173749}
+  - {fileID: 294382335}
+  - {fileID: 294382336}
+  - {fileID: 1741438313}
+  - {fileID: 1741438314}
+  - {fileID: 143916563}
+  - {fileID: 143916564}
+  - {fileID: 279201140}
+  - {fileID: 279201141}
+  - {fileID: 1529193100}
+  - {fileID: 1529193101}
+  - {fileID: 1294221977}
+  - {fileID: 1294221978}
   - {fileID: 2086444662}
+  - {fileID: 2086444663}
+  _startPoint: {fileID: 767399767}
 --- !u!1 &829476594
 GameObject:
   m_ObjectHideFlags: 0
