@@ -27,6 +27,7 @@ namespace _Main.Scripts.NPCs.Resident.ResidentRealizations
         private ResidentConditionType _currentCondition;
         
         private bool _playerInZone;
+        private bool _playerOpenDoor;
         
         public virtual void Init(ResidentDoor residentDoor, PlayerTriggerZone playerTriggerZone, ResidentCluesController residentCluesController)
         {
@@ -70,6 +71,8 @@ namespace _Main.Scripts.NPCs.Resident.ResidentRealizations
 
         public virtual void HandleKnock()
         {
+            _playerOpenDoor = true;
+            
             switch (_currentCondition)
             {
                 case ResidentConditionType.HaveOrder when _playerInZone:
@@ -103,15 +106,10 @@ namespace _Main.Scripts.NPCs.Resident.ResidentRealizations
             WindowController.Instance.ShowScreamerWindow();
         }
 
-        private void PlayerTriggerZoneOnPlayerEnterTriggerZone(Player.Player player, bool playerIn)
+        protected void OnPlayerLeaveHaveOrderResident()
         {
-            if (playerIn)
-            {
-                OnPlayerZoneIn();
-                return;
-            }
-            
-            OnPlayerZoneOut();
+            if (!_playerOpenDoor)
+                ShowScreamer();
         }
 
         private void OnPlayerZoneIn()
@@ -124,6 +122,20 @@ namespace _Main.Scripts.NPCs.Resident.ResidentRealizations
         {
             _playerInZone = false;
             _residentDoor.CloseDoor();
+            
+            if (_currentCondition == ResidentConditionType.HaveOrder)
+                OnPlayerLeaveHaveOrderResident();
+        }
+
+        private void PlayerTriggerZoneOnPlayerEnterTriggerZone(Player.Player player, bool playerIn)
+        {
+            if (playerIn)
+            {
+                OnPlayerZoneIn();
+                return;
+            }
+            
+            OnPlayerZoneOut();
         }
     }
 }
