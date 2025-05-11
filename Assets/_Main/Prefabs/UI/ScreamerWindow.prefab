@@ -59,7 +59,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.78431374}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 5813384321887088900}
   - component: {fileID: 8761866371044275103}
   m_Layer: 0
-  m_Name: ScrimmerWindow
+  m_Name: ScreamerWindow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -127,7 +127,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: 58a3104b6c16c4424871ba889fa05317, type: 3}
   m_Resource: {fileID: 8300000, guid: 58a3104b6c16c4424871ba889fa05317, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.035
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -223,7 +223,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87eb48c9da9842f58e4714335efaeb27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _lifeTime: 2.5
+  _lifeTime: 1.5
   _scaleCurve:
     serializedVersion: 2
     m_Curve:
@@ -422,7 +422,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ce1767d89654b422fbf150d5101ee604, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f671a1444d2804e7e8b45bbd45854ddd, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
