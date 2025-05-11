@@ -1,3 +1,4 @@
+using System.Collections;
 using Unity.Services.Analytics;
 using Unity.Services.Core;
 using UnityEngine;
@@ -22,9 +23,9 @@ namespace _Main.Scripts.Analytics
             Destroy(gameObject);
         }
 
-        private async void Start()
+        private IEnumerator Start()
         {
-            await UnityServices.InitializeAsync();
+            yield return UnityServices.InitializeAsync();
             AnalyticsService.Instance.StartDataCollection();
             _isInited = true;
         }
