@@ -909,6 +909,8 @@ MonoBehaviour:
   - {fileID: 2086444662}
   - {fileID: 2086444663}
   _startPoint: {fileID: 767399767}
+  _levelSettingsSettings: {fileID: 11400000, guid: dead0881d2024434faf278e903cbc55f, type: 2}
+  _residentOrderSettings: {fileID: 11400000, guid: aedcfae2114be4e7c899344233a0ea9b, type: 2}
 --- !u!1 &829476594
 GameObject:
   m_ObjectHideFlags: 0

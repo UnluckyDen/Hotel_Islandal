@@ -13,9 +13,10 @@ namespace _Main.Scripts.NPCs.Resident.ResidentRealizations
     public class BaseResident : MonoBehaviour
     {
         [SerializeField] private ResidentConditionHintSettings _residentConditionHintSettings;
+        [SerializeField] private ResidentOrderSettings _residentOrderSettings;
+        
         [SerializeField] private ResidentSoundsSettings _residentSoundsSettings;
         [SerializeField] private List<BaseResidentClue> _residentClues;
-        [SerializeField] private ResidentOrderSettings _residentOrderSettings;
         [SerializeField] private ResidentSound _residentSound;
 
         [SerializeField] private Food _orderedFood;
@@ -28,6 +29,14 @@ namespace _Main.Scripts.NPCs.Resident.ResidentRealizations
         
         private bool _playerInZone;
         private bool _playerOpenDoor;
+
+        public virtual void SetContext(ResidentConditionType condition, Food orderedFood)
+        {
+            _currentCondition = condition;
+            
+            if (_currentCondition == ResidentConditionType.HaveOrder)
+                _orderedFood = orderedFood;
+        }
         
         public virtual void Init(ResidentDoor residentDoor, PlayerTriggerZone playerTriggerZone, ResidentCluesController residentCluesController)
         {
@@ -38,10 +47,6 @@ namespace _Main.Scripts.NPCs.Resident.ResidentRealizations
             _residentSound.Init(_residentSoundsSettings);
             
             _playerTriggerZone.PlayerEnterTriggerZone += PlayerTriggerZoneOnPlayerEnterTriggerZone;
-            GenerateCondition();
-            
-            if (_currentCondition == ResidentConditionType.HaveOrder)
-                CreateOrder();
             
             _residentCluesController.InstantiateClue(_residentClues);
         }
@@ -90,17 +95,7 @@ namespace _Main.Scripts.NPCs.Resident.ResidentRealizations
                     throw new ArgumentOutOfRangeException();
             }
         }
-
-        protected virtual void GenerateCondition()
-        {
-            _currentCondition = _residentConditionHintSettings.GetRandomPair().Condition;
-        }
-
-        protected virtual void CreateOrder()
-        {
-            _orderedFood = _residentOrderSettings.GetRandomPair().Food;
-        }
-
+        
         protected virtual void ShowScreamer()
         {
             WindowController.Instance.ShowScreamerWindow();
