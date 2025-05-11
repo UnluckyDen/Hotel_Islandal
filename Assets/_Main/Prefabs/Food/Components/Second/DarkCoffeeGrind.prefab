@@ -103,6 +103,7 @@ MonoBehaviour:
   _collider: {fileID: 5128482928951431458}
   _cookingTime: 0
   _hoverGroup: {fileID: 5597983499432059238}
+  <FoodName>k__BackingField: DarkCoffeeGround
 --- !u!1001 &746493234193497185
 PrefabInstance:
   m_ObjectHideFlags: 0

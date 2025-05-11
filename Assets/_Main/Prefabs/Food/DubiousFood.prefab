@@ -171,6 +171,7 @@ MonoBehaviour:
   _collider: {fileID: 5128482928951431458}
   _cookingTime: 0
   _hoverGroup: {fileID: 6931824249304814758}
+  <FoodName>k__BackingField: DubiousFood
 --- !u!1 &2649807479531193190
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using _Main.Scripts.Analytics;
 using _Main.Scripts.Cooking.Foods;
 using _Main.Scripts.Interfaces;
 using UnityEngine;
@@ -68,6 +69,10 @@ namespace _Main.Scripts.Cooking.Devices.Cooking
                 return;
             
             _foodOut = Instantiate(_recipeSettings.GetFoodByIngredients(_foodIn), _foodGroup.transform);
+            
+            if (_foodOut != null)
+                GlobalAnalyticsService.Instance.SendCustomEvent(new FoodCombined(_foodIn, _foodOut));
+            
             foreach (var food in _foodIn)
             {
                 _foodGroup.OutGroup(food);

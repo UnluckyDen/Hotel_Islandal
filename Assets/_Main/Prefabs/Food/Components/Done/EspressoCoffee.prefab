@@ -72,6 +72,7 @@ MonoBehaviour:
   _collider: {fileID: 5128482928951431458}
   _cookingTime: 0
   _hoverGroup: {fileID: 4161675710691125598}
+  <FoodName>k__BackingField: Espresso
 --- !u!1001 &1301689878165216848
 PrefabInstance:
   m_ObjectHideFlags: 0

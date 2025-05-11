@@ -11,11 +11,11 @@ namespace _Main.Scripts.Cooking.Foods
         [SerializeField] private float _cookingTime;
         [SerializeField] private BaseHoverGroup _hoverGroup;
 
+
         public bool IsTrashable => true;
         public float CurrentCookingTime => _cookingTime;
-        
-        public void AddCookingTime(float time) => _cookingTime += time;
 
+        public void AddCookingTime(float time) => _cookingTime += time;
 
         public void ToNonInteractive()
         {
@@ -36,5 +36,7 @@ namespace _Main.Scripts.Cooking.Foods
         {
             _hoverGroup.OnHoverExit();
         }
+
+        public string GetFoodName() => gameObject.name;
     }
 }

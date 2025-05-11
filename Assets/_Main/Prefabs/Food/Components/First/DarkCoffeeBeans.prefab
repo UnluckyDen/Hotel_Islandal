@@ -70,6 +70,7 @@ MonoBehaviour:
   _collider: {fileID: 5128482928951431458}
   _cookingTime: 0
   _hoverGroup: {fileID: 6222986141996308812}
+  <FoodName>k__BackingField: DarkCoffeeBeans
 --- !u!1 &5248559175519844557
 GameObject:
   m_ObjectHideFlags: 0

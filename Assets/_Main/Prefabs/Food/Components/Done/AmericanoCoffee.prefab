@@ -72,6 +72,7 @@ MonoBehaviour:
   _collider: {fileID: 5128482928951431458}
   _cookingTime: 0
   _hoverGroup: {fileID: 1276619043089685530}
+  <FoodName>k__BackingField: Americano
 --- !u!1001 &1522323427748935556
 PrefabInstance:
   m_ObjectHideFlags: 0
