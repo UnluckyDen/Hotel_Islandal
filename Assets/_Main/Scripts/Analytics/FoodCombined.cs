@@ -20,20 +20,19 @@ namespace _Main.Scripts.Analytics
         {
             var customEvent = new CustomEvent("food_combined")
             {
-                {"food_list", GetFoodString(_foodIn, true)},
-                {"food_list", GetFoodString(_foodOut, false)}
+                {"food_list", GetFoodString()},
             };
             
             return customEvent;
         }
 
-        private string GetFoodString(List<Food> foods, bool isFoodIn)
+        private string GetFoodString()
         {
             StringBuilder stringBuilder = new StringBuilder();
 
-            stringBuilder.Append(isFoodIn ? "Food in : " : "Food out : ");
+            stringBuilder.Append("Food in : ");
 
-            foreach (var food in foods)
+            foreach (var food in _foodIn)
             {
                 stringBuilder.Append("Name: ");
                 stringBuilder.Append(food.GetFoodName());
@@ -41,18 +40,11 @@ namespace _Main.Scripts.Analytics
                 stringBuilder.Append(food.CurrentCookingTime);
                 stringBuilder.Append(", ");
             }
-            
-            return stringBuilder.ToString();
-        }
-        
-        private string GetFoodString(Food food, bool isFoodIn)
-        {
-            StringBuilder stringBuilder = new StringBuilder();
 
-            stringBuilder.Append(isFoodIn ? "Food in : " : "Food out : ");
+            stringBuilder.Append("Food out : ");
             
-            stringBuilder.Append(food.GetFoodName());
-            stringBuilder.Append(food.CurrentCookingTime);
+            stringBuilder.Append(_foodOut.GetFoodName());
+            stringBuilder.Append(_foodOut.CurrentCookingTime);
             stringBuilder.Append(", ");
             
             return stringBuilder.ToString();
