@@ -5,12 +5,12 @@ using Unity.Services.Analytics;
 
 namespace _Main.Scripts.Analytics
 {
-    public readonly struct FoodCombined : ICustomAnalyticsEvent
+    public readonly struct FoodCombinedAnalyticsEvent : ICustomAnalyticsEvent
     {
         private readonly List<Food> _foodIn;
         private readonly Food _foodOut;
 
-        public FoodCombined(List<Food> foodIn, Food foodOut)
+        public FoodCombinedAnalyticsEvent(List<Food> foodIn, Food foodOut)
         {
             _foodIn = foodIn;
             _foodOut = foodOut;
@@ -36,7 +36,7 @@ namespace _Main.Scripts.Analytics
             {
                 stringBuilder.Append("Name: ");
                 stringBuilder.Append(food.GetFoodName());
-                stringBuilder.Append(", CookingTime");
+                stringBuilder.Append(", CookingTime: ");
                 stringBuilder.Append(food.CurrentCookingTime);
                 stringBuilder.Append(", ");
             }
