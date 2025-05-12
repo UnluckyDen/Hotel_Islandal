@@ -1,6 +1,7 @@
 using _Main.Scripts.NPCs.Resident;
 using _Main.Scripts.Player.Movement.Way;
 using _Main.Scripts.Services;
+using _Main.Scripts.Tutorial;
 using UnityEngine;
 
 namespace _Main.Scripts.Infrastructure
@@ -8,6 +9,7 @@ namespace _Main.Scripts.Infrastructure
     public class LevelBootstrap : MonoBehaviour
     {
         [SerializeField] private ResidentsDistributor _residentsDistributor;
+        [SerializeField] private TutorialResidentsDistributor _tutorialResidentsDistributor;
         [SerializeField] private WayController _wayController;
 
         [SerializeField] private Player.Player _player;
@@ -24,14 +26,20 @@ namespace _Main.Scripts.Infrastructure
 
         private void Init()
         {
-            _residentsDistributor.Init();
+            if (_residentsDistributor != null)
+                _residentsDistributor.Init();
+            else
+                _tutorialResidentsDistributor.Init();
 
             _player.Init(_wayController, InputService.Instance);
         }
 
         private void Destruct()
         {
-            _residentsDistributor.Destruct();
+            if (_residentsDistributor != null)
+                _residentsDistributor.Destruct();
+            else 
+                _tutorialResidentsDistributor.Destruct();
             
             _player.Destruct();
         }

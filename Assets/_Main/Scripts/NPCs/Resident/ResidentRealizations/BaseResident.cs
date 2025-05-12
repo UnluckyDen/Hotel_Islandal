@@ -12,6 +12,8 @@ namespace _Main.Scripts.NPCs.Resident.ResidentRealizations
 {
     public class BaseResident : MonoBehaviour
     {
+        public static event Action<bool> FoodAccepted;
+        
         [SerializeField] private ResidentConditionHintSettings _residentConditionHintSettings;
         [SerializeField] private ResidentOrderSettings _residentOrderSettings;
         
@@ -63,6 +65,7 @@ namespace _Main.Scripts.NPCs.Resident.ResidentRealizations
             if (food.GetType() == _orderedFood.GetType())
             {
                 Debug.Log("Is ordered food");
+                FoodAccepted?.Invoke(true);
                 _residentDoor.CloseDoor();
                 _currentCondition = ResidentConditionType.NonActive;
                 
@@ -70,6 +73,7 @@ namespace _Main.Scripts.NPCs.Resident.ResidentRealizations
             }
 
             Debug.Log("In not ordered food");
+            FoodAccepted?.Invoke(false);
             WindowController.Instance.ShowScreamerWindow();
             return false;
         }
