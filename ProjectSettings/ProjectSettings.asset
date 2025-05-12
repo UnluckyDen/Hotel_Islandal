@@ -165,7 +165,7 @@ PlayerSettings:
   androidMinAspectRatio: 1
   applicationIdentifier:
     Android: com.Bughulmisters.Hotel_Islandal
-    Standalone: com.Unity-Technologies.com.unity.template.urp-blank
+    Standalone: com.Bughulmisters.Hotel-Islandal
     iPhone: com.Bughulmisters.Hotel-Islandal
   buildNumber:
     Standalone: 0
