@@ -1,5 +1,5 @@
+using System;
 using _Main.Scripts.Interfaces;
-using _Main.Scripts.NPCs.Resident;
 using _Main.Scripts.NPCs.Resident.ResidentRealizations;
 using UnityEngine;
 
@@ -7,6 +7,8 @@ namespace _Main.Scripts.Environment.Doors.ResidentDoor
 {
     public class ResidentDoorKnocker : MonoBehaviour, IInteractable
     {
+        public event Action DoorKnocked;
+        
         private ResidentDoor _residentDoor;
         private BaseResident _resident;
 
@@ -25,6 +27,7 @@ namespace _Main.Scripts.Environment.Doors.ResidentDoor
         public void OnClick()
         {
             _resident.HandleKnock();
+            DoorKnocked?.Invoke();
         }
     }
 }
