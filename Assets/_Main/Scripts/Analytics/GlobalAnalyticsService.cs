@@ -25,7 +25,17 @@ namespace _Main.Scripts.Analytics
 
         private IEnumerator Start()
         {
+            bool initialized = false;
+            UnityServices.Initialized += () =>
+            {
+                initialized = true;
+                Debug.Log("Analytics initialized");
+            };
+            
             yield return UnityServices.InitializeAsync();
+            while (!initialized)
+                yield return null;
+            
             AnalyticsService.Instance.StartDataCollection();
             _isInited = true;
         }
