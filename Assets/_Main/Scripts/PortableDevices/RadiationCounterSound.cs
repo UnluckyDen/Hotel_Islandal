@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace _Main.Scripts.Cooking.Devices.Utils
+namespace _Main.Scripts.PortableDevices
 {
     public class RadiationCounterSound : MonoBehaviour
     {

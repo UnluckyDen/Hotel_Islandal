@@ -1,9 +1,10 @@
+using _Main.Scripts.Cooking.Devices;
 using _Main.Scripts.Environment.Systems.Temperature;
 using _Main.Scripts.Interfaces;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace _Main.Scripts.Cooking.Devices.Utils
+namespace _Main.Scripts.PortableDevices
 {
     public class Thermometer : Device, IMovableObject
     {

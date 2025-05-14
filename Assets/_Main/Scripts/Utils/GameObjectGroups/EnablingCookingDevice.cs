@@ -1,12 +1,13 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using _Main.Scripts.Analytics;
+using _Main.Scripts.Cooking.Devices;
+using _Main.Scripts.Cooking.Devices.Cooking;
 using _Main.Scripts.Cooking.Foods;
 using _Main.Scripts.Interfaces;
 using UnityEngine;
 
-namespace _Main.Scripts.Cooking.Devices.Cooking
+namespace _Main.Scripts.Utils.GameObjectGroups
 {
     public class EnablingCookingDevice : CookingDevice
     {

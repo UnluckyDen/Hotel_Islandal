@@ -119,6 +119,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!4 &132082156 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3885953681245454754, guid: 3584cd94da279004d9613589cb079b4f, type: 3}
+  m_PrefabInstance: {fileID: 363887812}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &143916560
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -463,6 +468,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 132082156}
   - {fileID: 7565884732923305402}
   - {fileID: 1235349388}
   - {fileID: 845385611}
@@ -478,6 +484,63 @@ Transform:
   - {fileID: 257359649419319166}
   m_Father: {fileID: 829476595}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &363887812
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 315217790}
+    m_Modifications:
+    - target: {fileID: 314451408531990453, guid: 3584cd94da279004d9613589cb079b4f, type: 3}
+      propertyPath: m_Name
+      value: ElevatorTile
+      objectReference: {fileID: 0}
+    - target: {fileID: 3885953681245454754, guid: 3584cd94da279004d9613589cb079b4f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3885953681245454754, guid: 3584cd94da279004d9613589cb079b4f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3885953681245454754, guid: 3584cd94da279004d9613589cb079b4f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3885953681245454754, guid: 3584cd94da279004d9613589cb079b4f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3885953681245454754, guid: 3584cd94da279004d9613589cb079b4f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3885953681245454754, guid: 3584cd94da279004d9613589cb079b4f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3885953681245454754, guid: 3584cd94da279004d9613589cb079b4f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3885953681245454754, guid: 3584cd94da279004d9613589cb079b4f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3885953681245454754, guid: 3584cd94da279004d9613589cb079b4f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3885953681245454754, guid: 3584cd94da279004d9613589cb079b4f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3584cd94da279004d9613589cb079b4f, type: 3}
 --- !u!114 &406070892 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 404311154243504924, guid: 970dfe8440807484380ea61680dc9ca7, type: 3}
@@ -518,6 +581,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f513829c66fe84656bdec59e570533df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _sendInEditor: 0
 --- !u!4 &503434510
 Transform:
   m_ObjectHideFlags: 0
@@ -762,9 +826,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pointsLinkDistance: 2
-  _startPoint: {fileID: 7340813497430747827}
+  _startPoint: {fileID: 1250393000}
   _wayPoints:
   - {fileID: 7340813497430747827}
+  - {fileID: 1250393000}
   - {fileID: 406070892}
   - {fileID: 845385612}
   - {fileID: 876782443}
@@ -1386,6 +1451,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8963747949511332745, guid: 970dfe8440807484380ea61680dc9ca7, type: 3}
   m_PrefabInstance: {fileID: 910567540}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1250393000 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7247331240066460203, guid: 3584cd94da279004d9613589cb079b4f, type: 3}
+  m_PrefabInstance: {fileID: 363887812}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bce359b9ba2b4bbc84e1a4d64b4737fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1294221974
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1940,6 +2016,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _residentsDistributor: {fileID: 767399768}
+  _tutorialResidentsDistributor: {fileID: 0}
   _wayController: {fileID: 701934592}
   _player: {fileID: 1682888783}
 --- !u!1 &1927449815
@@ -2256,7 +2333,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3314917591816008105, guid: 0cb1702e84e4b4726b09e7ef44e5151f, type: 3}
       propertyPath: m_Name
-      value: StartTile
+      value: FirstCorridorTile
       objectReference: {fileID: 0}
     - target: {fileID: 6341822546918345908, guid: 0cb1702e84e4b4726b09e7ef44e5151f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2334,7 +2411,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5788081001657955669, guid: 92778504a4dad4c068ff927d430c38c9, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2
+      value: -4
       objectReference: {fileID: 0}
     - target: {fileID: 5788081001657955669, guid: 92778504a4dad4c068ff927d430c38c9, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2365,7 +2442,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 6163954166040621108, guid: 92778504a4dad4c068ff927d430c38c9, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 92778504a4dad4c068ff927d430c38c9, type: 3}

@@ -1,22 +1,22 @@
-using System;
 using _Main.Scripts.Interfaces;
 using _Main.Scripts.Utils;
+using _Main.Scripts.Utils.GameObjectGroups;
 using JetBrains.Annotations;
 using UnityEngine;
 
-namespace _Main.Scripts.Cooking.Devices.Cooking
+namespace _Main.Scripts.PortableDevices.Coins
 {
-    public class MovableObjectPlace : MonoBehaviour, IObjectPlace, IHoverable
+    public class CoinStash : MonoBehaviour, IObjectPlace, IHoverable
     {
-        [SerializeField] private Transform _place;
+        [SerializeField] private MovableObjectGroupPlace _coinsGroup;
         [SerializeField] private BaseHoverGroup _hoverGroup;
         [CanBeNull]
         [SerializeField] private GameObject _startObject;
-
-        private IMovableObject _movableObject;
-
-        public IMovableObject CurrentMovableObject => _movableObject;
-        public bool CanApply(IMovableObject movableObject) => _movableObject == null;
+        
+        public IMovableObject CurrentMovableObject => _coinsGroup.LastMovableObject;
+        
+        public bool CanApply(IMovableObject movableObject) =>
+            movableObject is Coin;
 
         private void Start()
         {
@@ -31,43 +31,33 @@ namespace _Main.Scripts.Cooking.Devices.Cooking
         public void OnHoverEnter()
         {
             _hoverGroup.OnHoverEnter();
-            _movableObject?.OnHoverEnter();
+            _coinsGroup.OnHoverEnter();
         }
 
         public void OnHoverExit()
         {
             _hoverGroup.OnHoverExit();
-            _movableObject?.OnHoverExit();
+            _coinsGroup.OnHoverExit();
         }
 
         public void PlaceMovableObject(IMovableObject movableObject)
         {
-            if (_movableObject != null || movableObject == null)
+            if (movableObject == null)
                 return;
 
-            _movableObject = movableObject;
-            
-            _movableObject.transform.SetParent(_place);
-            _movableObject.transform.localPosition = Vector3.zero;
-            _movableObject.transform.localEulerAngles = Vector3.zero;
+            _coinsGroup.InGroup(movableObject);
             
             OnHoverEnter();
-
-            _movableObject.ToNonInteractive();
         }
 
         public IMovableObject TakeMovableObject()
         {
-            if (_movableObject == null)
+            if (CurrentMovableObject == null)
                 return null;
             
             OnHoverExit();
             
-            var movableObject = _movableObject;
-            _movableObject = null;
-
-            movableObject.transform.SetParent(null);
-            movableObject.ToInteractable();
+            IMovableObject movableObject = _coinsGroup.OutGroup();
             
             return movableObject;
         }

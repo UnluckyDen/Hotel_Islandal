@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using _Main.Scripts.Cooking.Devices.Cooking;
+using _Main.Scripts.Utils.GameObjectGroups;
 using UnityEngine;
 
 namespace _Main.Scripts.Cooking.Devices.Utils

@@ -1,12 +1,11 @@
-using System;
 using _Main.Scripts.Interfaces;
 using _Main.Scripts.Utils;
 using JetBrains.Annotations;
 using UnityEngine;
 
-namespace _Main.Scripts.Cooking.Devices.Cooking
+namespace _Main.Scripts.PortableDevices.Coins
 {
-    public class MovableObjectPlace : MonoBehaviour, IObjectPlace, IHoverable
+    public class CoinReceiverPlace : MonoBehaviour, IObjectPlace, IHoverable
     {
         [SerializeField] private Transform _place;
         [SerializeField] private BaseHoverGroup _hoverGroup;
@@ -16,7 +15,8 @@ namespace _Main.Scripts.Cooking.Devices.Cooking
         private IMovableObject _movableObject;
 
         public IMovableObject CurrentMovableObject => _movableObject;
-        public bool CanApply(IMovableObject movableObject) => _movableObject == null;
+        public bool CanApply(IMovableObject movableObject) =>
+            movableObject is Coin;
 
         private void Start()
         {

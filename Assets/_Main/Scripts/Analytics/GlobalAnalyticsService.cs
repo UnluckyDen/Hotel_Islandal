@@ -7,6 +7,8 @@ namespace _Main.Scripts.Analytics
 {
     public class GlobalAnalyticsService : MonoBehaviour
     {
+        [SerializeField] private bool _sendInEditor = false; 
+            
         public static GlobalAnalyticsService Instance;
 
         private bool _isInited;
@@ -25,6 +27,14 @@ namespace _Main.Scripts.Analytics
 
         private IEnumerator Start()
         {
+            #if UNITY_EDITOR
+            if (!_sendInEditor)
+            {
+                Debug.LogWarning("Analytics in editor disabled now");
+                yield break;
+            }
+            #endif
+         
             bool initialized = false;
             UnityServices.Initialized += () =>
             {
