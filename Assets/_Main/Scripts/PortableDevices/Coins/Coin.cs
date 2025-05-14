@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace _Main.Scripts.PortableDevices.Coins
 {
-    public class Coin : Device, IMovableObject, IActivatingObject
+    public class Coin : Device, IMovableObject
     {
         [SerializeField] private Collider _collider;
         [SerializeField] private AnimationCurve _flyCurve;
@@ -14,30 +14,10 @@ namespace _Main.Scripts.PortableDevices.Coins
         [SerializeField] Vector3 _rotationAxis = Vector3.forward;
         [SerializeField] float _rotationSpeed = 720f;
         
-        private bool _rollActive;
         private Coroutine _flyCoroutine;
         private CoinStash _coinStash;
         
         public bool IsTrashable => false;
-        public bool CurrentActivity => _rollActive;
-
-        public void SwitchActive()
-        {
-            if (!_rollActive)
-                Activate();
-            else
-                Deactivate();
-        }
-
-        public void Activate()
-        {
-            _rollActive = true;
-        }
-
-        public void Deactivate()
-        {
-            _rollActive = false;
-        }
 
         public void ToNonInteractive()
         {
@@ -46,7 +26,6 @@ namespace _Main.Scripts.PortableDevices.Coins
 
         public void ToInteractable()
         {
-            Deactivate();
             _collider.enabled = true;
         }
 
