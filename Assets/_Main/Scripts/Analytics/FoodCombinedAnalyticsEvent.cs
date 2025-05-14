@@ -1,5 +1,7 @@
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using _Main.Scripts.Cooking.Devices.Cooking;
 using _Main.Scripts.Cooking.Foods;
 using Unity.Services.Analytics;
 
@@ -9,18 +11,23 @@ namespace _Main.Scripts.Analytics
     {
         private readonly List<Food> _foodIn;
         private readonly Food _foodOut;
+        private readonly CookingDevice _cookingDevice;
 
-        public FoodCombinedAnalyticsEvent(List<Food> foodIn, Food foodOut)
+        public FoodCombinedAnalyticsEvent(List<Food> foodIn, Food foodOut, CookingDevice cookingDevice)
         {
             _foodIn = foodIn;
             _foodOut = foodOut;
+            _cookingDevice = cookingDevice;
         }
 
         public CustomEvent GetCustomEvent()
         {
             var customEvent = new CustomEvent("food_combined")
             {
+                {"device_name", _cookingDevice.name},
+                {"cooking_time", _foodIn.First().CurrentCookingTime},
                 {"food_list", GetFoodString()},
+                {"food_out", _foodOut.GetFoodName()},
             };
             
             return customEvent;
@@ -29,23 +36,14 @@ namespace _Main.Scripts.Analytics
         private string GetFoodString()
         {
             StringBuilder stringBuilder = new StringBuilder();
-
-            stringBuilder.Append("Food in : ");
-
+            
             foreach (var food in _foodIn)
             {
-                stringBuilder.Append("Name: ");
                 stringBuilder.Append(food.GetFoodName());
-                stringBuilder.Append(", CookingTime: ");
-                stringBuilder.Append(food.CurrentCookingTime);
-                stringBuilder.Append(", ");
+                stringBuilder.Append($" ({food.CurrentCookingTime})");
+                if (_foodIn.Last() != food)
+                    stringBuilder.Append(", ");
             }
-
-            stringBuilder.Append("Food out : ");
-            
-            stringBuilder.Append(_foodOut.GetFoodName());
-            stringBuilder.Append(_foodOut.CurrentCookingTime);
-            stringBuilder.Append(", ");
             
             return stringBuilder.ToString();
         }

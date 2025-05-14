@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using _Main.Scripts.Analytics;
 using _Main.Scripts.Cooking.Foods;
 using _Main.Scripts.Environment;
 using _Main.Scripts.Environment.Doors.ResidentDoor;
@@ -82,6 +83,8 @@ namespace _Main.Scripts.NPCs.Resident.ResidentRealizations
         {
             _playerOpenDoor = true;
             
+            GlobalAnalyticsService.Instance.SendCustomEvent(new DoorInteractionAnalyticsEvent(_currentCondition));
+
             switch (_currentCondition)
             {
                 case ResidentConditionType.HaveOrder when _playerInZone:

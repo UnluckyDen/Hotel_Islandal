@@ -71,7 +71,7 @@ namespace _Main.Scripts.Cooking.Devices.Cooking
             _foodOut = Instantiate(_recipeSettings.GetFoodByIngredients(_foodIn), _foodGroup.transform);
             
             if (_foodOut != null)
-                GlobalAnalyticsService.Instance.SendCustomEvent(new FoodCombinedAnalyticsEvent(_foodIn, _foodOut));
+                GlobalAnalyticsService.Instance.SendCustomEvent(new FoodCombinedAnalyticsEvent(_foodIn, _foodOut, this));
             
             foreach (var food in _foodIn)
             {

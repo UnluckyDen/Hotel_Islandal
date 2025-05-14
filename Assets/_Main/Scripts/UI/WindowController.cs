@@ -1,4 +1,5 @@
 using System;
+using _Main.Scripts.Analytics;
 using _Main.Scripts.Services;
 using _Main.Scripts.UI.Book;
 using _Main.Scripts.UI.Screamers;
@@ -55,6 +56,8 @@ namespace _Main.Scripts.UI
         {
             _playerBookWindow.gameObject.SetActive(!_playerBookWindow.gameObject.active);
             _inputService.ToUiMode(_playerBookWindow.gameObject.active);
+            
+            GlobalAnalyticsService.Instance.SendCustomEvent(new PlayerOpenJournalEvent(_playerBookWindow.gameObject.active));
         }
     }
 }

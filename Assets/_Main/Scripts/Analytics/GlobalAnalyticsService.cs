@@ -46,7 +46,6 @@ namespace _Main.Scripts.Analytics
                 return;
             
             AnalyticsService.Instance.RecordEvent(customAnalyticsEvent.GetCustomEvent());
-            AnalyticsService.Instance.Flush();
         }
     }
 }
