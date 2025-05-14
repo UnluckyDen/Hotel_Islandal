@@ -68,6 +68,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerMovement: {fileID: 1061213946003470037}
   _playerLook: {fileID: 2775395773062287709}
+  _coinStash: {fileID: 3683991649516772408}
 --- !u!136 &4420505582903245596
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -555,3 +556,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 820042715873920613, guid: f468dfea917268a47a0bab52bd2e1470, type: 3}
   m_PrefabInstance: {fileID: 1165069914001778260}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &3683991649516772408 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2525114262379166316, guid: f468dfea917268a47a0bab52bd2e1470, type: 3}
+  m_PrefabInstance: {fileID: 1165069914001778260}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e377f258b99a461fb5d9d2297fe3730c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

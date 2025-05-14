@@ -5,8 +5,10 @@ using _Main.Scripts.Cooking.Foods;
 using _Main.Scripts.Environment;
 using _Main.Scripts.Environment.Doors.ResidentDoor;
 using _Main.Scripts.NPCs.Resident.Clues;
+using _Main.Scripts.PortableDevices.Coins;
 using _Main.Scripts.ScriptableObjects;
 using _Main.Scripts.UI;
+using Unity.Mathematics;
 using UnityEngine;
 
 namespace _Main.Scripts.NPCs.Resident.ResidentRealizations
@@ -21,8 +23,9 @@ namespace _Main.Scripts.NPCs.Resident.ResidentRealizations
         [SerializeField] private ResidentSoundsSettings _residentSoundsSettings;
         [SerializeField] private List<BaseResidentClue> _residentClues;
         [SerializeField] private ResidentSound _residentSound;
+        [SerializeField] private Coin _coinPrefab;
 
-        [SerializeField] private Food _orderedFood;
+        private Food _orderedFood;
         
         private ResidentDoor _residentDoor;
         private PlayerTriggerZone _playerTriggerZone;
@@ -30,7 +33,7 @@ namespace _Main.Scripts.NPCs.Resident.ResidentRealizations
         
         private ResidentConditionType _currentCondition;
         
-        private bool _playerInZone;
+        private Player.Player _player;
         private bool _playerOpenDoor;
 
         public virtual void SetContext(ResidentConditionType condition, Food orderedFood)
@@ -67,6 +70,7 @@ namespace _Main.Scripts.NPCs.Resident.ResidentRealizations
             {
                 Debug.Log("Is ordered food");
                 FoodAccepted?.Invoke(true);
+                GiveCoinToPlayer();
                 _residentDoor.CloseDoor();
                 _currentCondition = ResidentConditionType.NonActive;
                 
@@ -87,12 +91,12 @@ namespace _Main.Scripts.NPCs.Resident.ResidentRealizations
 
             switch (_currentCondition)
             {
-                case ResidentConditionType.HaveOrder when _playerInZone:
+                case ResidentConditionType.HaveOrder when _player != null:
                     _residentDoor.OpenDoor();
                     _residentSound.MakeOrder(_orderedFood);
                     return;
                 
-                case ResidentConditionType.Aggressive when _playerInZone:
+                case ResidentConditionType.Aggressive when _player != null:
                     ShowScreamer();
                     break;
                 
@@ -114,15 +118,21 @@ namespace _Main.Scripts.NPCs.Resident.ResidentRealizations
                 ShowScreamer();
         }
 
-        private void OnPlayerZoneIn()
+        protected void GiveCoinToPlayer()
         {
-            _playerInZone = true;
+            Coin coin = Instantiate(_coinPrefab, transform.position, quaternion.identity);
+            coin.FlyToStash(_player.CoinStash);
+        }
+
+        private void OnPlayerZoneIn(Player.Player player)
+        {
+            _player = player;
             _residentSound.ShowConditionHint(_currentCondition);
         }
 
         private void OnPlayerZoneOut()
         {
-            _playerInZone = false;
+            _player = null;
             _residentDoor.CloseDoor();
             
             if (_currentCondition == ResidentConditionType.HaveOrder)
@@ -133,7 +143,7 @@ namespace _Main.Scripts.NPCs.Resident.ResidentRealizations
         {
             if (playerIn)
             {
-                OnPlayerZoneIn();
+                OnPlayerZoneIn(player);
                 return;
             }
             

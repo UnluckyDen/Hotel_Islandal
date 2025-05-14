@@ -1,5 +1,6 @@
 using _Main.Scripts.Player.Movement;
 using _Main.Scripts.Player.Movement.Way;
+using _Main.Scripts.PortableDevices.Coins;
 using _Main.Scripts.Services;
 using UnityEngine;
 
@@ -9,9 +10,12 @@ namespace _Main.Scripts.Player
     {
         [SerializeField] private PlayerMovement _playerMovement;
         [SerializeField] private PlayerLook _playerLook;
+        [SerializeField] private CoinStash _coinStash;
         
         private WayController _wayController;
         private InputService _inputService;
+
+        public CoinStash CoinStash => _coinStash;
         
         public void Init(WayController wayController, InputService inputService)
         {

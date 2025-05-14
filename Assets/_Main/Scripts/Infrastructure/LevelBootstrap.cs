@@ -28,7 +28,7 @@ namespace _Main.Scripts.Infrastructure
         {
             if (_residentsDistributor != null)
                 _residentsDistributor.Init();
-            else
+            if (_tutorialResidentsDistributor != null)
                 _tutorialResidentsDistributor.Init();
 
             _player.Init(_wayController, InputService.Instance);
@@ -38,7 +38,7 @@ namespace _Main.Scripts.Infrastructure
         {
             if (_residentsDistributor != null)
                 _residentsDistributor.Destruct();
-            else 
+            if (_tutorialResidentsDistributor != null)
                 _tutorialResidentsDistributor.Destruct();
             
             _player.Destruct();

@@ -47,14 +47,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _residentConditionHintSettings: {fileID: 11400000, guid: 6635857dcd2024a0db09db4dfa9018b4, type: 2}
+  _residentOrderSettings: {fileID: 11400000, guid: aedcfae2114be4e7c899344233a0ea9b, type: 2}
   _residentSoundsSettings: {fileID: 11400000, guid: 77675571813ce404fbc729c5152cc4c9, type: 2}
   _residentClues:
   - {fileID: 2182014185722845574, guid: 370c0821fe62b2e478771eb88503d7f5, type: 3}
   - {fileID: -102728839203505149, guid: 314521a32ee224a66837399d67da7e36, type: 3}
   - {fileID: 917219871116907329, guid: 51f795e6881c348edab402ee83b2008b, type: 3}
-  _residentOrderSettings: {fileID: 11400000, guid: aedcfae2114be4e7c899344233a0ea9b, type: 2}
   _residentSound: {fileID: -6915316755852762064}
-  _orderedFood: {fileID: 0}
+  _coinPrefab: {fileID: 6158989519395891647, guid: 2dd6ab30c46e85a4a8bcf582818233fc, type: 3}
 --- !u!114 &-6915316755852762064
 MonoBehaviour:
   m_ObjectHideFlags: 0
