@@ -17,10 +17,6 @@ namespace _Main.Scripts.Environment.Elevators
 
         private Coroutine _coroutine;
 
-        private void Start() =>
-            Open();
-
-        [ContextMenu("Open")]
         public void Open()
         {
             if (_coroutine != null)
@@ -30,7 +26,6 @@ namespace _Main.Scripts.Environment.Elevators
         }
 
 
-        [ContextMenu("Close")]
         public void Close()
         {
             if (_coroutine != null)

@@ -15,6 +15,7 @@ namespace _Main.Scripts.Environment.Doors.ElevatorDoor
         [SerializeField] private Transform _leftRoot;
         [SerializeField] private Transform _rightRoot;
         [SerializeField] private float _moveSpeed = 4;
+        [SerializeField] private AudioSource _audioSource;
 
         private ElevatorDoorStateMachine _doorStateMachine;
 
@@ -46,6 +47,7 @@ namespace _Main.Scripts.Environment.Doors.ElevatorDoor
         public void OpenDoor()
         {
             _doorStateMachine.ToOpen();
+            _audioSource.Play();
         }
 
         [ContextMenu("Close")]
