@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3152362873298032812}
   - component: {fileID: 7447983347054180441}
-  - component: {fileID: 735825437429328328}
+  - component: {fileID: 1053481423247985256}
   m_Layer: 10
   m_Name: Aperture
   m_TagString: Untagged
@@ -60,9 +60,9 @@ MonoBehaviour:
   _openRotation: {x: 0, y: 0, z: 0}
   _closeRotation: {x: 45, y: 0, z: 0}
   _moveSpeed: 1.5
-  _collider: {fileID: 735825437429328328}
---- !u!65 &735825437429328328
-BoxCollider:
+  _collider: {fileID: 1053481423247985256}
+--- !u!135 &1053481423247985256
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -80,8 +80,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.012, y: 0.12, z: 0.12}
-  m_Center: {x: -0.007, y: 0, z: 0}
+  m_Radius: 0.051
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &8887039291188749153
 PrefabInstance:
   m_ObjectHideFlags: 0
