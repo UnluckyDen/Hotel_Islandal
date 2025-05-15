@@ -56,9 +56,6 @@ namespace _Main.Scripts.Environment.Elevators
 
         private void DeviceButtonOnButtonPressed(bool pressed)
         {
-            if (!pressed)
-                return;
-
             bool canEndLevel = _receiverPlaces.All(receiverPlace => !receiverPlace.IsOpen || receiverPlace.CurrentMovableObject != null);
 
             if (canEndLevel)

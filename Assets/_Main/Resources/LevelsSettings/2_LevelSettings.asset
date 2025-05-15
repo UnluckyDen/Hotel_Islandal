@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfbe561eba6240e5ab045a900bbdd976, type: 3}
+  m_Name: 2_LevelSettings
+  m_EditorClassIdentifier: 
+  <ResidentsAtLevel>k__BackingField:
+  - {fileID: 1094089761001466418, guid: bcad002189b8e466580019184d8cda0c, type: 3}
+  - {fileID: 6621101100979772481, guid: 13b4e58d4860b46778e5beb14d688f0a, type: 3}
+  - {fileID: 8576505542648893586, guid: 9fa495dc66dee4145b9494a1f40bba68, type: 3}
+  <AggressiveResidents>k__BackingField: 4
+  <HaveOrderResidents>k__BackingField: 2
+  <CoinsToLeave>k__BackingField: 2
+  <LevelTiles>k__BackingField: {fileID: 714325522999665298, guid: b01da9513e76b44f6bc863142df63a80, type: 3}

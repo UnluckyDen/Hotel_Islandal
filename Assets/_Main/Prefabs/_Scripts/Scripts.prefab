@@ -93,3 +93,5 @@ MonoBehaviour:
   _levelSettings:
   - {fileID: 11400000, guid: dead0881d2024434faf278e903cbc55f, type: 2}
   - {fileID: 11400000, guid: cc38563ebcc0945ea8af6cb4e7f86dbb, type: 2}
+  - {fileID: 11400000, guid: 30dc342761c684829875b18b756b772a, type: 2}
+  - {fileID: 11400000, guid: 1e05c91b4ca2449ada2daa23c941e2fc, type: 2}
