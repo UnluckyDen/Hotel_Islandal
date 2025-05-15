@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +15,9 @@ namespace _Main.Scripts.PortableDevices.Coins
         [SerializeField] private Collider _collider;
 
         private Coroutine _coroutine;
+
+        private void Start() =>
+            Open();
 
         [ContextMenu("Open")]
         public void Open()
