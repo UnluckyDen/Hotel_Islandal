@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfbe561eba6240e5ab045a900bbdd976, type: 3}
+  m_Name: 1_LevelSettings
+  m_EditorClassIdentifier: 
+  <CoinsToLeave>k__BackingField: 2
+  <LevelTiles>k__BackingField: {fileID: 714325522999665298, guid: b01da9513e76b44f6bc863142df63a80, type: 3}

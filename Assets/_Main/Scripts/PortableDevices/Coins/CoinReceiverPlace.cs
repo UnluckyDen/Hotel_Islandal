@@ -9,6 +9,7 @@ namespace _Main.Scripts.PortableDevices.Coins
     {
         [SerializeField] private Transform _place;
         [SerializeField] private BaseHoverGroup _hoverGroup;
+        [SerializeField] private CoinAperture _coinAperture;
         [CanBeNull]
         [SerializeField] private GameObject _startObject;
 
@@ -70,6 +71,16 @@ namespace _Main.Scripts.PortableDevices.Coins
             movableObject.ToInteractable();
             
             return movableObject;
+        }
+
+        public void OpenAperture()
+        {
+            _coinAperture.Open();
+        }
+
+        public void CloseAperture()
+        {
+            _coinAperture.Close();
         }
     }
 }

@@ -14,8 +14,9 @@ namespace _Main.Scripts.NPCs.Resident
         [SerializeField] protected List<ResidentRoom> _residentRooms;
         [SerializeField] protected Transform _startPoint;
         [Space] 
-        [SerializeField] private LevelSettings _levelSettings;
         [SerializeField] private ResidentOrderSettings _residentOrderSettings;
+        [SerializeField] private int _aggressiveResidents;
+        [SerializeField] private int _haveOrderResident;
         
         public virtual void Init()
         {
@@ -58,10 +59,10 @@ namespace _Main.Scripts.NPCs.Resident
 
             var conditionQueue = new Queue<ResidentConditionType>();
 
-            for (int i = 0; i < _levelSettings.ResidentsWithOrders; i++)
+            for (int i = 0; i < _haveOrderResident; i++)
                 conditionQueue.Enqueue(ResidentConditionType.HaveOrder);
             
-            for (int i = 0; i < _levelSettings.AggressiveResidents; i++)
+            for (int i = 0; i < _aggressiveResidents; i++)
                 conditionQueue.Enqueue(ResidentConditionType.Aggressive);
 
             for (int i = 0; i < _residentRooms.Count; i++)
