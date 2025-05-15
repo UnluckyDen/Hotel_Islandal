@@ -12,6 +12,8 @@ namespace _Main.Scripts.PortableDevices.Coins
         [SerializeField] private BaseHoverGroup _hoverGroup;
         [CanBeNull]
         [SerializeField] private GameObject _startObject;
+
+        [SerializeField] private AudioSource _audioSource;
         
         public IMovableObject CurrentMovableObject => _coinsGroup.LastMovableObject;
         
@@ -45,6 +47,7 @@ namespace _Main.Scripts.PortableDevices.Coins
             if (movableObject == null)
                 return;
 
+            _audioSource.Play();
             _coinsGroup.InGroup(movableObject);
         }
 
@@ -53,6 +56,7 @@ namespace _Main.Scripts.PortableDevices.Coins
             if (CurrentMovableObject == null)
                 return null;
             
+            _audioSource.Play();
             IMovableObject movableObject = _coinsGroup.OutGroup();
             
             return movableObject;

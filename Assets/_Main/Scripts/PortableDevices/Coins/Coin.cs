@@ -13,6 +13,7 @@ namespace _Main.Scripts.PortableDevices.Coins
         [SerializeField] private float _arcHeight = 2f;
         [SerializeField] Vector3 _rotationAxis = Vector3.forward;
         [SerializeField] float _rotationSpeed = 720f;
+        [SerializeField] private AudioSource _audioSource;
         
         private Coroutine _flyCoroutine;
         private CoinStash _coinStash;
@@ -44,6 +45,7 @@ namespace _Main.Scripts.PortableDevices.Coins
             Vector3 startPosition = transform.position;
             Quaternion startRotation = transform.rotation;
             float elapsedTime = 0f;
+            _audioSource.Play();
 
             while (elapsedTime < _flyDuration)
             {

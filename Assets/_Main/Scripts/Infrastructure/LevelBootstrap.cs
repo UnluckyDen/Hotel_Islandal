@@ -14,7 +14,7 @@ namespace _Main.Scripts.Infrastructure
 
         [SerializeField] private Player.Player _player;
 
-        private void Awake()
+        private void Start()
         {
             Init();
         }
