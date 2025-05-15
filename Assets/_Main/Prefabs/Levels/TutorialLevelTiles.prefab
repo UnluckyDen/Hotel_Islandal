@@ -113,10 +113,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1005c7359e184527b605ee47cd71c05c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _residents:
-  - {fileID: 1094089761001466418, guid: bcad002189b8e466580019184d8cda0c, type: 3}
-  - {fileID: 6621101100979772481, guid: 13b4e58d4860b46778e5beb14d688f0a, type: 3}
-  - {fileID: 8576505542648893586, guid: 9fa495dc66dee4145b9494a1f40bba68, type: 3}
   _residentRooms:
   - {fileID: 745226035318860847}
   - {fileID: 1488000926196959438}
@@ -129,8 +125,7 @@ MonoBehaviour:
   - {fileID: 5599997399128452201}
   - {fileID: 6000708004109355144}
   _startPoint: {fileID: 380992506050216171}
-  _levelSettings: {fileID: 0}
-  _residentOrderSettings: {fileID: 0}
+  _residentOrderSettings: {fileID: 11400000, guid: aedcfae2114be4e7c899344233a0ea9b, type: 2}
   _tutorialResidentContexts:
   - Resident: {fileID: 6621101100979772481, guid: 13b4e58d4860b46778e5beb14d688f0a, type: 3}
     ResidentCondition: 2

@@ -28,7 +28,7 @@ namespace _Main.Scripts.Player.Movement.Way
             _currentWayPoint = currentWayPoint;
         }
 
-        public void CollectWayPointsAtScene(List<WayPoint> wayPoints, WayPoint startPoint)
+        public void CollectWayPoints(List<WayPoint> wayPoints, WayPoint startPoint)
         {
             _currentWayPoint = startPoint;
             _wayPoints.Clear();
@@ -58,7 +58,15 @@ namespace _Main.Scripts.Player.Movement.Way
                     }
                 }
             }
+        }
+
+        public void DestroyCurrentPaths()
+        {
+            if (_currentWayPoint == null)
+                return;
             
+            _currentWayPoint.Clear();
+            _wayPoints.Clear();
         }
     }
 }

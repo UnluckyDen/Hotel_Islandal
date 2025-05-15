@@ -18,9 +18,16 @@ namespace _Main.Scripts.Infrastructure.Level
 
         public void UpdateCurrentLevel(int level)
         {
-            CurrentLevel = level;
+            if (level < _levelSettings.Count)
+                CurrentLevel = level;
         }
 
         public LevelSettings GetCurrentLevelSettings() => _levelSettings[CurrentLevel];
+
+        [ContextMenu("ClearProgress")]
+        public void ClearProgress()
+        {
+            CurrentLevel = 0;
+        }
     }
 }

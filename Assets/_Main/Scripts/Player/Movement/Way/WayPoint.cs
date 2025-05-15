@@ -22,6 +22,11 @@ namespace _Main.Scripts.Player.Movement.Way
         public WayPoint GetNextWayPoint(Vector3Int direction) => 
             _wayPoints.GetValueOrDefault(direction);
 
+        public void Clear()
+        {
+            _wayPoints.Clear();
+        }
+
         private void OnDrawGizmosSelected()
         {
             if (_wayPoints.Count <= 0) 

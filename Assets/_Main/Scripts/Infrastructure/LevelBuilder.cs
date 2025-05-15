@@ -16,5 +16,11 @@ namespace _Main.Scripts.Infrastructure
 
             return _levelTiles;
         }
+
+        public void DestroyCurrentLevel()
+        {
+            if (_levelTiles != null)
+                Destroy(_levelTiles.gameObject);
+        }
     }
 }

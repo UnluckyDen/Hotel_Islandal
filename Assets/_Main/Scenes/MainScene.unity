@@ -211,17 +211,20 @@ PrefabInstance:
     m_RemovedGameObjects:
     - {fileID: 1604695072353562478, guid: 3584cd94da279004d9613589cb079b4f, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2003755694589269063, guid: 3584cd94da279004d9613589cb079b4f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 3584cd94da279004d9613589cb079b4f, type: 3}
 --- !u!114 &363887813 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 226803866316285871, guid: 3584cd94da279004d9613589cb079b4f, type: 3}
+  m_CorrespondingSourceObject: {fileID: 5603906125714874920, guid: 3584cd94da279004d9613589cb079b4f, type: 3}
   m_PrefabInstance: {fileID: 363887812}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca05e9dfb7274069bce23f9d9300857a, type: 3}
+  m_Script: {fileID: 11500000, guid: a994854d571447e5bb294198d3997302, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &531015625
@@ -303,6 +306,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &670433598 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 226803866316285871, guid: 3584cd94da279004d9613589cb079b4f, type: 3}
+  m_PrefabInstance: {fileID: 363887812}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca05e9dfb7274069bce23f9d9300857a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &701934590
 GameObject:
   m_ObjectHideFlags: 0
@@ -807,6 +821,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1682888783}
     - target: {fileID: 3468362549574509452, guid: 19d2a449ef58545c2a6aa357202825be, type: 3}
+      propertyPath: _elevator
+      value: 
+      objectReference: {fileID: 363887813}
+    - target: {fileID: 3468362549574509452, guid: 19d2a449ef58545c2a6aa357202825be, type: 3}
       propertyPath: _startPoint
       value: 
       objectReference: {fileID: 1250393000}
@@ -821,7 +839,7 @@ PrefabInstance:
     - target: {fileID: 3468362549574509452, guid: 19d2a449ef58545c2a6aa357202825be, type: 3}
       propertyPath: _coinReceiverMachine
       value: 
-      objectReference: {fileID: 363887813}
+      objectReference: {fileID: 670433598}
     - target: {fileID: 3468362549574509452, guid: 19d2a449ef58545c2a6aa357202825be, type: 3}
       propertyPath: _residentsDistributor
       value: 

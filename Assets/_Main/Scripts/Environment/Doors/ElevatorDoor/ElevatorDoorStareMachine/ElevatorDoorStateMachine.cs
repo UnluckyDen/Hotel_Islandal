@@ -1,3 +1,4 @@
+using System;
 using _Main.Scripts.Utils.StateMachine;
 using UnityEngine;
 
@@ -5,6 +6,8 @@ namespace _Main.Scripts.Environment.Doors.ElevatorDoor.ElevatorDoorStareMachine
 {
     public class ElevatorDoorStateMachine : BaseStateMachine
     {
+        public event Action<bool> DoorStateChangeComplete;
+
         private readonly Vector3 _closePositionLeft;
         private readonly Vector3 _closePositionRight;
         private readonly Vector3 _openPositionLeft;
@@ -38,5 +41,10 @@ namespace _Main.Scripts.Environment.Doors.ElevatorDoor.ElevatorDoorStareMachine
         
         public void ToClose() => ToState(_elevatorDoorCloseState);
         public void ToOpen() => ToState(_elevatorDoorOpenState);
+
+        public void StateChanged(bool opened)
+        {
+            DoorStateChangeComplete?.Invoke(opened);
+        }
     }
 }

@@ -1,3 +1,4 @@
+using System;
 using _Main.Scripts.Environment.Doors.ElevatorDoor.ElevatorDoorStareMachine;
 using UnityEngine;
 
@@ -5,6 +6,8 @@ namespace _Main.Scripts.Environment.Doors.ElevatorDoor
 {
     public class ElevatorDoor : MonoBehaviour
     {
+        public event Action<bool> DoorStateChangeComplete;
+        
         [SerializeField] private Vector3 _closePositionLeft;
         [SerializeField] private Vector3 _closePositionRight;
         [SerializeField] private Vector3 _openPositionLeft;
@@ -25,12 +28,16 @@ namespace _Main.Scripts.Environment.Doors.ElevatorDoor
                 _rightRoot,
                 _moveSpeed);
             
-            //_doorStateMachine.ToClose();
-            _doorStateMachine.ToOpen();
+            _doorStateMachine.DoorStateChangeComplete += DoorStateMachineOnDoorStateChangeComplete;
+            
+            _doorStateMachine.ToClose();
         }
 
-        private void OnDestroy() =>
+        private void OnDestroy()
+        {
+            _doorStateMachine.DoorStateChangeComplete -= DoorStateMachineOnDoorStateChangeComplete;
             _doorStateMachine.Dispose();
+        }
 
         private void Update() =>
             _doorStateMachine.UpdateStates();
@@ -45,6 +52,11 @@ namespace _Main.Scripts.Environment.Doors.ElevatorDoor
         public void CloseDoor()
         {
             _doorStateMachine.ToClose();
+        }
+
+        private void DoorStateMachineOnDoorStateChangeComplete(bool opened)
+        {
+            DoorStateChangeComplete?.Invoke(opened);
         }
     }
 }

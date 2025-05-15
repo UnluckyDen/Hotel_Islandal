@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-namespace _Main.Scripts.PortableDevices.Coins
+namespace _Main.Scripts.Environment.Elevators
 {
     public class CoinAperture : MonoBehaviour
     {
+        public event Action<bool> StateChanged;
         [SerializeField] private List<Transform> _segmentsList;
         [SerializeField] private Vector3 _openRotation;
         [SerializeField] private Vector3 _closeRotation;
@@ -58,6 +59,7 @@ namespace _Main.Scripts.PortableDevices.Coins
                 segment.localEulerAngles = _openRotation;
 
             _coroutine = null;
+            StateChanged?.Invoke(true);
         }
 
         private IEnumerator CloseCoroutine()
@@ -80,6 +82,7 @@ namespace _Main.Scripts.PortableDevices.Coins
                 segment.localEulerAngles = _closeRotation;
 
             _coroutine = null;
+            StateChanged?.Invoke(false);
         }
     }
 }

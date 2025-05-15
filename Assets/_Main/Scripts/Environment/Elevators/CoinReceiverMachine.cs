@@ -1,14 +1,19 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using _Main.Scripts.Cooking.Devices;
+using _Main.Scripts.Environment.Doors;
 using UnityEngine;
 
-namespace _Main.Scripts.PortableDevices.Coins
+namespace _Main.Scripts.Environment.Elevators
 {
     public class CoinReceiverMachine : MonoBehaviour
     {
+        public event Action CoinsCollectedButtonPressed;
+        
         [SerializeField] private List<CoinReceiverPlace> _receiverPlaces;
         [SerializeField] private DeviceButton _deviceButton;
+        [SerializeField] private DoorSign _doorSign;
 
         private int _coinsCount;
 
@@ -22,10 +27,17 @@ namespace _Main.Scripts.PortableDevices.Coins
             _deviceButton.ButtonPressed -= DeviceButtonOnButtonPressed;
         }
 
-        public void SetNeedCoins(int coinsCount)
+        public void SetLevelSettings(int coinsCount, int levelNumber)
         {
             _coinsCount = coinsCount;
+            _doorSign.SetNumber(levelNumber);
             UpdateNeedCoinReceivers();
+        }
+
+        public void DestroyCollectedCoins()
+        {
+            foreach (var receiverPlace in _receiverPlaces)
+                receiverPlace.DestroyCollectedCoin();
         }
 
         private void UpdateNeedCoinReceivers()
@@ -44,8 +56,13 @@ namespace _Main.Scripts.PortableDevices.Coins
 
         private void DeviceButtonOnButtonPressed(bool pressed)
         {
-            if (pressed)
-                Debug.Log("ElevatorButtonPressed");
+            if (!pressed)
+                return;
+
+            bool canEndLevel = _receiverPlaces.All(receiverPlace => !receiverPlace.IsOpen || receiverPlace.CurrentMovableObject != null);
+
+            if (canEndLevel)
+                CoinsCollectedButtonPressed?.Invoke();
         }
     }
 }

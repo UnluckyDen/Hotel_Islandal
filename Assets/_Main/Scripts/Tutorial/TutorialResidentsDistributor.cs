@@ -5,7 +5,6 @@ using _Main.Scripts.Cooking.Foods;
 using _Main.Scripts.NPCs.Resident;
 using _Main.Scripts.NPCs.Resident.ResidentRealizations;
 using UnityEngine;
-using Random = UnityEngine.Random;
 
 namespace _Main.Scripts.Tutorial
 {
@@ -14,7 +13,7 @@ namespace _Main.Scripts.Tutorial
         [Space]
         [SerializeField] private List<TutorialResidentContext> _tutorialResidentContexts;
         
-        public override void Init()
+        public override void Init(List<BaseResident> residents, int aggressiveResidents, int haveOrderResident)
         {
             for (var index = 0; index < _residentRooms.Count; index++)
             {

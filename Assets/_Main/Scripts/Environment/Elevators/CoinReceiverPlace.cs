@@ -1,9 +1,10 @@
 using _Main.Scripts.Interfaces;
+using _Main.Scripts.PortableDevices.Coins;
 using _Main.Scripts.Utils;
 using JetBrains.Annotations;
 using UnityEngine;
 
-namespace _Main.Scripts.PortableDevices.Coins
+namespace _Main.Scripts.Environment.Elevators
 {
     public class CoinReceiverPlace : MonoBehaviour, IObjectPlace, IHoverable
     {
@@ -18,6 +19,8 @@ namespace _Main.Scripts.PortableDevices.Coins
         public IMovableObject CurrentMovableObject => _movableObject;
         public bool CanApply(IMovableObject movableObject) =>
             movableObject is Coin;
+
+        public bool IsOpen { get; private set; }
 
         private void Start()
         {
@@ -76,11 +79,26 @@ namespace _Main.Scripts.PortableDevices.Coins
         public void OpenAperture()
         {
             _coinAperture.Open();
+            IsOpen = true;
         }
 
         public void CloseAperture()
         {
             _coinAperture.Close();
+            IsOpen = false;
+        }
+
+        public void DestroyCollectedCoin()
+        {
+            CloseAperture();
+            _coinAperture.StateChanged += b =>
+            {
+                if (_movableObject != null)
+                {
+                    Destroy(_movableObject.transform.gameObject);
+                    _movableObject = null;
+                }
+            };
         }
     }
 }

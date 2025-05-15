@@ -10,16 +10,22 @@ namespace _Main.Scripts.NPCs.Resident
 {
     public class ResidentsDistributor : MonoBehaviour
     {
-        [SerializeField] protected List<BaseResident> _residents;
         [SerializeField] protected List<ResidentRoom> _residentRooms;
         [SerializeField] protected Transform _startPoint;
         [Space] 
         [SerializeField] private ResidentOrderSettings _residentOrderSettings;
-        [SerializeField] private int _aggressiveResidents;
-        [SerializeField] private int _haveOrderResident;
+
+        private int _aggressiveResidents;
+        private int _haveOrderResident;
         
-        public virtual void Init()
+        private List<BaseResident> _residents;
+
+        public virtual void Init(List<BaseResident> residents, int aggressiveResidents, int haveOrderResident)
         {
+            _residents = residents;
+            _aggressiveResidents = aggressiveResidents;
+            _haveOrderResident = haveOrderResident;
+            
             var residentContexts = GenerateResidentsContext();
 
             for (var index = 0; index < _residentRooms.Count; index++)

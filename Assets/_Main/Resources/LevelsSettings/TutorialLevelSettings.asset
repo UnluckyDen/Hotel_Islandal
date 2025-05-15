@@ -12,5 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfbe561eba6240e5ab045a900bbdd976, type: 3}
   m_Name: TutorialLevelSettings
   m_EditorClassIdentifier: 
+  <ResidentsAtLevel>k__BackingField:
+  - {fileID: 6621101100979772481, guid: 13b4e58d4860b46778e5beb14d688f0a, type: 3}
+  <AggressiveResidents>k__BackingField: 1
+  <HaveOrderResidents>k__BackingField: 1
   <CoinsToLeave>k__BackingField: 1
   <LevelTiles>k__BackingField: {fileID: 7626565831075802870, guid: d2a52e5e35eff4039a916e0e7a54fc46, type: 3}

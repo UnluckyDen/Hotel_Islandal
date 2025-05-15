@@ -54,6 +54,7 @@ namespace _Main.Scripts.Environment.Doors.ElevatorDoor.ElevatorDoorStareMachine
             }
 
             _done = true;
+            _elevatorDoorStateMachine.StateChanged(false);
             
             _leftRoot.localPosition = _closePositionLeft;
             _rightRoot.localPosition = _closePositionRight;
