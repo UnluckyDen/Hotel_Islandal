@@ -1,15 +1,14 @@
-using _Main.Scripts.NPCs.Resident;
+using _Main.Scripts.Infrastructure.Level;
+using _Main.Scripts.Infrastructure.Tiles;
 using _Main.Scripts.Player.Movement.Way;
 using _Main.Scripts.Services;
-using _Main.Scripts.Tutorial;
 using UnityEngine;
 
 namespace _Main.Scripts.Infrastructure
 {
     public class LevelBootstrap : MonoBehaviour
     {
-        [SerializeField] private ResidentsDistributor _residentsDistributor;
-        [SerializeField] private TutorialResidentsDistributor _tutorialResidentsDistributor;
+        [SerializeField] private LevelBuilder _levelBuilder;
         [SerializeField] private WayController _wayController;
 
         [SerializeField] private Player.Player _player;
@@ -26,20 +25,20 @@ namespace _Main.Scripts.Infrastructure
 
         private void Init()
         {
-            if (_residentsDistributor != null)
-                _residentsDistributor.Init();
-            if (_tutorialResidentsDistributor != null)
-                _tutorialResidentsDistributor.Init();
+            LevelTiles a = _levelBuilder.BuildLevel();
+            
+            _wayController.Init();
+            _wayController.CollectWayPointsAtScene();
+            _wayController.LinkWayPoints();
+            
+            a.ResidentsDistributor.Init();
 
             _player.Init(_wayController, InputService.Instance);
         }
 
         private void Destruct()
-        {
-            if (_residentsDistributor != null)
-                _residentsDistributor.Destruct();
-            if (_tutorialResidentsDistributor != null)
-                _tutorialResidentsDistributor.Destruct();
+        { 
+            //_residentsDistributor.Destruct();
             
             _player.Destruct();
         }

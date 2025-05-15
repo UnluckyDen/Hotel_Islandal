@@ -10,14 +10,14 @@ namespace _Main.Scripts.NPCs.Resident
 {
     public class ResidentsDistributor : MonoBehaviour
     {
-        [SerializeField] private List<BaseResident> _residents;
-        [SerializeField] private List<ResidentRoom> _residentRooms;
-        [SerializeField] private Transform _startPoint;
+        [SerializeField] protected List<BaseResident> _residents;
+        [SerializeField] protected List<ResidentRoom> _residentRooms;
+        [SerializeField] protected Transform _startPoint;
         [Space] 
-        [SerializeField] private LevelSettingsSettings _levelSettingsSettings;
+        [SerializeField] private LevelSettings _levelSettings;
         [SerializeField] private ResidentOrderSettings _residentOrderSettings;
         
-        public void Init()
+        public virtual void Init()
         {
             var residentContexts = GenerateResidentsContext();
 
@@ -30,7 +30,7 @@ namespace _Main.Scripts.NPCs.Resident
             }
         }
 
-        public void Destruct()
+        public virtual void Destruct()
         {
             foreach (ResidentRoom residentRoom in _residentRooms)
                 residentRoom.Destruct();
@@ -58,10 +58,10 @@ namespace _Main.Scripts.NPCs.Resident
 
             var conditionQueue = new Queue<ResidentConditionType>();
 
-            for (int i = 0; i < _levelSettingsSettings.ResidentsWithOrders; i++)
+            for (int i = 0; i < _levelSettings.ResidentsWithOrders; i++)
                 conditionQueue.Enqueue(ResidentConditionType.HaveOrder);
             
-            for (int i = 0; i < _levelSettingsSettings.AggressiveResidents; i++)
+            for (int i = 0; i < _levelSettings.AggressiveResidents; i++)
                 conditionQueue.Enqueue(ResidentConditionType.Aggressive);
 
             for (int i = 0; i < _residentRooms.Count; i++)

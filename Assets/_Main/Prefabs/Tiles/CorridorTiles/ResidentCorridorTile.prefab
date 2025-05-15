@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2929968449242145039}
+  - component: {fileID: 1388319425779578829}
   m_Layer: 0
   m_Name: ResidentCorridorTile
   m_TagString: Untagged
@@ -39,6 +40,19 @@ Transform:
   - {fileID: 4454819282927415087}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1388319425779578829
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2811962035180362794}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39a6f50433fb4f779bcf00a78c0da380, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _wayPoint: {fileID: 7340813498301446749}
 --- !u!1 &5160330614095719545
 GameObject:
   m_ObjectHideFlags: 0

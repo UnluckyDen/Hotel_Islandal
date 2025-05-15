@@ -41,6 +41,7 @@ namespace _Main.Scripts.PortableDevices.Coins
         private IEnumerator OpenCoroutine()
         {
             float factor = 0f;
+            _collider.enabled = false;
 
             Vector3 startRotation = _segmentsList.First().localEulerAngles;
 
@@ -56,13 +57,13 @@ namespace _Main.Scripts.PortableDevices.Coins
             foreach (var segment in _segmentsList)
                 segment.localEulerAngles = _openRotation;
 
-            _collider.enabled = false;
             _coroutine = null;
         }
 
         private IEnumerator CloseCoroutine()
         {
             float factor = 0f;
+            _collider.enabled = true;
 
             Vector3 startRotation = _segmentsList.First().localEulerAngles;
 
@@ -78,7 +79,6 @@ namespace _Main.Scripts.PortableDevices.Coins
             foreach (var segment in _segmentsList)
                 segment.localEulerAngles = _closeRotation;
 
-            _collider.enabled = true;
             _coroutine = null;
         }
     }

@@ -10,7 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bfbe561eba6240e5ab045a900bbdd976, type: 3}
-  m_Name: TestLevelSettingsSettings
+  m_Name: TutorialLevelSettingsSettings
   m_EditorClassIdentifier: 
   <ResidentsWithOrders>k__BackingField: 3
   <AggressiveResidents>k__BackingField: 3
+  <LevelTiles>k__BackingField: {fileID: 7626565831075802870, guid: d2a52e5e35eff4039a916e0e7a54fc46, type: 3}

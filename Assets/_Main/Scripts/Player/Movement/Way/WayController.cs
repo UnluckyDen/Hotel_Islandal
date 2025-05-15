@@ -17,9 +17,8 @@ namespace _Main.Scripts.Player.Movement.Way
 
         public WayPoint CurrentWayPoint => _currentWayPoint;
 
-        private void Awake()
+        public void Init()
         {
-            LinkWayPoints();
             _currentWayPoint = _startPoint;
         }
 
@@ -38,7 +37,7 @@ namespace _Main.Scripts.Player.Movement.Way
         }
 
         [ContextMenu("CollectWayPointsAtScene")]
-        private void CollectWayPointsAtScene()
+        public void CollectWayPointsAtScene()
         {
             
             _wayPoints.Clear();
@@ -49,11 +48,8 @@ namespace _Main.Scripts.Player.Movement.Way
                 .ToList();
         }
 
-        private void LinkWayPoints()
+        public void LinkWayPoints()
         {
-            StringBuilder stringBuilder = new StringBuilder();
-            stringBuilder.Append($"Linked path \n");
-            
             foreach (var connectingWayPoint in _wayPoints)
             {
                 foreach (var connectableWayPoint in _wayPoints)
@@ -67,13 +63,10 @@ namespace _Main.Scripts.Player.Movement.Way
                         connectingWayPoint.SetNeighboringCell(
                             direction,
                             connectableWayPoint);
-                        
-                        stringBuilder.Append($"WP1: {connectingWayPoint.name} WP2: {connectableWayPoint.name} connected by direction: {direction} \n");
                     }
                 }
             }
             
-            Debug.Log(stringBuilder);
         }
     }
 }

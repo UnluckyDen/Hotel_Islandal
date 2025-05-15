@@ -9,15 +9,12 @@ using Random = UnityEngine.Random;
 
 namespace _Main.Scripts.Tutorial
 {
-    public class TutorialResidentsDistributor : MonoBehaviour
+    public class TutorialResidentsDistributor : ResidentsDistributor
     {
-        [SerializeField] private List<BaseResident> _residents;
-        [SerializeField] private List<ResidentRoom> _residentRooms;
-        [SerializeField] private Transform _startPoint;
         [Space]
         [SerializeField] private List<TutorialResidentContext> _tutorialResidentContexts;
         
-        public void Init()
+        public override void Init()
         {
             for (var index = 0; index < _residentRooms.Count; index++)
             {
@@ -28,7 +25,7 @@ namespace _Main.Scripts.Tutorial
             }
         }
 
-        public void Destruct()
+        public override void Destruct()
         {
             foreach (ResidentRoom residentRoom in _residentRooms)
                 residentRoom.Destruct();
