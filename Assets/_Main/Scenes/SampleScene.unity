@@ -496,6 +496,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ElevatorTile
       objectReference: {fileID: 0}
+    - target: {fileID: 3408508834770273879, guid: 3584cd94da279004d9613589cb079b4f, type: 3}
+      propertyPath: _moveSpeed
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3885953681245454754, guid: 3584cd94da279004d9613589cb079b4f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

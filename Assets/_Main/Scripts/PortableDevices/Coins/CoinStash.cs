@@ -46,16 +46,12 @@ namespace _Main.Scripts.PortableDevices.Coins
                 return;
 
             _coinsGroup.InGroup(movableObject);
-            
-            OnHoverEnter();
         }
 
         public IMovableObject TakeMovableObject()
         {
             if (CurrentMovableObject == null)
                 return null;
-            
-            OnHoverExit();
             
             IMovableObject movableObject = _coinsGroup.OutGroup();
             
