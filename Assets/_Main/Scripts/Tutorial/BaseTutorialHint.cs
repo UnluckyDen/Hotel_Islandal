@@ -1,4 +1,5 @@
 using System.Collections;
+using _Main.Scripts.Analytics;
 using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.UI;
@@ -25,6 +26,7 @@ namespace _Main.Scripts.Tutorial
         [ContextMenu("Show hint")]
         public void ShowHint()
         {
+            GlobalAnalyticsService.Instance.SendCustomEvent(new TutorialHintShowAnalyticsEvent(this));
             if (_hintShowed || _showCoroutine != null)
                 return;
 
