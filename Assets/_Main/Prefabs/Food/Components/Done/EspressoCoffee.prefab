@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3199445849784977624}
   - component: {fileID: 5128482928951431458}
-  - component: {fileID: 5262758395039784401}
+  - component: {fileID: -1320382508973253987}
   m_Layer: 10
   m_Name: EspressoCoffee
   m_TagString: Untagged
@@ -58,7 +58,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.1, y: 0.07, z: 0.1}
   m_Center: {x: 0, y: 0.035, z: 0}
---- !u!114 &5262758395039784401
+--- !u!114 &-1320382508973253987
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -67,7 +67,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2101519097300812990}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea8ac9fc18ff47dcb449d3db83bc475c, type: 3}
+  m_Script: {fileID: 11500000, guid: fe477b70c46a449095c562b377858b38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _collider: {fileID: 5128482928951431458}

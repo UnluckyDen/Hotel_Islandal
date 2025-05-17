@@ -15,5 +15,5 @@ MonoBehaviour:
   <OrderMethodPairs>k__BackingField:
   - Food: {fileID: 8320604136278060514, guid: 4288d4998e888479a8e2700eb5ab6eb5, type: 3}
     Method: '*-'
-  - Food: {fileID: 5262758395039784401, guid: f2093c8c617884fd29766da548d57c40, type: 3}
+  - Food: {fileID: -1320382508973253987, guid: f2093c8c617884fd29766da548d57c40, type: 3}
     Method: '*'

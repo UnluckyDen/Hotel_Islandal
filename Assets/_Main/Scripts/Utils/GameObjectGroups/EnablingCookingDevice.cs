@@ -12,6 +12,8 @@ namespace _Main.Scripts.Utils.GameObjectGroups
     public class EnablingCookingDevice : CookingDevice
     {
         public event Action<EnablingCookingDevice, bool> DeviceActivation;
+        public event Action<Food> FoodCombined;
+        public event Action<Food> FoodGiven;
         
         [SerializeField] private DeviceButton _deviceButton;
         [SerializeField] private DeviceIngredientGroupPlace _foodGroup;
@@ -53,6 +55,7 @@ namespace _Main.Scripts.Utils.GameObjectGroups
             
             var food = _foodOut;
             _foodOut = null;
+            FoodGiven?.Invoke(food);
             return food;
         }
 
@@ -73,6 +76,8 @@ namespace _Main.Scripts.Utils.GameObjectGroups
             
             if (_foodOut != null)
                 GlobalAnalyticsService.Instance.SendCustomEvent(new FoodCombinedAnalyticsEvent(_foodIn, _foodOut, this));
+            
+            FoodCombined?.Invoke(_foodOut);
             
             foreach (var food in _foodIn)
             {
