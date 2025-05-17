@@ -1,25 +1,32 @@
+using _Main.Scripts.ScriptableObjects.Book;
 using UnityEngine;
 
 namespace _Main.Scripts.UI.Book.BookPages
 {
     public class BookSpread : MonoBehaviour
     {
-        [SerializeField] private BookPage _bookPageLeft;
-        [SerializeField] private BookPage _bookPageRight;
+        [SerializeField] private DefaultBookPage _defaultBookPageLeft;
+        [SerializeField] private DefaultBookPage _defaultBookPageRight;
 
-        public BookPage BookPageLeft => _bookPageLeft;
-        public BookPage BookPageRight => _bookPageRight;
+        public DefaultBookPage BookPageLeft => _defaultBookPageLeft;
+        public DefaultBookPage BookPageRight => _defaultBookPageRight;
 
-        public void Init()
+        public void PagesInit(JournalPageSettings pageSettingsLeft, JournalPageSettings pageSettingsRight)
         {
-            _bookPageLeft.Init();
-            _bookPageRight.Init();
+            _defaultBookPageLeft.Init(pageSettingsLeft);
+            _defaultBookPageRight.Init(pageSettingsRight);
         }
 
-        public void Destruct()
+        public void PagesDestruct()
         {
-            _bookPageLeft.Destruct();
-            _bookPageRight.Destruct();
+            _defaultBookPageLeft.Destruct();
+            _defaultBookPageRight.Destruct();
+        }
+
+        public void UpdatePages(JournalPageSettings pageSettingsLeft, JournalPageSettings pageSettingsRight)
+        {
+            PagesDestruct();
+            PagesInit(pageSettingsLeft, pageSettingsRight);
         }
     }
 }

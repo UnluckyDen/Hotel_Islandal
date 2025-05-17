@@ -65,8 +65,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: f30993ba916994692985bbbc6db2fcf2, type: 3}
-  m_Type: 0
+  m_Sprite: {fileID: 1047630786, guid: 13af46217d5394ed29cee5b381c2be0a, type: 3}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -134,6 +134,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d44222ade98643e598d1eb9c0b725f25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _pageContent: {fileID: 0}
+  _header: {fileID: 0}
+  _body: {fileID: 0}
 --- !u!1 &5876440827434651749
 GameObject:
   m_ObjectHideFlags: 0
@@ -193,6 +196,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d44222ade98643e598d1eb9c0b725f25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _pageContent: {fileID: 0}
+  _header: {fileID: 0}
+  _body: {fileID: 0}
 --- !u!1 &7653962740417482021
 GameObject:
   m_ObjectHideFlags: 0
@@ -205,7 +211,7 @@ GameObject:
   - component: {fileID: 1152452961714369307}
   - component: {fileID: 8603934414288678685}
   m_Layer: 5
-  m_Name: BookSpread_2
+  m_Name: DefaultBookSpread
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -270,8 +276,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91cf2b1bd38e4ecca34da3cf22852317, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _bookPageLeft: {fileID: 2567371761699644356}
-  _bookPageRight: {fileID: 5011722011553419994}
+  _pageSettingsLeft: {fileID: 11400000, guid: a19b33fb93cb8462497834e8b41397a5, type: 2}
+  _pageSettingsRight: {fileID: 11400000, guid: a19b33fb93cb8462497834e8b41397a5, type: 2}
+  _defaultBookPageLeft: {fileID: 2567371761699644356}
+  _defaultBookPageRight: {fileID: 5011722011553419994}
 --- !u!1 &8069339752486568713
 GameObject:
   m_ObjectHideFlags: 0
@@ -337,8 +345,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 9133fc98fccb94a76b2b8c2ad31f7905, type: 3}
-  m_Type: 0
+  m_Sprite: {fileID: -1361032135, guid: 13af46217d5394ed29cee5b381c2be0a, type: 3}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -377,7 +385,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 830367885331738930, guid: 7623d5a53828f4a1685889cb489cd41a, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -214.08
+      value: -442.595
       objectReference: {fileID: 0}
     - target: {fileID: 1476021105868347733, guid: 7623d5a53828f4a1685889cb489cd41a, type: 3}
       propertyPath: m_AnchorMax.y
@@ -402,24 +410,6 @@ PrefabInstance:
     - target: {fileID: 1476021105868347733, guid: 7623d5a53828f4a1685889cb489cd41a, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -49.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1995533685222401410, guid: 7623d5a53828f4a1685889cb489cd41a, type: 3}
-      propertyPath: m_text
-      value: Undead`s language
-      objectReference: {fileID: 0}
-    - target: {fileID: 2100921554877042507, guid: 7623d5a53828f4a1685889cb489cd41a, type: 3}
-      propertyPath: m_text
-      value: 'Espresso: *
-
-'
-      objectReference: {fileID: 0}
-    - target: {fileID: 2100921554877042507, guid: 7623d5a53828f4a1685889cb489cd41a, type: 3}
-      propertyPath: m_fontSize
-      value: 60
-      objectReference: {fileID: 0}
-    - target: {fileID: 2100921554877042507, guid: 7623d5a53828f4a1685889cb489cd41a, type: 3}
-      propertyPath: m_fontSizeBase
-      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 2136114897269988598, guid: 7623d5a53828f4a1685889cb489cd41a, type: 3}
       propertyPath: m_Pivot.x
@@ -527,19 +517,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3318197535425575440, guid: 7623d5a53828f4a1685889cb489cd41a, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -123.759995
-      objectReference: {fileID: 0}
-    - target: {fileID: 4470626668697530966, guid: 7623d5a53828f4a1685889cb489cd41a, type: 3}
-      propertyPath: m_text
-      value: 'Americano: *-'
-      objectReference: {fileID: 0}
-    - target: {fileID: 4470626668697530966, guid: 7623d5a53828f4a1685889cb489cd41a, type: 3}
-      propertyPath: m_fontSize
-      value: 60
-      objectReference: {fileID: 0}
-    - target: {fileID: 4470626668697530966, guid: 7623d5a53828f4a1685889cb489cd41a, type: 3}
-      propertyPath: m_fontSizeBase
-      value: 60
+      value: -211.65
       objectReference: {fileID: 0}
     - target: {fileID: 8727272497212442441, guid: 7623d5a53828f4a1685889cb489cd41a, type: 3}
       propertyPath: m_AnchorMax.y
@@ -605,7 +583,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 830367885331738930, guid: 7623d5a53828f4a1685889cb489cd41a, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -337.125
+      value: -442.595
       objectReference: {fileID: 0}
     - target: {fileID: 1476021105868347733, guid: 7623d5a53828f4a1685889cb489cd41a, type: 3}
       propertyPath: m_AnchorMax.y
@@ -630,15 +608,6 @@ PrefabInstance:
     - target: {fileID: 1476021105868347733, guid: 7623d5a53828f4a1685889cb489cd41a, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -49.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1995533685222401410, guid: 7623d5a53828f4a1685889cb489cd41a, type: 3}
-      propertyPath: m_text
-      value: Dubious food
-      objectReference: {fileID: 0}
-    - target: {fileID: 2100921554877042507, guid: 7623d5a53828f4a1685889cb489cd41a, type: 3}
-      propertyPath: m_text
-      value: If you stray too far from the recipe or use the wrong ingredients, you'll
-        inevitably end up with a dubious dish (dubious grind/drink).
       objectReference: {fileID: 0}
     - target: {fileID: 2136114897269988598, guid: 7623d5a53828f4a1685889cb489cd41a, type: 3}
       propertyPath: m_Pivot.x
@@ -746,27 +715,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3318197535425575440, guid: 7623d5a53828f4a1685889cb489cd41a, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -158.91501
-      objectReference: {fileID: 0}
-    - target: {fileID: 6931584149048985582, guid: 7623d5a53828f4a1685889cb489cd41a, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: -1670476717, guid: 1051ff7cae99947ba9b41494022664fe, type: 3}
-    - target: {fileID: 6931584149048985582, guid: 7623d5a53828f4a1685889cb489cd41a, type: 3}
-      propertyPath: m_Color.a
-      value: 0.70980394
-      objectReference: {fileID: 0}
-    - target: {fileID: 6931584149048985582, guid: 7623d5a53828f4a1685889cb489cd41a, type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6931584149048985582, guid: 7623d5a53828f4a1685889cb489cd41a, type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6931584149048985582, guid: 7623d5a53828f4a1685889cb489cd41a, type: 3}
-      propertyPath: m_Color.r
-      value: 1
+      value: -211.65
       objectReference: {fileID: 0}
     - target: {fileID: 8727272497212442441, guid: 7623d5a53828f4a1685889cb489cd41a, type: 3}
       propertyPath: m_AnchorMax.y
@@ -793,9 +742,7 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects:
-    - {fileID: 572647192192366452, guid: 7623d5a53828f4a1685889cb489cd41a, type: 3}
-    - {fileID: 4374770166145662838, guid: 7623d5a53828f4a1685889cb489cd41a, type: 3}
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7623d5a53828f4a1685889cb489cd41a, type: 3}

@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df7879d349e84f50b53a8d6f696e299e, type: 3}
+  m_Name: AmericanoRecipePageSettings
+  m_EditorClassIdentifier: 
+  <BookPage>k__BackingField: {fileID: 6715381086485655671, guid: 7623d5a53828f4a1685889cb489cd41a, type: 3}
+  <HaveHeader>k__BackingField: 1
+  <Header>k__BackingField: Americano
+  <BodyContent>k__BackingField:
+  - Grind 2 portions of dark roast beans for half a full rotation of the arrow. 
+    Put the ground coffee into the coffee machine, turn it on, and wait for 1 full
+    rotation.  Turn off the coffee machine and take the finished drink.
