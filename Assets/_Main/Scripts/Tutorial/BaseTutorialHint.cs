@@ -1,4 +1,6 @@
 using System.Collections;
+using _Main.Scripts.Analytics;
+using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -6,6 +8,9 @@ namespace _Main.Scripts.Tutorial
 {
     public class BaseTutorialHint : MonoBehaviour
     {
+        [CanBeNull]
+        [SerializeField] private BaseTutorialHint _nextHint;
+        [Space]
         [SerializeField] private float _hintTime;
         [SerializeField] private Slider _slider;
         [SerializeField] private GameObject _hintGameObject;
@@ -21,6 +26,7 @@ namespace _Main.Scripts.Tutorial
         [ContextMenu("Show hint")]
         public void ShowHint()
         {
+            GlobalAnalyticsService.Instance.SendCustomEvent(new TutorialHintShowAnalyticsEvent(this));
             if (_hintShowed || _showCoroutine != null)
                 return;
 
@@ -32,7 +38,12 @@ namespace _Main.Scripts.Tutorial
         public void HideHint()
         {
             if (_showCoroutine != null)
+            {
                 StopCoroutine(_showCoroutine);
+                
+                if (_nextHint != null)
+                    _nextHint.gameObject.SetActive(true);
+            }
             
             _hintGameObject.SetActive(false);
             _showCoroutine = null;
@@ -52,6 +63,9 @@ namespace _Main.Scripts.Tutorial
             }
             
             _hintGameObject.SetActive(false);
+            
+            if (_nextHint != null)
+                _nextHint.gameObject.SetActive(true);
         }
 
     }

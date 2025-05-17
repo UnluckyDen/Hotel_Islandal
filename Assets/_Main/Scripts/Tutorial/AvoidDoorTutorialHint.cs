@@ -1,5 +1,4 @@
 using _Main.Scripts.Environment;
-using _Main.Scripts.Services;
 using UnityEngine;
 
 namespace _Main.Scripts.Tutorial
