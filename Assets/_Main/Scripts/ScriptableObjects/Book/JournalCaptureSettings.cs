@@ -8,13 +8,5 @@ namespace _Main.Scripts.ScriptableObjects.Book
     public class JournalCaptureSettings : ScriptableObject
     {
         [field: SerializeField] public List<JournalPageSettings> JournalPageSettings { get; private set; }
-
-        public int GetBookSpreadCount() =>
-            (int)((float)JournalPageSettings.Count / 2 + 0.5f);
-
-        public (JournalPageSettings, JournalPageSettings) GetFirstSpread()
-        {
-            return (JournalPageSettings.First(), JournalPageSettings.First());
-        }
     }
 }

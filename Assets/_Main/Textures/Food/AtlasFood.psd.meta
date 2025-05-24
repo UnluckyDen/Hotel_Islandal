@@ -139,10 +139,10 @@ TextureImporter:
       name: AtlasFood_Espresso
       rect:
         serializedVersion: 2
-        x: 31
-        y: 832
-        width: 179
-        height: 173
+        x: 47
+        y: 843
+        width: 151
+        height: 151
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -161,10 +161,10 @@ TextureImporter:
       name: AtlasFood_Americano
       rect:
         serializedVersion: 2
-        x: 224
-        y: 815
-        width: 172
-        height: 198
+        x: 245
+        y: 826
+        width: 129
+        height: 184
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -183,10 +183,10 @@ TextureImporter:
       name: AtlasFood_DarkBeens
       rect:
         serializedVersion: 2
-        x: 34
-        y: 627
-        width: 185
-        height: 137
+        x: 47
+        y: 640
+        width: 156
+        height: 110
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -205,10 +205,10 @@ TextureImporter:
       name: AtlasFood_DarkGrind
       rect:
         serializedVersion: 2
-        x: 25
-        y: 394
-        width: 169
-        height: 135
+        x: 33
+        y: 409
+        width: 153
+        height: 99
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -227,10 +227,10 @@ TextureImporter:
       name: AtlasFood_DoubleDarkGrind
       rect:
         serializedVersion: 2
-        x: 216
-        y: 394
-        width: 204
-        height: 122
+        x: 223
+        y: 408
+        width: 180
+        height: 89
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -254,7 +254,7 @@ TextureImporter:
         width: 211
         height: 205
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []

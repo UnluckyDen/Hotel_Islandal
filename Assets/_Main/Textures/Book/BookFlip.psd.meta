@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -136,45 +136,287 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BookFlip_L
+      name: BookFlip_CoverL
       rect:
         serializedVersion: 2
         x: 0
-        y: 186
-        width: 1253
-        height: 93
+        y: 914
+        width: 512
+        height: 86
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 46, z: 0, w: 47}
+      border: {x: 252, y: 43, z: 256, w: 43}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 28222c7f10582418c89878925f180f2d
-      internalID: 1047630786
+      spriteID: e7f3469d8b2a04c18ad4dfd3c9919a62
+      internalID: 249108362
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BookFlip_R
+      name: BookFlip_CoverR
       rect:
         serializedVersion: 2
-        x: 0
-        y: 279
-        width: 1253
-        height: 93
+        x: 512
+        y: 914
+        width: 512
+        height: 86
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 46, z: 0, w: 47}
+      border: {x: 256, y: 43, z: 256, w: 43}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d99dd1f79b6f94637bd4570c2bee93b8
-      internalID: -1361032135
+      spriteID: 910fee99437a14bb3b6e604820cf2ca1
+      internalID: 172631476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BookFlip_PageL
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 821
+        width: 1024
+        height: 67
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 33, z: 0, w: 34}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70c6c379679794caf837281d87e65b10
+      internalID: 170566006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BookFlip_PageR
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 732
+        width: 1024
+        height: 69
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 34, z: 0, w: 34}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 757e2f8540471413a86c3f7dcc934bef
+      internalID: -1014802087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BookFlip_PageBookMark
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 611
+        width: 272
+        height: 73
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5255028f1b8794a539fa7fae9d9ca88c
+      internalID: 626131582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BookFlip_BookMark
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 552
+        width: 145
+        height: 155
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31a422285a37d43088f1cd2d5e624e38
+      internalID: -1360290721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BookFlip_AudioExample
+      rect:
+        serializedVersion: 2
+        x: 822
+        y: 567
+        width: 142
+        height: 136
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e84ea672680cd4b089503ac31b799d04
+      internalID: -821692935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BookFlip_IconFrame
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 319
+        width: 250
+        height: 242
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 123, y: 121, z: 125, w: 121}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71064e1db7667423fac4dcc8beac58c6
+      internalID: 779095640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BookFlip_Star
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 319
+        width: 170
+        height: 161
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d95472fb649b46d4bfede15db066923
+      internalID: 1957228082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BookFlip_SpiderWeb
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 242
+        height: 287
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32c3593df35714d0a9002dcbabc89f1e
+      internalID: 1502479904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BookFlip_Face
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 42
+        width: 151
+        height: 184
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7504d97b19d04e84b880e47c3f7248c
+      internalID: -1078759766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BookFlip_ArrowRight
+      rect:
+        serializedVersion: 2
+        x: 839
+        y: 218
+        width: 139
+        height: 137
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b91d93d47b80462a8b4fd313f0d24eb
+      internalID: 1700476373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BookFlip_ArrowLeft
+      rect:
+        serializedVersion: 2
+        x: 771
+        y: 31
+        width: 139
+        height: 137
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73d4600a1303347df85bd29a4ac9af14
+      internalID: -1523437635
       vertices: []
       indices: 
       edges: []
@@ -193,8 +435,25 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
+      BookFlip_10: -2126451417
+      BookFlip_3: -1933374068
+      BookFlip_7: -650499767
+      BookFlip_9: 1787906542
+      BookFlip_ArrowLeft: -1523437635
+      BookFlip_ArrowRight: 1700476373
+      BookFlip_AudioExample: -821692935
+      BookFlip_BookMark: -1360290721
+      BookFlip_CoverL: 249108362
+      BookFlip_CoverR: 172631476
+      BookFlip_Face: -1078759766
+      BookFlip_IconFrame: 779095640
       BookFlip_L: 1047630786
+      BookFlip_PageBookMark: 626131582
+      BookFlip_PageL: 170566006
+      BookFlip_PageR: -1014802087
       BookFlip_R: -1361032135
+      BookFlip_SpiderWeb: 1502479904
+      BookFlip_Star: 1957228082
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
