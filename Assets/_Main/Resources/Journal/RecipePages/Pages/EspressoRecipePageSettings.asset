@@ -29,29 +29,29 @@ MonoBehaviour:
     TextContent: I Grind beans
     ImageContent: {fileID: 0}
   - PageElementType: 5
-    TextContent: '<b><size=40>Ingridient: </size></b>Black coffee beans x1'
+    TextContent: '<b><size=35>Ingridient: </size></b>Black coffee beans x1'
     ImageContent: {fileID: 1141218072, guid: eb8efd37f94bf40fdbf8380f49e759b6, type: 3}
   - PageElementType: 5
-    TextContent: '<b><size=40>Action: </size></b>Grind'
+    TextContent: '<b><size=35>Action: </size></b>Grind'
     ImageContent: {fileID: -1177383119, guid: eb8efd37f94bf40fdbf8380f49e759b6, type: 3}
   - PageElementType: 5
-    TextContent: '<b><size=40>Time: </size></b> Full rotation '
+    TextContent: '<b><size=35>Time: </size></b> Full rotation '
     ImageContent: {fileID: -106826065, guid: eb8efd37f94bf40fdbf8380f49e759b6, type: 3}
   - PageElementType: 5
-    TextContent: '<b><size=40>Out: </size></b> Dark grind x1 '
+    TextContent: '<b><size=35>Out: </size></b> Dark grind x1 '
     ImageContent: {fileID: -91076462, guid: eb8efd37f94bf40fdbf8380f49e759b6, type: 3}
   - PageElementType: 4
     TextContent: II Brew coffee
     ImageContent: {fileID: 0}
   - PageElementType: 5
-    TextContent: '<b><size=40>Ingridient: </size></b>Dark grind x1'
+    TextContent: '<b><size=35>Ingridient: </size></b>Dark grind x1'
     ImageContent: {fileID: -91076462, guid: eb8efd37f94bf40fdbf8380f49e759b6, type: 3}
   - PageElementType: 5
-    TextContent: '<b><size=40>Action: </size></b>Brew'
+    TextContent: '<b><size=35>Action: </size></b>Brew'
     ImageContent: {fileID: -1177383119, guid: eb8efd37f94bf40fdbf8380f49e759b6, type: 3}
   - PageElementType: 5
-    TextContent: '<b><size=40>Time: </size></b> Full rotation '
+    TextContent: '<b><size=35>Time: </size></b> Full rotation '
     ImageContent: {fileID: -106826065, guid: eb8efd37f94bf40fdbf8380f49e759b6, type: 3}
   - PageElementType: 5
-    TextContent: '<b><size=40>Out: </size></b> Espresso x1 '
+    TextContent: '<b><size=35>Out: </size></b> Espresso x1 '
     ImageContent: {fileID: 1198335064, guid: eb8efd37f94bf40fdbf8380f49e759b6, type: 3}
