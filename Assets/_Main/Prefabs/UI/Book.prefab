@@ -34,8 +34,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -12.5, y: 4.5}
+  m_SizeDelta: {x: -25, y: -11}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4968594026056340502
 CanvasRenderer:
@@ -170,8 +170,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 12.500007, y: 4.5}
+  m_SizeDelta: {x: -24.999987, y: -11}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6815338902016828627
 CanvasRenderer:
@@ -332,14 +332,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 1, a: 0.39215687}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 1700476373, guid: 13af46217d5394ed29cee5b381c2be0a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -463,10 +463,10 @@ RectTransform:
   - {fileID: 6777556606256682296}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1580, y: 1000}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &6516123657762445409
 MonoBehaviour:
@@ -482,7 +482,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _bookSpreadContent: {fileID: 4135452243970372557}
   _bookPageCollection: {fileID: 5999176428742211650}
-  _currentBookSpread: {fileID: 0}
 --- !u!1 &7940995940479136659
 GameObject:
   m_ObjectHideFlags: 0
@@ -543,14 +542,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 0.39215687}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -1523437635, guid: 13af46217d5394ed29cee5b381c2be0a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -652,9 +651,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fa97ad42ab14ee1899db1443b2c55c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _bookSpreads:
-  - {fileID: 8603934414288678685, guid: 83b5d797004a44102a7cd25421297892, type: 3}
-  - {fileID: 8603934414288678685, guid: fc68eac3596e94a67abf9c03d4321c37, type: 3}
-  - {fileID: 8603934414288678685, guid: 65b04b0192687474794ccef5a312d931, type: 3}
+  _welcomeJournalCapture: {fileID: 11400000, guid: fbeb32302bf2645d981f4524d9d0e3da, type: 2}
+  _languageJournalCapture: {fileID: 11400000, guid: 5115daf01671849479c3a304f91cd021, type: 2}
+  _recipeJournalCapture: {fileID: 11400000, guid: 7423b72b467aa492db213d7d7fe761c1, type: 2}
+  _welcomeButton: {fileID: 0}
+  _languageButton: {fileID: 0}
+  _recipePageButton: {fileID: 0}
   _buttonRight: {fileID: 3048478199188498585}
   _buttonLeft: {fileID: 510789358526426537}
+  _bookSpread: {fileID: 0}

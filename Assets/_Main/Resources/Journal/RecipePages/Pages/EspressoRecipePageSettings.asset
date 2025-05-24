@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df7879d349e84f50b53a8d6f696e299e, type: 3}
+  m_Name: EspressoRecipePageSettings
+  m_EditorClassIdentifier: 
+  <BookPage>k__BackingField: {fileID: 6715381086485655671, guid: 7623d5a53828f4a1685889cb489cd41a, type: 3}
+  PageContentElementSettingsList:
+  - PageElementType: 1
+    TextContent: Espresso
+    ImageContent: {fileID: 0}
+  - PageElementType: 3
+    TextContent: Grind one portion of dark beans for a full rotation of the arrow. 
+      Put the ground coffee into the coffee machine, turn it on, and wait for one
+      full rotation.  Turn off the coffee machine and take the finished drink.
+    ImageContent: {fileID: 183165002, guid: 5acd4b568c729431a85092dc40b94ca2, type: 3}
+  - PageElementType: 6
+    TextContent: 
+    ImageContent: {fileID: 0}
+  - PageElementType: 4
+    TextContent: I Grind beans
+    ImageContent: {fileID: 0}
+  - PageElementType: 5
+    TextContent: '<b><size=35>Ingridient: </size></b>Black coffee beans x1'
+    ImageContent: {fileID: 1141218072, guid: eb8efd37f94bf40fdbf8380f49e759b6, type: 3}
+  - PageElementType: 5
+    TextContent: '<b><size=35>Action: </size></b>Grind'
+    ImageContent: {fileID: -1177383119, guid: eb8efd37f94bf40fdbf8380f49e759b6, type: 3}
+  - PageElementType: 5
+    TextContent: '<b><size=35>Time: </size></b> Full rotation '
+    ImageContent: {fileID: -106826065, guid: eb8efd37f94bf40fdbf8380f49e759b6, type: 3}
+  - PageElementType: 5
+    TextContent: '<b><size=35>Out: </size></b> Dark grind x1 '
+    ImageContent: {fileID: -91076462, guid: eb8efd37f94bf40fdbf8380f49e759b6, type: 3}
+  - PageElementType: 4
+    TextContent: II Brew coffee
+    ImageContent: {fileID: 0}
+  - PageElementType: 5
+    TextContent: '<b><size=35>Ingridient: </size></b>Dark grind x1'
+    ImageContent: {fileID: -91076462, guid: eb8efd37f94bf40fdbf8380f49e759b6, type: 3}
+  - PageElementType: 5
+    TextContent: '<b><size=35>Action: </size></b>Brew'
+    ImageContent: {fileID: -1177383119, guid: eb8efd37f94bf40fdbf8380f49e759b6, type: 3}
+  - PageElementType: 5
+    TextContent: '<b><size=35>Time: </size></b> Full rotation '
+    ImageContent: {fileID: -106826065, guid: eb8efd37f94bf40fdbf8380f49e759b6, type: 3}
+  - PageElementType: 5
+    TextContent: '<b><size=35>Out: </size></b> Espresso x1 '
+    ImageContent: {fileID: 1198335064, guid: eb8efd37f94bf40fdbf8380f49e759b6, type: 3}
