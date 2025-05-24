@@ -16,15 +16,42 @@ MonoBehaviour:
   PageContentElementSettingsList:
   - PageElementType: 1
     TextContent: Espresso
-    ImageContent: 
-  - PageElementType: 2
-    TextContent: Grind 1 portion of dark roast beans for 1 full rotation (of the
-      arrow/dial).  Put the ground coffee into the coffee machine, turn it on, and
-      wait for 1 full rotation.  Turn off the machine and take the finished drink.
-    ImageContent: 
-  <HaveHeader>k__BackingField: 1
-  <Header>k__BackingField: Espresso
-  <BodyContent>k__BackingField:
-  - Grind 1 portion of dark roast beans for 1 full rotation (of the arrow/dial). 
-    Put the ground coffee into the coffee machine, turn it on, and wait for 1 full
-    rotation.  Turn off the machine and take the finished drink.
+    ImageContent: {fileID: 0}
+  - PageElementType: 3
+    TextContent: Grind one portion of dark beans for a full rotation of the arrow. 
+      Put the ground coffee into the coffee machine, turn it on, and wait for one
+      full rotation.  Turn off the coffee machine and take the finished drink.
+    ImageContent: {fileID: 183165002, guid: 5acd4b568c729431a85092dc40b94ca2, type: 3}
+  - PageElementType: 6
+    TextContent: 
+    ImageContent: {fileID: 0}
+  - PageElementType: 4
+    TextContent: I Grind beans
+    ImageContent: {fileID: 0}
+  - PageElementType: 5
+    TextContent: '<b><size=40>Ingridient: </size></b>Black coffee beans x1'
+    ImageContent: {fileID: 1141218072, guid: eb8efd37f94bf40fdbf8380f49e759b6, type: 3}
+  - PageElementType: 5
+    TextContent: '<b><size=40>Action: </size></b>Grind'
+    ImageContent: {fileID: -1177383119, guid: eb8efd37f94bf40fdbf8380f49e759b6, type: 3}
+  - PageElementType: 5
+    TextContent: '<b><size=40>Time: </size></b> Full rotation '
+    ImageContent: {fileID: -106826065, guid: eb8efd37f94bf40fdbf8380f49e759b6, type: 3}
+  - PageElementType: 5
+    TextContent: '<b><size=40>Out: </size></b> Dark grind x1 '
+    ImageContent: {fileID: -91076462, guid: eb8efd37f94bf40fdbf8380f49e759b6, type: 3}
+  - PageElementType: 4
+    TextContent: II Brew coffee
+    ImageContent: {fileID: 0}
+  - PageElementType: 5
+    TextContent: '<b><size=40>Ingridient: </size></b>Dark grind x1'
+    ImageContent: {fileID: -91076462, guid: eb8efd37f94bf40fdbf8380f49e759b6, type: 3}
+  - PageElementType: 5
+    TextContent: '<b><size=40>Action: </size></b>Brew'
+    ImageContent: {fileID: -1177383119, guid: eb8efd37f94bf40fdbf8380f49e759b6, type: 3}
+  - PageElementType: 5
+    TextContent: '<b><size=40>Time: </size></b> Full rotation '
+    ImageContent: {fileID: -106826065, guid: eb8efd37f94bf40fdbf8380f49e759b6, type: 3}
+  - PageElementType: 5
+    TextContent: '<b><size=40>Out: </size></b> Espresso x1 '
+    ImageContent: {fileID: 1198335064, guid: eb8efd37f94bf40fdbf8380f49e759b6, type: 3}

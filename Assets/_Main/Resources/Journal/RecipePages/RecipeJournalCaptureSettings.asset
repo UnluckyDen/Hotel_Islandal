@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: RecipeJournalCaptureSettings
   m_EditorClassIdentifier: 
   <JournalPageSettings>k__BackingField:
-  - {fileID: 11400000, guid: a2ff81b0a2bf649ce98836a9b0f8d55c, type: 2}
   - {fileID: 11400000, guid: caee31b95b9f44806a20675c8a65e2e6, type: 2}
+  - {fileID: 11400000, guid: a2ff81b0a2bf649ce98836a9b0f8d55c, type: 2}
   - {fileID: 11400000, guid: adc555009de374044939afe842bbe9de, type: 2}

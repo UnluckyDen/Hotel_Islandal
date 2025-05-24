@@ -15,14 +15,16 @@ MonoBehaviour:
   <BookPage>k__BackingField: {fileID: 6715381086485655671, guid: 7623d5a53828f4a1685889cb489cd41a, type: 3}
   PageContentElementSettingsList:
   - PageElementType: 1
-    TextContent: DubiousFood
-    ImageContent: 
-  - PageElementType: 2
+    TextContent: Dubious Food
+    ImageContent: {fileID: 0}
+  - PageElementType: 3
     TextContent: If you stray too far from the recipe or use the wrong ingredients,
       you'll inevitably end up with a dubious dish (dubious grind/drink).
-    ImageContent: 
-  <HaveHeader>k__BackingField: 1
-  <Header>k__BackingField: DubiousFood
-  <BodyContent>k__BackingField:
-  - If you stray too far from the recipe or use the wrong ingredients, you'll inevitably
-    end up with a dubious dish (dubious grind/drink).
+    ImageContent: {fileID: -263827227, guid: 5acd4b568c729431a85092dc40b94ca2, type: 3}
+  - PageElementType: 6
+    TextContent: 
+    ImageContent: {fileID: 0}
+  - PageElementType: 2
+    TextContent: "Follow the recipes and hope you don\u2019t end up making it by
+      accident."
+    ImageContent: {fileID: 0}

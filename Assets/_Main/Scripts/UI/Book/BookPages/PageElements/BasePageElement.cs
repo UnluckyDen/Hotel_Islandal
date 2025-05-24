@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace _Main.Scripts.UI.Book.BookPages.PageElements
 {
@@ -7,10 +8,12 @@ namespace _Main.Scripts.UI.Book.BookPages.PageElements
     {
         [SerializeField] private PageElementType _pageElementType;
         [SerializeField] private TMP_Text _text;
+        [SerializeField] private Image _image;
 
-        public void Init(string elementText)
+        public void Init(string elementText, Sprite sprite)
         {
             SetText(elementText);
+            SetImage(sprite);
         }
 
         public void Destruct()
@@ -20,7 +23,14 @@ namespace _Main.Scripts.UI.Book.BookPages.PageElements
 
         public virtual void SetText(string text)
         {
-            _text.text = text;
+            if (_text != null)
+                _text.text = text;
+        }
+
+        public virtual void SetImage(Sprite sprite)
+        {
+            if (_image != null)
+                _image.sprite = sprite;
         }
     }
 }

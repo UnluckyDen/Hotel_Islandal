@@ -58,6 +58,8 @@ MonoBehaviour:
       Value: {fileID: -1447391341744196925, guid: 7fb0859de95cc41ef9a49daecf66f15b, type: 3}
     - Key: 3
       Value: {fileID: 3051467521020688913, guid: fe90aa7fea19348668bdb1e65e1d48bc, type: 3}
+    - Key: 4
+      Value: {fileID: -1447391341744196925, guid: b5046c5e73f09496d8fb0abfdf8e1ab6, type: 3}
     - Key: 5
       Value: {fileID: 1925497188048539535, guid: 7027a6ae459c24c24bc84fafd957bde1, type: 3}
     - Key: 6
@@ -80,7 +82,7 @@ MonoBehaviour:
     m_Top: 20
     m_Bottom: 20
   m_ChildAlignment: 1
-  m_Spacing: 10
+  m_Spacing: 20
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 1

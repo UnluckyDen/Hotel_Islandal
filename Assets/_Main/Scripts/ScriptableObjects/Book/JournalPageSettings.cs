@@ -18,6 +18,6 @@ namespace _Main.Scripts.ScriptableObjects.Book
     {
         public PageElementType PageElementType;
         public string TextContent;
-        public string ImageContent;
+        public Sprite ImageContent;
     }
 }

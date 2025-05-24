@@ -41,7 +41,7 @@ namespace _Main.Scripts.UI.Book.BookPages
             foreach (var contentElement in _journalPageSettings.PageContentElementSettingsList)
             {
                 BasePageElement basePageElement = Instantiate(_pageElements[contentElement.PageElementType], _pageContent);
-                basePageElement.Init(contentElement.TextContent);
+                basePageElement.Init(contentElement.TextContent, contentElement.ImageContent);
                 _elements.Add(basePageElement);
             }
 
