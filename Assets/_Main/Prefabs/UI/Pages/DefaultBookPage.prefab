@@ -1,0 +1,92 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2615507471937613362
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2136114897269988598}
+  - component: {fileID: 6715381086485655671}
+  - component: {fileID: 3317708704931638768}
+  m_Layer: 5
+  m_Name: DefaultBookPage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2136114897269988598
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2615507471937613362}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &6715381086485655671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2615507471937613362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d44222ade98643e598d1eb9c0b725f25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pageContent: {fileID: 2136114897269988598}
+  _pageElements:
+    _serializedList:
+    - Key: 1
+      Value: {fileID: 6460358512772570793, guid: 56dd1b46898964b19a39e8a98b25a869, type: 3}
+    - Key: 2
+      Value: {fileID: -1447391341744196925, guid: 7fb0859de95cc41ef9a49daecf66f15b, type: 3}
+    - Key: 3
+      Value: {fileID: 3051467521020688913, guid: fe90aa7fea19348668bdb1e65e1d48bc, type: 3}
+    - Key: 4
+      Value: {fileID: -1447391341744196925, guid: b5046c5e73f09496d8fb0abfdf8e1ab6, type: 3}
+    - Key: 5
+      Value: {fileID: 1925497188048539535, guid: 7027a6ae459c24c24bc84fafd957bde1, type: 3}
+    - Key: 6
+      Value: {fileID: 5935708702144754324, guid: 849b006d2ac0243348a81bddfe5cf4fb, type: 3}
+--- !u!114 &3317708704931638768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2615507471937613362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59f8146938fff824cb5fd77236b75775, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 20
+    m_Right: 20
+    m_Top: 20
+    m_Bottom: 20
+  m_ChildAlignment: 1
+  m_Spacing: 20
+  m_ChildForceExpandWidth: 1
+  m_ChildForceExpandHeight: 0
+  m_ChildControlWidth: 1
+  m_ChildControlHeight: 0
+  m_ChildScaleWidth: 0
+  m_ChildScaleHeight: 0
+  m_ReverseArrangement: 0

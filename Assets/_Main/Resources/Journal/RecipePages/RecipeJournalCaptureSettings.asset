@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ba2fa00b7f441c5aa01dd4cd490bd19, type: 3}
+  m_Name: RecipeJournalCaptureSettings
+  m_EditorClassIdentifier: 
+  <JournalPageSettings>k__BackingField:
+  - {fileID: 11400000, guid: caee31b95b9f44806a20675c8a65e2e6, type: 2}
+  - {fileID: 11400000, guid: a2ff81b0a2bf649ce98836a9b0f8d55c, type: 2}
+  - {fileID: 11400000, guid: adc555009de374044939afe842bbe9de, type: 2}
