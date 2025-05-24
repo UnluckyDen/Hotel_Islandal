@@ -13,6 +13,24 @@ MonoBehaviour:
   m_Name: LanguagePageSettings
   m_EditorClassIdentifier: 
   <BookPage>k__BackingField: {fileID: 6715381086485655671, guid: 7623d5a53828f4a1685889cb489cd41a, type: 3}
+  PageElements:
+    _serializedList:
+    - Key: 1
+      Value: {fileID: 0}
+    - Key: 2
+      Value: {fileID: 0}
+    - Key: 3
+      Value: {fileID: 0}
+  PageContentElementSettingsList:
+  - PageElementType: 1
+    TextContent: Undead's language
+    ImageContent: 
+  - PageElementType: 2
+    TextContent: 'Americano: *-'
+    ImageContent: 
+  - PageElementType: 2
+    TextContent: 'Espresso: *'
+    ImageContent: 
   <HaveHeader>k__BackingField: 1
   <Header>k__BackingField: Undead's language
   <BodyContent>k__BackingField:

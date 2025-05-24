@@ -13,6 +13,16 @@ MonoBehaviour:
   m_Name: 2_WelcomePageSettings
   m_EditorClassIdentifier: 
   <BookPage>k__BackingField: {fileID: 6715381086485655671, guid: 7623d5a53828f4a1685889cb489cd41a, type: 3}
+  PageContentElementSettingsList:
+  - PageElementType: 2
+    TextContent: <b>Rules:</b>
+    ImageContent: 
+  - PageElementType: 2
+    TextContent: " \u2014 If there\u2019s a quiet, friendly whisper, knocking, or
+      laughter behind the door\u2014knock back and take the order. Miss it, and they\u2019ll
+      get angry. \u2014 If you hear screeching, roaring, or the sound of tearing
+      flesh\u2014do not knock. "
+    ImageContent: 
   <HaveHeader>k__BackingField: 0
   <Header>k__BackingField: 
   <BodyContent>k__BackingField:

@@ -13,6 +13,16 @@ MonoBehaviour:
   m_Name: AmericanoRecipePageSettings
   m_EditorClassIdentifier: 
   <BookPage>k__BackingField: {fileID: 6715381086485655671, guid: 7623d5a53828f4a1685889cb489cd41a, type: 3}
+  PageContentElementSettingsList:
+  - PageElementType: 1
+    TextContent: Americano
+    ImageContent: 
+  - PageElementType: 2
+    TextContent: Grind 2 portions of dark roast beans for half a full rotation of
+      the arrow.  Put the ground coffee into the coffee machine, turn it on, and
+      wait for 1 full rotation.  Turn off the coffee machine and take the finished
+      drink.
+    ImageContent: 
   <HaveHeader>k__BackingField: 1
   <Header>k__BackingField: Americano
   <BodyContent>k__BackingField:

@@ -13,6 +13,17 @@ MonoBehaviour:
   m_Name: 1_WelcomePageSettings
   m_EditorClassIdentifier: 
   <BookPage>k__BackingField: {fileID: 6715381086485655671, guid: 7623d5a53828f4a1685889cb489cd41a, type: 3}
+  PageContentElementSettingsList:
+  - PageElementType: 1
+    TextContent: Welcome to Islandal
+    ImageContent: 
+  - PageElementType: 2
+    TextContent: 'Your duties:'
+    ImageContent: 
+  - PageElementType: 2
+    TextContent: "\u2014 Brew drinks to quench the insatiable thirst of our... guests.
+      \u2014 Deliver orders, but do not make mistakes. Here, mistakes have a <i>flavor.</i>"
+    ImageContent: 
   <HaveHeader>k__BackingField: 1
   <Header>k__BackingField: Welcome to Islandal
   <BodyContent>k__BackingField:

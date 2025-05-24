@@ -10,7 +10,7 @@ namespace _Main.Scripts.UI.Book.BookPages.PageElements
 
         public void Init(string elementText)
         {
-            BuildPage(elementText);
+            SetText(elementText);
         }
 
         public void Destruct()
@@ -18,7 +18,7 @@ namespace _Main.Scripts.UI.Book.BookPages.PageElements
             
         }
 
-        protected virtual void BuildPage(string text)
+        public virtual void SetText(string text)
         {
             _text.text = text;
         }

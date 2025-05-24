@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using _Main.Scripts.ScriptableObjects.Book;
-using TMPro;
+using _Main.Scripts.UI.Book.BookPages.PageElements;
+using AYellowpaper.SerializedCollections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,14 +9,12 @@ namespace _Main.Scripts.UI.Book.BookPages
 {
     public class DefaultBookPage : MonoBehaviour
     {
-        [SerializeField] private RectTransform _pageContent; 
-            
-        [SerializeField] private TMP_Text _header;
-        [SerializeField] private TMP_Text _body;
+        [SerializeField] private RectTransform _pageContent;
+        [SerializeField] private SerializedDictionary<PageElementType, BasePageElement> _pageElements;
 
         private JournalPageSettings _journalPageSettings;
 
-        private List<GameObject> _elements = new();
+        private List<BasePageElement> _elements = new();
         
         public void Init(JournalPageSettings journalPageSettings)
         {
@@ -25,9 +24,12 @@ namespace _Main.Scripts.UI.Book.BookPages
 
         public void Destruct()
         {
-            foreach (var gameObjectElement in _elements)
-                Destroy(gameObjectElement.gameObject);
-            
+            foreach (var pageElement in _elements)
+            {
+                pageElement.Destruct();
+                Destroy(pageElement.gameObject);
+            }
+
             _elements.Clear();
         }
 
@@ -35,19 +37,12 @@ namespace _Main.Scripts.UI.Book.BookPages
         {
             if (_journalPageSettings == null)
                 return;
-            
-            if (_journalPageSettings.HaveHeader)
-            {
-                TMP_Text header = Instantiate(_header, _pageContent);
-                _elements.Add(header.gameObject);
-                header.text = _journalPageSettings.Header;
-            }
 
-            foreach (var bodyString in _journalPageSettings.BodyContent)
+            foreach (var contentElement in _journalPageSettings.PageContentElementSettingsList)
             {
-                TMP_Text body = Instantiate(_body, _pageContent);
-                _elements.Add(body.gameObject);
-                body.text = bodyString;
+                BasePageElement basePageElement = Instantiate(_pageElements[contentElement.PageElementType], _pageContent);
+                basePageElement.Init(contentElement.TextContent);
+                _elements.Add(basePageElement);
             }
 
             _pageContent.ForceUpdateRectTransforms();

@@ -87,6 +87,7 @@ GameObject:
   - component: {fileID: 40402918100659796}
   - component: {fileID: 5809917382837618206}
   - component: {fileID: 3370346246767513167}
+  - component: {fileID: 1925497188048539535}
   m_Layer: 5
   m_Name: CookStep (TMP)
   m_TagString: Untagged
@@ -227,3 +228,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_HorizontalFit: 0
   m_VerticalFit: 2
+--- !u!114 &1925497188048539535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7812455274327607609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdffe267a9ad4b49a123337e1a3fc79c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pageElementType: 5
+  _text: {fileID: 5809917382837618206}

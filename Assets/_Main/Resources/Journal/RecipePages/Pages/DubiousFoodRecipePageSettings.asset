@@ -13,6 +13,14 @@ MonoBehaviour:
   m_Name: DubiousFoodRecipePageSettings
   m_EditorClassIdentifier: 
   <BookPage>k__BackingField: {fileID: 6715381086485655671, guid: 7623d5a53828f4a1685889cb489cd41a, type: 3}
+  PageContentElementSettingsList:
+  - PageElementType: 1
+    TextContent: DubiousFood
+    ImageContent: 
+  - PageElementType: 2
+    TextContent: If you stray too far from the recipe or use the wrong ingredients,
+      you'll inevitably end up with a dubious dish (dubious grind/drink).
+    ImageContent: 
   <HaveHeader>k__BackingField: 1
   <Header>k__BackingField: DubiousFood
   <BodyContent>k__BackingField:

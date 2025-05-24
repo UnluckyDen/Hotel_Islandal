@@ -50,8 +50,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pageContent: {fileID: 2136114897269988598}
-  _header: {fileID: 4606789659199082303, guid: 56dd1b46898964b19a39e8a98b25a869, type: 3}
-  _body: {fileID: 8591152795466297063, guid: 7fb0859de95cc41ef9a49daecf66f15b, type: 3}
+  _pageElements:
+    _serializedList:
+    - Key: 1
+      Value: {fileID: 6460358512772570793, guid: 56dd1b46898964b19a39e8a98b25a869, type: 3}
+    - Key: 2
+      Value: {fileID: -1447391341744196925, guid: 7fb0859de95cc41ef9a49daecf66f15b, type: 3}
+    - Key: 3
+      Value: {fileID: 3051467521020688913, guid: fe90aa7fea19348668bdb1e65e1d48bc, type: 3}
+    - Key: 5
+      Value: {fileID: 1925497188048539535, guid: 7027a6ae459c24c24bc84fafd957bde1, type: 3}
+    - Key: 6
+      Value: {fileID: 5935708702144754324, guid: 849b006d2ac0243348a81bddfe5cf4fb, type: 3}
 --- !u!114 &3317708704931638768
 MonoBehaviour:
   m_ObjectHideFlags: 0
