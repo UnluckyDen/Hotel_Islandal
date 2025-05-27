@@ -9,11 +9,13 @@ namespace _Main.Scripts.UI.Book.BookPages.PageElements
         [SerializeField] private PageElementType _pageElementType;
         [SerializeField] private TMP_Text _text;
         [SerializeField] private Image _image;
+        [SerializeField] protected AudioSource _audioSource;
 
-        public void Init(string elementText, Sprite sprite)
+        public void Init(string elementText, Sprite sprite, AudioClip audioClip)
         {
             SetText(elementText);
             SetImage(sprite);
+            SetAudio(audioClip);
         }
 
         public void Destruct()
@@ -31,6 +33,12 @@ namespace _Main.Scripts.UI.Book.BookPages.PageElements
         {
             if (_image != null)
                 _image.sprite = sprite;
+        }
+
+        public virtual void SetAudio(AudioClip audioClip)
+        {
+            if (_audioSource != null)
+                _audioSource.clip = audioClip;
         }
     }
 }

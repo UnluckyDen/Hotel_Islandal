@@ -16,17 +16,18 @@ MonoBehaviour:
   PageContentElementSettingsList:
   - PageElementType: 1
     TextContent: Welcome to Islandal
-    ImageContent: 
+    ImageContent: {fileID: 0}
+    AudioContent: {fileID: 0}
   - PageElementType: 2
     TextContent: 'Your duties:'
-    ImageContent: 
+    ImageContent: {fileID: 0}
+    AudioContent: {fileID: 0}
   - PageElementType: 2
     TextContent: "\u2014 Brew drinks to quench the insatiable thirst of our... guests.
       \u2014 Deliver orders, but do not make mistakes. Here, mistakes have a <i>flavor.</i>"
-    ImageContent: 
-  <HaveHeader>k__BackingField: 1
-  <Header>k__BackingField: Welcome to Islandal
-  <BodyContent>k__BackingField:
-  - 'Your duties:'
-  - "\u2014 Brew drinks to quench the insatiable thirst of our... guests. \u2014
-    Deliver orders, but do not make mistakes. Here, mistakes have a <i>flavor.</i>"
+    ImageContent: {fileID: 0}
+    AudioContent: {fileID: 0}
+  - PageElementType: 7
+    TextContent: Example of friendly sound
+    ImageContent: {fileID: -821692935, guid: 13af46217d5394ed29cee5b381c2be0a, type: 3}
+    AudioContent: {fileID: 8300000, guid: 5e5eaa392f3e94e41991c1bff7aff1c8, type: 3}

@@ -268,7 +268,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BookFlip_AudioExample
+      name: BookFlip_PlayButton
       rect:
         serializedVersion: 2
         x: 822
@@ -421,6 +421,50 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: BookFlip_PauseButton
+      rect:
+        serializedVersion: 2
+        x: 663
+        y: 567
+        width: 142
+        height: 136
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99067f856392b4d6497a25d686ef9fe2
+      internalID: -662903537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BookFlip_ButtonBg
+      rect:
+        serializedVersion: 2
+        x: 964
+        y: 536
+        width: 50
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 25, y: 24, z: 25, w: 24}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d4a3628f20524d94acd189be23c29a4
+      internalID: -947417356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -435,23 +479,25 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      BookFlip_10: -2126451417
-      BookFlip_3: -1933374068
-      BookFlip_7: -650499767
-      BookFlip_9: 1787906542
+      BookFlip_10: -955686249
+      BookFlip_3: -37420338
+      BookFlip_7: -1994029178
+      BookFlip_9: 1693476469
       BookFlip_ArrowLeft: -1523437635
       BookFlip_ArrowRight: 1700476373
-      BookFlip_AudioExample: -821692935
       BookFlip_BookMark: -1360290721
+      BookFlip_ButtonBg: -947417356
       BookFlip_CoverL: 249108362
       BookFlip_CoverR: 172631476
       BookFlip_Face: -1078759766
       BookFlip_IconFrame: 779095640
-      BookFlip_L: 1047630786
+      BookFlip_L: -35652619
       BookFlip_PageBookMark: 626131582
       BookFlip_PageL: 170566006
       BookFlip_PageR: -1014802087
-      BookFlip_R: -1361032135
+      BookFlip_PauseButton: -662903537
+      BookFlip_PlayButton: -821692935
+      BookFlip_R: -1649459098
       BookFlip_SpiderWeb: 1502479904
       BookFlip_Star: 1957228082
   mipmapLimitGroupName: 
