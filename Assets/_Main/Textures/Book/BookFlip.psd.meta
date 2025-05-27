@@ -140,7 +140,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 914
+        y: 938
         width: 512
         height: 86
       alignment: 0
@@ -162,7 +162,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 512
-        y: 914
+        y: 938
         width: 512
         height: 86
       alignment: 0
@@ -184,7 +184,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 821
+        y: 871
         width: 1024
         height: 67
       alignment: 0
@@ -206,12 +206,12 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 732
+        y: 799
         width: 1024
-        height: 69
+        height: 70
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 34, z: 0, w: 34}
+      border: {x: 0, y: 35, z: 0, w: 35}
       customData: 
       outline: []
       physicsShape: []
@@ -227,13 +227,13 @@ TextureImporter:
       name: BookFlip_PageBookMark
       rect:
         serializedVersion: 2
-        x: 29
-        y: 611
-        width: 272
+        x: 64
+        y: 699
+        width: 268
         height: 73
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 134, y: 0, z: 134, w: 0}
       customData: 
       outline: []
       physicsShape: []
@@ -249,10 +249,10 @@ TextureImporter:
       name: BookFlip_BookMark
       rect:
         serializedVersion: 2
-        x: 417
-        y: 552
-        width: 145
-        height: 155
+        x: 367
+        y: 640
+        width: 142
+        height: 153
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -271,8 +271,8 @@ TextureImporter:
       name: BookFlip_PlayButton
       rect:
         serializedVersion: 2
-        x: 822
-        y: 567
+        x: 809
+        y: 659
         width: 142
         height: 136
       alignment: 0
@@ -293,8 +293,8 @@ TextureImporter:
       name: BookFlip_IconFrame
       rect:
         serializedVersion: 2
-        x: 45
-        y: 319
+        x: 25
+        y: 425
         width: 250
         height: 242
       alignment: 0
@@ -315,8 +315,8 @@ TextureImporter:
       name: BookFlip_Star
       rect:
         serializedVersion: 2
-        x: 540
-        y: 319
+        x: 639
+        y: 490
         width: 170
         height: 161
       alignment: 0
@@ -337,10 +337,10 @@ TextureImporter:
       name: BookFlip_SpiderWeb
       rect:
         serializedVersion: 2
-        x: 48
-        y: 0
-        width: 242
-        height: 287
+        x: 603
+        y: 183
+        width: 231
+        height: 269
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -359,12 +359,12 @@ TextureImporter:
       name: BookFlip_Face
       rect:
         serializedVersion: 2
-        x: 540
-        y: 42
-        width: 151
-        height: 184
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 488
+        y: 468
+        width: 150
+        height: 183
+      alignment: 9
+      pivot: {x: 0.5256586, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -425,8 +425,8 @@ TextureImporter:
       name: BookFlip_PauseButton
       rect:
         serializedVersion: 2
-        x: 663
-        y: 567
+        x: 654
+        y: 657
         width: 142
         height: 136
       alignment: 0
@@ -448,7 +448,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 964
-        y: 536
+        y: 710
         width: 50
         height: 48
       alignment: 0
@@ -461,6 +461,28 @@ TextureImporter:
       bones: []
       spriteID: 5d4a3628f20524d94acd189be23c29a4
       internalID: -947417356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BookFlip_Screen
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 595
+        height: 337
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39a00fea1753747089106f8de587f534
+      internalID: -195382528
       vertices: []
       indices: 
       edges: []
@@ -498,6 +520,7 @@ TextureImporter:
       BookFlip_PauseButton: -662903537
       BookFlip_PlayButton: -821692935
       BookFlip_R: -1649459098
+      BookFlip_Screen: -195382528
       BookFlip_SpiderWeb: 1502479904
       BookFlip_Star: 1957228082
   mipmapLimitGroupName: 

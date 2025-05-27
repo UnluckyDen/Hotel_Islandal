@@ -16,18 +16,28 @@ MonoBehaviour:
   PageContentElementSettingsList:
   - PageElementType: 2
     TextContent: <b>Rules:</b>
-    ImageContent: 
+    ImageContent: {fileID: 0}
+    AudioContent: {fileID: 0}
   - PageElementType: 2
     TextContent: " \u2014 If there\u2019s a quiet, friendly whisper, knocking, or
       laughter behind the door\u2014knock back and take the order. Miss it, and they\u2019ll
-      get angry. \u2014 If you hear screeching, roaring, or the sound of tearing
+      get angry. "
+    ImageContent: {fileID: 0}
+    AudioContent: {fileID: 0}
+  - PageElementType: 7
+    TextContent: Example of friendly sound
+    ImageContent: {fileID: 0}
+    AudioContent: {fileID: 8300000, guid: 5e5eaa392f3e94e41991c1bff7aff1c8, type: 3}
+  - PageElementType: 2
+    TextContent: "\u2014 If you hear screeching, roaring, or the sound of tearing
       flesh\u2014do not knock. "
-    ImageContent: 
-  <HaveHeader>k__BackingField: 0
-  <Header>k__BackingField: 
-  <BodyContent>k__BackingField:
-  - <b>Rules:</b>
-  - " \u2014 If there\u2019s a quiet, friendly whisper, knocking, or laughter behind
-    the door\u2014knock back and take the order. Miss it, and they\u2019ll get angry.
-    \u2014 If you hear screeching, roaring, or the sound of tearing flesh\u2014do
-    not knock. "
+    ImageContent: {fileID: 0}
+    AudioContent: {fileID: 0}
+  - PageElementType: 7
+    TextContent: Example of aggressive sound 1
+    ImageContent: {fileID: 0}
+    AudioContent: {fileID: 8300000, guid: cf129b9adcb4647aabc2da932497b29e, type: 3}
+  - PageElementType: 7
+    TextContent: Example of aggressive sound 2
+    ImageContent: {fileID: 0}
+    AudioContent: {fileID: 8300000, guid: f8b69be3f465b4346a3de93a19336724, type: 3}
