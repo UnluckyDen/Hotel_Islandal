@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: UndeadResidentSoundsSettings
   m_EditorClassIdentifier: 
   <LongSounds>k__BackingField:
-  - {fileID: 8300000, guid: 99b0aa3b0eea040769fe8e8ee75259ac, type: 3}
+  - {fileID: 8300000, guid: 0a59bea18087d4de3a2afa2c5edf98a6, type: 3}
+  - {fileID: 8300000, guid: 8123c063017c84209b3e1a11b047d4e7, type: 3}
   <ShortSounds>k__BackingField:
-  - {fileID: 8300000, guid: c06c95fefda22404d9f65b65930a4249, type: 3}
+  - {fileID: 8300000, guid: afb598ffd49ca453fa14910924b73bf4, type: 3}
+  - {fileID: 8300000, guid: 1d86cee294f7246e7aa2baeddf869db9, type: 3}

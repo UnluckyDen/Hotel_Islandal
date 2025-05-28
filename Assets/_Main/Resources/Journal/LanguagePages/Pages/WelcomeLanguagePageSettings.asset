@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df7879d349e84f50b53a8d6f696e299e, type: 3}
+  m_Name: WelcomeLanguagePageSettings
+  m_EditorClassIdentifier: 
+  <BookPage>k__BackingField: {fileID: 6715381086485655671, guid: 7623d5a53828f4a1685889cb489cd41a, type: 3}
+  PageContentElementSettingsList:
+  - PageElementType: 1
+    TextContent: Languages
+    ImageContent: {fileID: 0}
+    AudioContent: {fileID: 0}
+  - PageElementType: 2
+    TextContent: Residents who wish to place an order do so using a combination of
+      short (*) and long (-) sounds.
+    ImageContent: {fileID: 0}
+    AudioContent: {fileID: 0}
+  - PageElementType: 7
+    TextContent: Example of <i>long (-)</i> soudn 1
+    ImageContent: {fileID: 0}
+    AudioContent: {fileID: 8300000, guid: 0a59bea18087d4de3a2afa2c5edf98a6, type: 3}
+  - PageElementType: 7
+    TextContent: Example of <i>long (-)</i> soudn 2
+    ImageContent: {fileID: 0}
+    AudioContent: {fileID: 8300000, guid: 8123c063017c84209b3e1a11b047d4e7, type: 3}
+  - PageElementType: 6
+    TextContent: Example of <i>short (*)</i> soudn 2
+    ImageContent: {fileID: 0}
+    AudioContent: {fileID: 8300000, guid: 1d86cee294f7246e7aa2baeddf869db9, type: 3}
+  - PageElementType: 7
+    TextContent: Example of <i>short (*)</i> soudn 1
+    ImageContent: {fileID: 0}
+    AudioContent: {fileID: 8300000, guid: afb598ffd49ca453fa14910924b73bf4, type: 3}
+  - PageElementType: 7
+    TextContent: Example of <i>short (*)</i> soudn 2
+    ImageContent: {fileID: 0}
+    AudioContent: {fileID: 8300000, guid: 1d86cee294f7246e7aa2baeddf869db9, type: 3}

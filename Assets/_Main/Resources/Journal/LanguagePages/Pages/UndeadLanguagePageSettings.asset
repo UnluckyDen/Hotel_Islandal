@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: df7879d349e84f50b53a8d6f696e299e, type: 3}
-  m_Name: LanguagePageSettings
+  m_Name: UndeadLanguagePageSettings
   m_EditorClassIdentifier: 
   <BookPage>k__BackingField: {fileID: 6715381086485655671, guid: 7623d5a53828f4a1685889cb489cd41a, type: 3}
   PageContentElementSettingsList:
