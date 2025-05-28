@@ -299,7 +299,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: 779095640, guid: 13af46217d5394ed29cee5b381c2be0a, type: 3}
-  m_Type: 0
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -411,6 +411,7 @@ MonoBehaviour:
   _pageElementType: 3
   _text: {fileID: 8670601431471922390}
   _image: {fileID: 8366812647413203591}
+  _audioSource: {fileID: 0}
 --- !u!1 &7562161055599426435
 GameObject:
   m_ObjectHideFlags: 0

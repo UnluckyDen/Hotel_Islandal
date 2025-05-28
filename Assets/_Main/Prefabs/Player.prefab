@@ -387,6 +387,34 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cart
       objectReference: {fileID: 0}
+    - target: {fileID: 7244346424218573445, guid: f468dfea917268a47a0bab52bd2e1470, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.265
+      objectReference: {fileID: 0}
+    - target: {fileID: 7244346424218573445, guid: f468dfea917268a47a0bab52bd2e1470, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7244346424218573445, guid: f468dfea917268a47a0bab52bd2e1470, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 7244346424218573445, guid: f468dfea917268a47a0bab52bd2e1470, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7244346424218573445, guid: f468dfea917268a47a0bab52bd2e1470, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 7244346424218573445, guid: f468dfea917268a47a0bab52bd2e1470, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7244346424218573445, guid: f468dfea917268a47a0bab52bd2e1470, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
     - target: {fileID: 7444930196539999909, guid: f468dfea917268a47a0bab52bd2e1470, type: 3}
       propertyPath: m_LocalPosition.z
       value: -0.0345
@@ -445,7 +473,7 @@ AudioSource:
   DopplerLevel: 1
   MinDistance: 0.1
   MaxDistance: 2.5
-  Pan2D: 0.5
+  Pan2D: 0
   rolloffMode: 2
   BypassEffects: 0
   BypassListenerEffects: 0

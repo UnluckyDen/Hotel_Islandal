@@ -229,11 +229,11 @@ TextureImporter:
         serializedVersion: 2
         x: 64
         y: 699
-        width: 268
+        width: 109
         height: 73
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 134, y: 0, z: 134, w: 0}
+      border: {x: 53, y: 0, z: 56, w: 0}
       customData: 
       outline: []
       physicsShape: []
@@ -241,28 +241,6 @@ TextureImporter:
       bones: []
       spriteID: 5255028f1b8794a539fa7fae9d9ca88c
       internalID: 626131582
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BookFlip_BookMark
-      rect:
-        serializedVersion: 2
-        x: 367
-        y: 640
-        width: 142
-        height: 153
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 31a422285a37d43088f1cd2d5e624e38
-      internalID: -1360290721
       vertices: []
       indices: 
       edges: []
@@ -294,12 +272,12 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 25
-        y: 425
-        width: 250
-        height: 242
+        y: 569
+        width: 99
+        height: 97
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 123, y: 121, z: 125, w: 121}
+      border: {x: 49, y: 48, z: 49, w: 48}
       customData: 
       outline: []
       physicsShape: []
@@ -312,77 +290,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BookFlip_Star
-      rect:
-        serializedVersion: 2
-        x: 639
-        y: 490
-        width: 170
-        height: 161
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0d95472fb649b46d4bfede15db066923
-      internalID: 1957228082
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BookFlip_SpiderWeb
-      rect:
-        serializedVersion: 2
-        x: 603
-        y: 183
-        width: 231
-        height: 269
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 32c3593df35714d0a9002dcbabc89f1e
-      internalID: 1502479904
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BookFlip_Face
-      rect:
-        serializedVersion: 2
-        x: 488
-        y: 468
-        width: 150
-        height: 183
-      alignment: 9
-      pivot: {x: 0.5256586, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d7504d97b19d04e84b880e47c3f7248c
-      internalID: -1078759766
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: BookFlip_ArrowRight
       rect:
         serializedVersion: 2
-        x: 839
-        y: 218
+        x: 512
+        y: 654
         width: 139
         height: 137
       alignment: 0
@@ -403,9 +315,9 @@ TextureImporter:
       name: BookFlip_ArrowLeft
       rect:
         serializedVersion: 2
-        x: 771
-        y: 31
-        width: 139
+        x: 361
+        y: 654
+        width: 135
         height: 137
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -471,8 +383,8 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 595
-        height: 337
+        width: 444
+        height: 251
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -483,6 +395,28 @@ TextureImporter:
       bones: []
       spriteID: 39a00fea1753747089106f8de587f534
       internalID: -195382528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BookFlip_Screen_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 254
+        width: 443
+        height: 249
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c049048329724380abe36afded62037
+      internalID: -197483403
       vertices: []
       indices: 
       edges: []
@@ -521,6 +455,7 @@ TextureImporter:
       BookFlip_PlayButton: -821692935
       BookFlip_R: -1649459098
       BookFlip_Screen: -195382528
+      BookFlip_Screen_2: -197483403
       BookFlip_SpiderWeb: 1502479904
       BookFlip_Star: 1957228082
   mipmapLimitGroupName: 
