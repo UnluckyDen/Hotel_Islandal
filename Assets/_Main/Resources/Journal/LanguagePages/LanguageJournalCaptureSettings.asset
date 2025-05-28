@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <JournalPageSettings>k__BackingField:
   - {fileID: 11400000, guid: e51be12fd2ed44330ac8d36c338761a9, type: 2}
+  - {fileID: 11400000, guid: 2b17ef51c75a046cca512820e0d0c975, type: 2}

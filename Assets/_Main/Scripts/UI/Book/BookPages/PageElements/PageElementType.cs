@@ -7,6 +7,7 @@ namespace _Main.Scripts.UI.Book.BookPages.PageElements
         Recipe = 3,
         Header2 = 4,
         RecipeStep = 5,
-        Spacer = 6
+        Spacer = 6,
+        AudioSample = 7
     }
 }

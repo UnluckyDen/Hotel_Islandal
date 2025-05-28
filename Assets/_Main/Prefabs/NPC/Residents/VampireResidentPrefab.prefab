@@ -70,7 +70,7 @@ MonoBehaviour:
   _audioSource: {fileID: -3940338055109517777}
   _residentConditionHintSettings: {fileID: 11400000, guid: 6635857dcd2024a0db09db4dfa9018b4, type: 2}
   _residentOrderSettings: {fileID: 11400000, guid: aedcfae2114be4e7c899344233a0ea9b, type: 2}
-  _delayBetweenClips: 0.05
+  _delayBetweenClips: 0
 --- !u!82 &-3940338055109517777
 AudioSource:
   m_ObjectHideFlags: 0

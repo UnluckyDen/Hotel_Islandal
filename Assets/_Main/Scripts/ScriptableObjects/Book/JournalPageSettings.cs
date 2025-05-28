@@ -1,7 +1,5 @@
-using System;
 using System.Collections.Generic;
 using _Main.Scripts.UI.Book.BookPages;
-using _Main.Scripts.UI.Book.BookPages.PageElements;
 using UnityEngine;
 
 namespace _Main.Scripts.ScriptableObjects.Book
@@ -11,13 +9,5 @@ namespace _Main.Scripts.ScriptableObjects.Book
     {
         [field: SerializeField] public DefaultBookPage BookPage { get; private set; }
         [field: SerializeField] public List<JournalPageContentElementSettings> PageContentElementSettingsList;
-    }
-
-    [Serializable]
-    public struct JournalPageContentElementSettings
-    {
-        public PageElementType PageElementType;
-        public string TextContent;
-        public Sprite ImageContent;
     }
 }

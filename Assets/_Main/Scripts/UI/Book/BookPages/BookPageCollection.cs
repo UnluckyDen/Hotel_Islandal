@@ -37,7 +37,7 @@ namespace _Main.Scripts.UI.Book.BookPages
         {
             var pageNumbers = GetPageNumbersBySpread(_currentSpread);
             var pageLeft = _currentSpread >= 0 ? _bookPages[pageNumbers.Item1] : null;
-            var pageRight = _bookPages.Count > _currentSpread ? _bookPages[pageNumbers.Item2] : null;
+            var pageRight = _bookPages.Count > pageNumbers.Item2 ? _bookPages[pageNumbers.Item2] : null;
             return (pageLeft, pageRight);
         }
 
