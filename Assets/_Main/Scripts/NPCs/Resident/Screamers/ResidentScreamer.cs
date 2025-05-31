@@ -27,7 +27,7 @@ namespace _Main.Scripts.NPCs.Resident.Screamers
         {
             _player.Pause();
             var screamerObject = Instantiate(_screamerPrefab, _screamerRoot.position, _screamerRoot.rotation, _screamerRoot);
-            
+            _screamerRoot.LookAt(_player.CameraRoot);
             _player.LockCameraAtObject(true, _lookRoot);
             
             PostprocessingController.Instance.ToScream(_toScream);

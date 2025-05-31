@@ -17,6 +17,7 @@ namespace _Main.Scripts.Player
         private InputService _inputService;
 
         public CoinStash CoinStash => _coinStash;
+        public Transform CameraRoot => _playerLook.transform;
         
         public void Init(WayController wayController, InputService inputService)
         {
