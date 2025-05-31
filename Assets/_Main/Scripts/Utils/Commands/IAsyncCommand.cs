@@ -8,7 +8,7 @@ namespace _Main.Scripts.Utils.Commands
         public CommandStatus Status { get; }
         public int CommandNumber { get; }
         
-        public IEnumerator Execute(StopFlag stopFlag);
+        public IEnumerator Execute(StopFlag stopFlag, PauseFlag pauseFlag);
         public void UpdateCommandNumber(int commandNumber);
         
         public void Undo();

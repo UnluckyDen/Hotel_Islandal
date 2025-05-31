@@ -20,6 +20,7 @@ namespace _Main.Scripts.Player.Movement.Commands
         private readonly WayController _wayController;
 
         private StopFlag _stopFlag;
+        private PauseFlag _pauseFlag;
         private bool _undo;
         private float _currentMoveFactor;
 
@@ -42,9 +43,11 @@ namespace _Main.Scripts.Player.Movement.Commands
             Status = CommandStatus.NotStarted;
         }
 
-        public IEnumerator Execute(StopFlag stopFlag)
+        public IEnumerator Execute(StopFlag stopFlag, PauseFlag pauseFlag)
         {
             _stopFlag = stopFlag;
+            _pauseFlag = pauseFlag;
+            
             Status = CommandStatus.Running;
             yield return MoveCoroutine();
             yield return UndoCoroutine();
@@ -72,6 +75,12 @@ namespace _Main.Scripts.Player.Movement.Commands
             
             while (factor < 1f)
             {
+                if (_pauseFlag.IsPause)
+                {
+                    yield return null;
+                    continue;
+                }
+
                 if (_stopFlag.IsStop)
                 {
                     Status = CommandStatus.Interrupted;

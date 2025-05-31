@@ -14,14 +14,17 @@ namespace _Main.Scripts.NPCs.Resident.Screamers
         [SerializeField] private ScreamerObject _screamerPrefab;
 
         private Coroutine _screamCoroutine;
+        private Player.Player _player;
         
-        public void Scream()
+        public void Scream(Player.Player player)
         {
+            _player = player;
             _screamCoroutine = StartCoroutine(ScreamerCoroutine());
         }
 
         private IEnumerator ScreamerCoroutine()
         {
+            _player.Pause();
             var screamerObject = Instantiate(_screamerPrefab, _screamerRoot.position, _screamerRoot.rotation, _screamerRoot);
             PostprocessingController.Instance.ToScream(_toScream);
             yield return new WaitForSeconds(_toScream);
@@ -32,6 +35,7 @@ namespace _Main.Scripts.NPCs.Resident.Screamers
             PostprocessingController.Instance.ToNormal(_toNormal);
             yield return new WaitForSeconds(_toNormal);
             Destroy(screamerObject.gameObject);
+            _player.UnPause();
         }
     }
 }

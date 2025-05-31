@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace _Main.Scripts.Player.Movement
 {
-    public class PlayerMovement : MonoBehaviour, ICoroutineRunner
+    public class PlayerMovement : MonoBehaviour, ICoroutineRunner, IPausable
     {
         [SerializeField] private float _movementSpeed = 1f;
         [SerializeField] private float _rotateSpeed = 1f;
@@ -38,6 +38,12 @@ namespace _Main.Scripts.Player.Movement
             _inputService.MovementInput -= InputServiceOnMovementInput;
             _movementAsyncCommandQuery.DiscardAllCommands();
         }
+
+        public void Pause() => 
+            _movementAsyncCommandQuery.PauseQueue();
+
+        public void UnPause() => 
+            _movementAsyncCommandQuery.UnPauseQueue();
 
         private void InputServiceOnMovementInput(Vector2 inputDirection, bool press)
         {

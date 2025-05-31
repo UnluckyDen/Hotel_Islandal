@@ -16,6 +16,7 @@ namespace _Main.Scripts.Utils.Commands
         private readonly List<IAsyncCommand> _commands = new();
         private readonly ICoroutineRunner _coroutineRunner;
         private StopFlag _stopFlag;
+        private PauseFlag _pauseFlag;
         
         public IAsyncCommand RunningCommand {get; private set; }
         public IReadOnlyCollection<IAsyncCommand> Commands => _commands;
@@ -24,6 +25,7 @@ namespace _Main.Scripts.Utils.Commands
         public BaseAsyncCommandQuery(ICoroutineRunner coroutineRunner)
         {
             _coroutineRunner = coroutineRunner;
+            _pauseFlag = new PauseFlag();
         }
 
         public void StartQueue()
@@ -32,6 +34,18 @@ namespace _Main.Scripts.Utils.Commands
                 return;
             
             _coroutineRunner.StartCoroutine(Loop());
+        }
+
+        public void PauseQueue()
+        {
+            if (IsRunning && _pauseFlag != null)
+                _pauseFlag.Pause();
+        }
+
+        public void UnPauseQueue()
+        {
+            if (IsRunning && _pauseFlag != null)
+                _pauseFlag.UnPause();
         }
         
         public void Append(IAsyncCommand command)
@@ -75,7 +89,7 @@ namespace _Main.Scripts.Utils.Commands
                 RunningCommand = _commands.First();
                 _commands.RemoveAt(0);
                 
-                yield return RunningCommand.Execute(_stopFlag);
+                yield return RunningCommand.Execute(_stopFlag, _pauseFlag);
                 var result = RunningCommand.Status;
                 
                 UpdateCommandNumbers();

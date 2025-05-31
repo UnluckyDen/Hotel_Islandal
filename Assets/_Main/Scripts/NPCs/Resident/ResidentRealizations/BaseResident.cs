@@ -82,7 +82,7 @@ namespace _Main.Scripts.NPCs.Resident.ResidentRealizations
 
             Debug.Log("In not ordered food");
             FoodAccepted?.Invoke(false);
-            ShowScreamer();
+            ShowScreamer(_player);
             return false;
         }
 
@@ -100,7 +100,7 @@ namespace _Main.Scripts.NPCs.Resident.ResidentRealizations
                     return;
                 
                 case ResidentConditionType.Aggressive when _player != null:
-                    ShowScreamer();
+                    ShowScreamer(_player);
                     break;
                 
                 case ResidentConditionType.NonActive:
@@ -110,15 +110,13 @@ namespace _Main.Scripts.NPCs.Resident.ResidentRealizations
             }
         }
         
-        protected virtual void ShowScreamer()
-        {
-            _residentScreamer.Scream();
-        }
+        protected virtual void ShowScreamer(Player.Player player) =>
+            _residentScreamer.Scream(player);
 
-        protected void OnPlayerLeaveHaveOrderResident()
+        protected void OnPlayerLeaveHaveOrderResident(Player.Player player)
         {
             if (!_playerOpenDoor)
-                ShowScreamer();
+                ShowScreamer(player);
         }
 
         protected void GiveCoinToPlayer()
@@ -133,13 +131,13 @@ namespace _Main.Scripts.NPCs.Resident.ResidentRealizations
             _residentSound.ShowConditionHint(_currentCondition);
         }
 
-        private void OnPlayerZoneOut()
+        private void OnPlayerZoneOut(Player.Player player)
         {
             _player = null;
             _residentDoor.CloseDoor();
             
             if (_currentCondition == ResidentConditionType.HaveOrder)
-                OnPlayerLeaveHaveOrderResident();
+                OnPlayerLeaveHaveOrderResident(player);
         }
 
         private void PlayerTriggerZoneOnPlayerEnterTriggerZone(Player.Player player, bool playerIn)
@@ -150,7 +148,7 @@ namespace _Main.Scripts.NPCs.Resident.ResidentRealizations
                 return;
             }
             
-            OnPlayerZoneOut();
+            OnPlayerZoneOut(player);
         }
     }
 }

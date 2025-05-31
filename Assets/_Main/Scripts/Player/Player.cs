@@ -2,11 +2,12 @@ using _Main.Scripts.Player.Movement;
 using _Main.Scripts.Player.Movement.Way;
 using _Main.Scripts.PortableDevices.Coins;
 using _Main.Scripts.Services;
+using _Main.Scripts.Utils;
 using UnityEngine;
 
 namespace _Main.Scripts.Player
 {
-    public class Player : MonoBehaviour
+    public class Player : MonoBehaviour, IPausable
     {
         [SerializeField] private PlayerMovement _playerMovement;
         [SerializeField] private PlayerLook _playerLook;
@@ -30,6 +31,16 @@ namespace _Main.Scripts.Player
         {
             _playerMovement.Destruct();
             _playerLook.Destruct();
+        }
+
+        public void Pause()
+        {
+            _playerMovement.Pause();
+        }
+
+        public void UnPause()
+        {
+            _playerMovement.UnPause();
         }
     }
 }
