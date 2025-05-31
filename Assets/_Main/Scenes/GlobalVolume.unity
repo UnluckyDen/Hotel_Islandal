@@ -1251,7 +1251,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1461587300255139834, guid: 71929ed39b58044b9b71e4b7dfdeba78, type: 3}
       propertyPath: weight
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1461587300255139834, guid: 71929ed39b58044b9b71e4b7dfdeba78, type: 3}
       propertyPath: priority
