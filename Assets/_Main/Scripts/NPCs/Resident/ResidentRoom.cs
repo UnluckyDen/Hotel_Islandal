@@ -2,7 +2,9 @@ using _Main.Scripts.Environment;
 using _Main.Scripts.Environment.Doors;
 using _Main.Scripts.Environment.Doors.ResidentDoor;
 using _Main.Scripts.NPCs.Resident.ResidentRealizations;
+using _Main.Scripts.NPCs.Resident.Screamers;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace _Main.Scripts.NPCs.Resident
 {
@@ -13,6 +15,7 @@ namespace _Main.Scripts.NPCs.Resident
         [SerializeField] private ResidentObjectPlace _residentObjectPlace;
         [SerializeField] private DoorSign _doorSign;
         [SerializeField] private ResidentCluesController _residentCluesController;
+        [FormerlySerializedAs("_screamer")] [SerializeField] private ResidentScreamer _residentScreamer;
 
         [SerializeField] private Transform _residentPlace;
 
@@ -34,7 +37,7 @@ namespace _Main.Scripts.NPCs.Resident
 
             _residentDoor.Init(_residentDoorKnocker, _residentObjectPlace);
             
-            _resident.Init(_residentDoor, _playerTriggerZone, _residentCluesController);
+            _resident.Init(_residentDoor, _playerTriggerZone, _residentCluesController, _residentScreamer);
         }
 
         public void Destruct()

@@ -1,8 +1,6 @@
-using System;
 using _Main.Scripts.Analytics;
 using _Main.Scripts.Services;
 using _Main.Scripts.UI.Book;
-using _Main.Scripts.UI.Screamers;
 using UnityEngine;
 
 namespace _Main.Scripts.UI
@@ -10,7 +8,6 @@ namespace _Main.Scripts.UI
     public class WindowController : MonoBehaviour
     {
         [SerializeField] private PlayerBookWindow _playerBookWindow;
-        [SerializeField] private ScreamerWindow _screamerWindow;
 
         [SerializeField] private Transform _content;
 
@@ -44,12 +41,6 @@ namespace _Main.Scripts.UI
             _inputService.OpenBook -= InputServiceOnOpenBook;
             
             _playerBookWindow.Destruct();
-        }
-
-        public void ShowScreamerWindow()
-        {
-            var a = Instantiate(_screamerWindow, _content);
-            a.Init();
         }
 
         private void InputServiceOnOpenBook()

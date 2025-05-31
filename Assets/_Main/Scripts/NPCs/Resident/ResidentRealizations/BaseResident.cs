@@ -5,6 +5,7 @@ using _Main.Scripts.Cooking.Foods;
 using _Main.Scripts.Environment;
 using _Main.Scripts.Environment.Doors.ResidentDoor;
 using _Main.Scripts.NPCs.Resident.Clues;
+using _Main.Scripts.NPCs.Resident.Screamers;
 using _Main.Scripts.PortableDevices.Coins;
 using _Main.Scripts.ScriptableObjects;
 using _Main.Scripts.UI;
@@ -30,6 +31,7 @@ namespace _Main.Scripts.NPCs.Resident.ResidentRealizations
         private ResidentDoor _residentDoor;
         private PlayerTriggerZone _playerTriggerZone;
         private ResidentCluesController _residentCluesController;
+        private ResidentScreamer _residentScreamer;
         
         private ResidentConditionType _currentCondition;
         
@@ -44,11 +46,12 @@ namespace _Main.Scripts.NPCs.Resident.ResidentRealizations
                 _orderedFood = orderedFood;
         }
         
-        public virtual void Init(ResidentDoor residentDoor, PlayerTriggerZone playerTriggerZone, ResidentCluesController residentCluesController)
+        public virtual void Init(ResidentDoor residentDoor, PlayerTriggerZone playerTriggerZone, ResidentCluesController residentCluesController, ResidentScreamer residentScreamer)
         {
             _residentDoor = residentDoor;
             _playerTriggerZone = playerTriggerZone;
             _residentCluesController = residentCluesController;
+            _residentScreamer = residentScreamer;
             
             _residentSound.Init(_residentSoundsSettings);
             
@@ -79,7 +82,7 @@ namespace _Main.Scripts.NPCs.Resident.ResidentRealizations
 
             Debug.Log("In not ordered food");
             FoodAccepted?.Invoke(false);
-            WindowController.Instance.ShowScreamerWindow();
+            ShowScreamer();
             return false;
         }
 
@@ -109,7 +112,7 @@ namespace _Main.Scripts.NPCs.Resident.ResidentRealizations
         
         protected virtual void ShowScreamer()
         {
-            WindowController.Instance.ShowScreamerWindow();
+            _residentScreamer.Scream();
         }
 
         protected void OnPlayerLeaveHaveOrderResident()
