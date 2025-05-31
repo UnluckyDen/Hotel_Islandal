@@ -388,14 +388,6 @@ PrefabInstance:
       value: Cart
       objectReference: {fileID: 0}
     - target: {fileID: 7244346424218573445, guid: f468dfea917268a47a0bab52bd2e1470, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.265
-      objectReference: {fileID: 0}
-    - target: {fileID: 7244346424218573445, guid: f468dfea917268a47a0bab52bd2e1470, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7244346424218573445, guid: f468dfea917268a47a0bab52bd2e1470, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.7071068
       objectReference: {fileID: 0}
