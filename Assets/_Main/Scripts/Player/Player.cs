@@ -33,6 +33,11 @@ namespace _Main.Scripts.Player
             _playerLook.Destruct();
         }
 
+        public void LockCameraAtObject(bool isLock, Transform target = null)
+        {
+            _playerLook.LookCameraAtObject(isLock, target);
+        }
+
         public void Pause()
         {
             _playerMovement.Pause();

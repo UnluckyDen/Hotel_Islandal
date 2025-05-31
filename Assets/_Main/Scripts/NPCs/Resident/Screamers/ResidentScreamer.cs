@@ -11,6 +11,7 @@ namespace _Main.Scripts.NPCs.Resident.Screamers
         [SerializeField] private float _toNormal = 0.5f;
         [Space] 
         [SerializeField] private Transform _screamerRoot;
+        [SerializeField] private Transform _lookRoot;
         [SerializeField] private ScreamerObject _screamerPrefab;
 
         private Coroutine _screamCoroutine;
@@ -26,6 +27,9 @@ namespace _Main.Scripts.NPCs.Resident.Screamers
         {
             _player.Pause();
             var screamerObject = Instantiate(_screamerPrefab, _screamerRoot.position, _screamerRoot.rotation, _screamerRoot);
+            
+            _player.LockCameraAtObject(true, _lookRoot);
+            
             PostprocessingController.Instance.ToScream(_toScream);
             yield return new WaitForSeconds(_toScream);
 
@@ -34,6 +38,9 @@ namespace _Main.Scripts.NPCs.Resident.Screamers
             
             PostprocessingController.Instance.ToNormal(_toNormal);
             yield return new WaitForSeconds(_toNormal);
+            
+            _player.LockCameraAtObject(false, _lookRoot);
+            
             Destroy(screamerObject.gameObject);
             _player.UnPause();
         }
