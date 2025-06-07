@@ -21,6 +21,7 @@ namespace _Main.Scripts.UI.Book
         [Space]
         [SerializeField] private Button _buttonRight;
         [SerializeField] private Button _buttonLeft;
+        [SerializeField] private Button _closeButton;
 
         private InputService _inputService;
 
@@ -30,6 +31,8 @@ namespace _Main.Scripts.UI.Book
             
             if (_inputService != null)
                 _inputService.MovementInput += InstanceOnMovementInput;
+            
+            _closeButton.onClick.AddListener(Close);
         }
 
         private void OnDisable()
@@ -38,6 +41,8 @@ namespace _Main.Scripts.UI.Book
             
             if (_inputService != null)
                 _inputService.MovementInput -= InstanceOnMovementInput;
+            
+            _closeButton.onClick.RemoveListener(Close);
         }
 
         public void Init()
@@ -104,6 +109,11 @@ namespace _Main.Scripts.UI.Book
 
             (JournalPageSettings, JournalPageSettings) pagePair = _bookPageCollection.GetCurrentPages();
             _bookSpread.UpdatePages(pagePair.Item1, pagePair.Item2);
+        }
+
+        private void Close()
+        {
+            gameObject.SetActive(false);
         }
     }
 }
