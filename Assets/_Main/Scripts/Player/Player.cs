@@ -58,7 +58,7 @@ namespace _Main.Scripts.Player
         {
             _playerMovement.UnPause();
             _playerLook.UnPause();
-            _playerObjectManipulator.Pause();
+            _playerObjectManipulator.UnPause();
         }
 
         private void BookOpen(BookOpenedEvent bookOpenedEvent)
