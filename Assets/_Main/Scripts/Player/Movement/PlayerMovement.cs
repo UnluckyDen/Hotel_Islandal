@@ -19,6 +19,7 @@ namespace _Main.Scripts.Player.Movement
         private MovementAsyncCommandQuery _movementAsyncCommandQuery;
 
         private MoveInput _moveInput;
+        private bool _isPause;
         
         public void Init(WayController wayController, InputService inputService)
         {
@@ -39,11 +40,17 @@ namespace _Main.Scripts.Player.Movement
             _movementAsyncCommandQuery.DiscardAllCommands();
         }
 
-        public void Pause() => 
+        public void Pause()
+        {
             _movementAsyncCommandQuery.PauseQueue();
+            _isPause = true;
+        }
 
-        public void UnPause() => 
+        public void UnPause()
+        {
             _movementAsyncCommandQuery.UnPauseQueue();
+            _isPause = false;
+        }
 
         private void InputServiceOnMovementInput(Vector2 inputDirection, bool press)
         {
@@ -55,6 +62,9 @@ namespace _Main.Scripts.Player.Movement
 
         private void Update()
         {
+            if (_isPause)
+                return;
+            
             if (_movementAsyncCommandQuery.IsRunning)
             {
                 HandleUndo();

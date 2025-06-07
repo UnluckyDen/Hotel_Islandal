@@ -65,10 +65,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Next page
+  m_text: D
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 80be9dc29fbab4745bfd5215b5b48e39, type: 2}
+  m_sharedMaterial: {fileID: -5273082348830432231, guid: 80be9dc29fbab4745bfd5215b5b48e39, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -98,7 +98,7 @@ MonoBehaviour:
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -201,10 +201,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Previous page
+  m_text: A
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 80be9dc29fbab4745bfd5215b5b48e39, type: 2}
+  m_sharedMaterial: {fileID: -5273082348830432231, guid: 80be9dc29fbab4745bfd5215b5b48e39, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -228,13 +228,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 51.3
+  m_fontSize: 72
   m_fontSizeBase: 58
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -482,6 +482,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _bookSpreadContent: {fileID: 4135452243970372557}
   _bookPageCollection: {fileID: 5999176428742211650}
+  _bookSpread: {fileID: 0}
+  _captureButtons: []
+  _buttonRight: {fileID: 0}
+  _buttonLeft: {fileID: 0}
 --- !u!1 &7940995940479136659
 GameObject:
   m_ObjectHideFlags: 0
@@ -654,9 +658,3 @@ MonoBehaviour:
   _welcomeJournalCapture: {fileID: 11400000, guid: fbeb32302bf2645d981f4524d9d0e3da, type: 2}
   _languageJournalCapture: {fileID: 11400000, guid: 5115daf01671849479c3a304f91cd021, type: 2}
   _recipeJournalCapture: {fileID: 11400000, guid: 7423b72b467aa492db213d7d7fe761c1, type: 2}
-  _welcomeButton: {fileID: 0}
-  _languageButton: {fileID: 0}
-  _recipePageButton: {fileID: 0}
-  _buttonRight: {fileID: 3048478199188498585}
-  _buttonLeft: {fileID: 510789358526426537}
-  _bookSpread: {fileID: 0}

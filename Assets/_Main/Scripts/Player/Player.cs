@@ -3,7 +3,9 @@ using _Main.Scripts.Player.Movement.Way;
 using _Main.Scripts.PortableDevices.Coins;
 using _Main.Scripts.Services;
 using _Main.Scripts.Utils;
+using _Main.Scripts.Utils.GlobalEvents.Events;
 using UnityEngine;
+using EventProvider = _Main.Scripts.Utils.GlobalEvents.EventProvider;
 
 namespace _Main.Scripts.Player
 {
@@ -11,6 +13,8 @@ namespace _Main.Scripts.Player
     {
         [SerializeField] private PlayerMovement _playerMovement;
         [SerializeField] private PlayerLook _playerLook;
+        [SerializeField] private PlayerObjectManipulator.PlayerObjectManipulator _playerObjectManipulator;
+        [Space]
         [SerializeField] private CoinStash _coinStash;
         
         private WayController _wayController;
@@ -26,12 +30,16 @@ namespace _Main.Scripts.Player
             
             _playerMovement.Init(_wayController, _inputService);
             _playerLook.Init(_inputService);
+            
+            EventProvider.Instance.Subscribe<BookOpenedEvent>(BookOpen);
         }
 
         public void Destruct()
         {
             _playerMovement.Destruct();
             _playerLook.Destruct();
+            
+            EventProvider.Instance.UnSubscribe<BookOpenedEvent>(BookOpen);
         }
 
         public void LockCameraAtObject(bool isLock, Transform target = null)
@@ -42,11 +50,23 @@ namespace _Main.Scripts.Player
         public void Pause()
         {
             _playerMovement.Pause();
+            _playerLook.Pause();
+            _playerObjectManipulator.Pause();
         }
 
         public void UnPause()
         {
             _playerMovement.UnPause();
+            _playerLook.UnPause();
+            _playerObjectManipulator.Pause();
+        }
+
+        private void BookOpen(BookOpenedEvent bookOpenedEvent)
+        {
+            if (bookOpenedEvent.IsOpen)
+                Pause();
+            else
+                UnPause();
         }
     }
 }

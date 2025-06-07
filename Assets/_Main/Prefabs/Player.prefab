@@ -68,6 +68,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerMovement: {fileID: 1061213946003470037}
   _playerLook: {fileID: 2775395773062287709}
+  _playerObjectManipulator: {fileID: 8401339251147536766}
   _coinStash: {fileID: 3683991649516772408}
 --- !u!136 &4420505582903245596
 CapsuleCollider:

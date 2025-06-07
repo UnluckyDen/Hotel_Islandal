@@ -2037,17 +2037,9 @@ PrefabInstance:
       propertyPath: m_text
       value: D
       objectReference: {fileID: 0}
-    - target: {fileID: 6278041577651290442, guid: dc95318166257421085bdf5ea59c2d4e, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7043247863441769672, guid: dc95318166257421085bdf5ea59c2d4e, type: 3}
       propertyPath: m_text
       value: A
-      objectReference: {fileID: 0}
-    - target: {fileID: 7043247863441769672, guid: dc95318166257421085bdf5ea59c2d4e, type: 3}
-      propertyPath: m_Enabled
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7043247863441769672, guid: dc95318166257421085bdf5ea59c2d4e, type: 3}
       propertyPath: m_fontSize

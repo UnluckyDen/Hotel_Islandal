@@ -43,7 +43,7 @@ namespace _Main.Scripts.UI.Book.BookPages
 
         public void NextSpread()
         {
-            if (_maxSpreads > _currentSpread)
+            if (_maxSpreads > _currentSpread + 1)
                 _currentSpread++;
         }
 

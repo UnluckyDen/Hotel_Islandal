@@ -1,10 +1,11 @@
 using _Main.Scripts.Interfaces;
 using _Main.Scripts.Services;
+using _Main.Scripts.Utils;
 using UnityEngine;
 
 namespace _Main.Scripts.Player.PlayerObjectManipulator
 {
-    public class PlayerObjectManipulator : MonoBehaviour
+    public class PlayerObjectManipulator : MonoBehaviour, IPausable
     {
         [SerializeField] private float _manipulatorDistance;
         [SerializeField] private LayerMask _manipulatorLayerMask;
@@ -15,6 +16,8 @@ namespace _Main.Scripts.Player.PlayerObjectManipulator
         
         private IHoverable _hoverableObject;
         private IMovableObject _movableObject;
+
+        private bool _pause;
 
         private void Awake()
         {
@@ -41,6 +44,9 @@ namespace _Main.Scripts.Player.PlayerObjectManipulator
 
         private void InputServiceOnClick(bool clicked)
         {
+            if (_pause)
+                return;
+            
             IHoverable hoverable = GetIHoverable();
             
             if (hoverable == null || !clicked) 
@@ -69,6 +75,9 @@ namespace _Main.Scripts.Player.PlayerObjectManipulator
 
         private void InputServiceOnRightClick(bool rightClick)
         {
+            if (_pause)
+                return;
+            
             if (rightClick && _manipulatorPlace.CurrentMovableObject is IActivatingObject activatingObject)
                 activatingObject.SwitchActive();
         }
@@ -110,6 +119,16 @@ namespace _Main.Scripts.Player.PlayerObjectManipulator
             
             _hoverableObject.OnHoverExit();
             _hoverableObject = null;
+        }
+
+        public void Pause()
+        {
+            _pause = true;
+        }
+
+        public void UnPause()
+        {
+            _pause = false;
         }
     }
 }

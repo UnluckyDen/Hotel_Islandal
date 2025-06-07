@@ -1,10 +1,11 @@
 using System.Collections;
 using _Main.Scripts.Services;
+using _Main.Scripts.Utils;
 using UnityEngine;
 
 namespace _Main.Scripts.Player.Movement
 {
-    public class PlayerLook : MonoBehaviour
+    public class PlayerLook : MonoBehaviour, IPausable
     {
         [SerializeField] private Vector2 _mouseSensitivity = new Vector2(3f, 3f);
 
@@ -30,6 +31,12 @@ namespace _Main.Scripts.Player.Movement
             Cursor.lockState = CursorLockMode.None;
             _inputService.LookInput -= InputServiceOnLookInput;
         }
+
+        public void Pause() => 
+            _isLocked = true;
+        
+        public void UnPause() => 
+            _isLocked = false;
 
         public void LookCameraAtObject(bool isLocked, Transform target)
         {

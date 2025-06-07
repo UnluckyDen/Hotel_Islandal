@@ -1,7 +1,9 @@
 using _Main.Scripts.Analytics;
 using _Main.Scripts.Services;
 using _Main.Scripts.UI.Book;
+using _Main.Scripts.Utils.GlobalEvents.Events;
 using UnityEngine;
+using EventProvider = _Main.Scripts.Utils.GlobalEvents.EventProvider;
 
 namespace _Main.Scripts.UI
 {
@@ -46,8 +48,8 @@ namespace _Main.Scripts.UI
         private void InputServiceOnOpenBook()
         {
             _playerBookWindow.gameObject.SetActive(!_playerBookWindow.gameObject.active);
-            _inputService.ToUiMode(_playerBookWindow.gameObject.active);
             
+            EventProvider.Instance.Invoke(new BookOpenedEvent(_playerBookWindow.gameObject.active));
             GlobalAnalyticsService.Instance.SendCustomEvent(new PlayerOpenJournalEvent(_playerBookWindow.gameObject.active));
         }
     }
