@@ -11,6 +11,7 @@ namespace _Main.Scripts.Player
 {
     public class Player : MonoBehaviour, IPausable
     {
+        [SerializeField] private PlayerMindController _playerMindController;
         [SerializeField] private PlayerMovement _playerMovement;
         [SerializeField] private PlayerLook _playerLook;
         [SerializeField] private PlayerObjectManipulator.PlayerObjectManipulator _playerObjectManipulator;
@@ -27,7 +28,8 @@ namespace _Main.Scripts.Player
         {
             _wayController = wayController;
             _inputService = inputService;
-            
+
+            _playerMindController.Init(EventProvider.Instance);
             _playerMovement.Init(_wayController, _inputService);
             _playerLook.Init(_inputService);
             
@@ -36,6 +38,7 @@ namespace _Main.Scripts.Player
 
         public void Destruct()
         {
+            _playerMindController.Destruct();
             _playerMovement.Destruct();
             _playerLook.Destruct();
             

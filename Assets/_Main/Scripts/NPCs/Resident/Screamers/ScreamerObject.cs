@@ -1,4 +1,6 @@
+using _Main.Scripts.Utils.GlobalEvents.Events;
 using UnityEngine;
+using EventProvider = _Main.Scripts.Utils.GlobalEvents.EventProvider;
 
 namespace _Main.Scripts.NPCs.Resident.Screamers
 {
@@ -11,6 +13,7 @@ namespace _Main.Scripts.NPCs.Resident.Screamers
         {
             _audioSource.Play();
             _animator.SetTrigger("Scream");
+            EventProvider.Instance.Invoke(new ScreamerShowedEvent(25));
         }
     }
 }

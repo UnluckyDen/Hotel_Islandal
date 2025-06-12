@@ -9,8 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5788081001657955669}
-  - component: {fileID: 1061213946003470037}
   - component: {fileID: 4524126244907849935}
+  - component: {fileID: 1061213946003470037}
+  - component: {fileID: 1900877996277106260}
   - component: {fileID: 4420505582903245596}
   - component: {fileID: 6843964228795105345}
   m_Layer: 0
@@ -37,6 +38,23 @@ Transform:
   - {fileID: 1966463801614000177}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4524126244907849935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 177307347802110839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86f740045bfb488c93fb2a7766552d4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerMindController: {fileID: 1900877996277106260}
+  _playerMovement: {fileID: 1061213946003470037}
+  _playerLook: {fileID: 2775395773062287709}
+  _playerObjectManipulator: {fileID: 8401339251147536766}
+  _coinStash: {fileID: 3683991649516772408}
 --- !u!114 &1061213946003470037
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54,7 +72,7 @@ MonoBehaviour:
   _canUndoMoveFactor: 0.5
   _canUndoRotateFactor: 0.3
   _movementSound: {fileID: 3581843646349616106}
---- !u!114 &4524126244907849935
+--- !u!114 &1900877996277106260
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -63,13 +81,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 177307347802110839}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86f740045bfb488c93fb2a7766552d4b, type: 3}
+  m_Script: {fileID: 11500000, guid: 508c0706b09b942c483f1d14b2d6e2e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerMovement: {fileID: 1061213946003470037}
-  _playerLook: {fileID: 2775395773062287709}
-  _playerObjectManipulator: {fileID: 8401339251147536766}
-  _coinStash: {fileID: 3683991649516772408}
+  _maxMind: 100
+  _startMind: 100
+  _currentMind: 0
+  _mindView: {fileID: 7228490908967819221}
 --- !u!136 &4420505582903245596
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -590,5 +608,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e377f258b99a461fb5d9d2297fe3730c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7228490908967819221 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8393560470983340417, guid: f468dfea917268a47a0bab52bd2e1470, type: 3}
+  m_PrefabInstance: {fileID: 1165069914001778260}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99f969bc117f47179bec932239c177e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
