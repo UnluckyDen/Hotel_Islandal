@@ -48,13 +48,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac7940cfcadb48efbd589028377a2ced, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _hoverGroup: {fileID: 4961356043743521132}
   _mainArrow: {fileID: 2521887440200930162}
-  _deviceArrows:
-  - {fileID: 7178613148613253767}
-  - {fileID: 1581172684487402324}
-  - {fileID: 5210163221009947175}
-  _trackingDevices: []
+  _arrowsTrackingDevices:
+    _serializedList:
+    - Key: {fileID: 0}
+      Value: {fileID: 7178613148613253767}
+    - Key: {fileID: 0}
+      Value: {fileID: 1581172684487402324}
+    - Key: {fileID: 0}
+      Value: {fileID: 5210163221009947175}
   _segmentsCount: 12
   _interval: 1
   _audioSource: {fileID: 2062846970388053746}

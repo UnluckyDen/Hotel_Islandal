@@ -1,7 +1,6 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using _Main.Scripts.Utils.GameObjectGroups;
+using AYellowpaper.SerializedCollections;
 using UnityEngine;
 
 namespace _Main.Scripts.Cooking.Devices.Utils
@@ -9,8 +8,7 @@ namespace _Main.Scripts.Cooking.Devices.Utils
     public class Timer : MonoBehaviour
     {
         [SerializeField] private Transform _mainArrow;
-        [SerializeField] private List<Transform> _deviceArrows;
-        [SerializeField] private List<EnablingCookingDevice> _trackingDevices;
+        [SerializeField] private SerializedDictionary<EnablingCookingDevice, Transform> _arrowsTrackingDevices;
         [Space]
         [SerializeField] private int _segmentsCount;
         [SerializeField] private float _interval = 1f;
@@ -20,28 +18,23 @@ namespace _Main.Scripts.Cooking.Devices.Utils
 
         private float _anglePerSegment = 0f;
         private float _timer = 0f;
-
-        private HashSet<Transform> _freeArrows = new();
-        private Dictionary<EnablingCookingDevice, Transform> _trackingArrows = new();
         
         private void Start()
         {
             _anglePerSegment = 360f / _segmentsCount;
-
-            foreach (var deviceArrow in _deviceArrows)
-                _freeArrows.Add(deviceArrow);
             
-            foreach (var deviceArrow in _deviceArrows)
-                deviceArrow.gameObject.SetActive(false);
+            
+            foreach (var deviceArrow in _arrowsTrackingDevices)
+                deviceArrow.Value.gameObject.SetActive(false);
 
-            foreach (var trackingDevice in _trackingDevices)
-                trackingDevice.DeviceActivation += CookingDeviceOnDeviceActivation;
+            foreach (var trackingDevice in _arrowsTrackingDevices)
+                trackingDevice.Key.DeviceActivation += CookingDeviceOnDeviceActivation;
         }
 
         private void OnDestroy()
         {
-            foreach (var trackingDevice in _trackingDevices)
-                trackingDevice.DeviceActivation -= CookingDeviceOnDeviceActivation;
+            foreach (var trackingDevice in _arrowsTrackingDevices)
+                trackingDevice.Key.DeviceActivation -= CookingDeviceOnDeviceActivation;
         }
 
         private void Update()
@@ -68,31 +61,15 @@ namespace _Main.Scripts.Cooking.Devices.Utils
 
             if (active)
             {
-                if (_freeArrows.Count > 0)
-                {
-                    arrowForTrack = _freeArrows.First();
-                    _freeArrows.Remove(arrowForTrack);
-                }
-                else
-                {
-                    KeyValuePair<EnablingCookingDevice, Transform> trackingPair = _trackingArrows.First();
-                    _trackingArrows.Remove(trackingPair.Key);
-                    arrowForTrack = trackingPair.Value;
-                }
+                arrowForTrack = _arrowsTrackingDevices[device];
 
                 arrowForTrack.gameObject.SetActive(active);
                 arrowForTrack.localRotation = _mainArrow.localRotation;
-                _trackingArrows.Add(device, arrowForTrack);
                 return;
             }
-
-            if (_trackingArrows.ContainsKey(device))
-            {
-                arrowForTrack = _trackingArrows[device];
-                _trackingArrows.Remove(device);
-                _freeArrows.Add(arrowForTrack);
-                arrowForTrack.gameObject.SetActive(false);
-            }
+            
+            arrowForTrack = _arrowsTrackingDevices[device]; 
+            arrowForTrack.gameObject.SetActive(false);
         }
     }
 }
