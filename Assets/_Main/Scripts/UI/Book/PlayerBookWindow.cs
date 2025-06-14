@@ -1,7 +1,10 @@
 using System.Collections.Generic;
+using _Main.Scripts.Analytics;
 using _Main.Scripts.ScriptableObjects.Book;
 using _Main.Scripts.Services;
 using _Main.Scripts.UI.Book.BookPages;
+using _Main.Scripts.Utils.GlobalEvents.Events;
+using EventProvider = _Main.Scripts.Utils.GlobalEvents.EventProvider;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -24,6 +27,9 @@ namespace _Main.Scripts.UI.Book
         [SerializeField] private Button _closeButton;
 
         private InputService _inputService;
+        private bool _opened;
+
+        public bool Opened => _opened;
 
         private void OnEnable()
         {
@@ -111,9 +117,28 @@ namespace _Main.Scripts.UI.Book
             _bookSpread.UpdatePages(pagePair.Item1, pagePair.Item2);
         }
 
-        private void Close()
+        public void Close()
         {
-            gameObject.SetActive(false);
+            _opened = false;
+            gameObject.SetActive(_opened);
+            EventProvider.Instance.Invoke(new BookOpenedEvent(_opened));
+            GlobalAnalyticsService.Instance.SendCustomEvent(new PlayerOpenJournalEvent(_opened));
+        }
+
+        public void Open()
+        {
+            _opened = true;
+            gameObject.SetActive(_opened);
+            EventProvider.Instance.Invoke(new BookOpenedEvent(_opened));
+            GlobalAnalyticsService.Instance.SendCustomEvent(new PlayerOpenJournalEvent(_opened));
+        }
+
+        public void ChangeState()
+        {
+            if (_opened)
+                Close();
+            else
+                Open();
         }
     }
 }
