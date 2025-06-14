@@ -34,6 +34,15 @@ namespace _Main.Scripts.Player
         {
             _currentMind -= screamerShowedEvent.MindDamage;
             
+            if (_currentMind <= 0)
+            {
+                _currentMind = 0;
+                EventProvider.Instance.Invoke(new PlayerLostMindEvent());
+            }
+
+            if (_currentMind > _maxMind)
+                _currentMind = _maxMind;
+            
             if (_mindView != null)
                 _mindView.SetMindCount(_currentMind);
         }

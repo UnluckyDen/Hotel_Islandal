@@ -1,6 +1,8 @@
 using System.Collections;
+using _Main.Scripts.Utils.GlobalEvents.Events;
 using UnityEngine;
 using UnityEngine.Rendering;
+using EventProvider = _Main.Scripts.Utils.GlobalEvents.EventProvider;
 
 namespace _Main.Scripts.Infrastructure.Postprocessing
 {
@@ -25,6 +27,12 @@ namespace _Main.Scripts.Infrastructure.Postprocessing
             Destroy(gameObject);
         }
 
+        private void Start() =>
+            EventProvider.Instance.Subscribe<PlayerLostMindEvent>(ForceSetNormal);
+
+        private void OnDestroy() =>
+            EventProvider.Instance.UnSubscribe<PlayerLostMindEvent>(ForceSetNormal);
+
         [ContextMenu("Scream")]
         public void ToScream(float time)
         {
@@ -41,6 +49,11 @@ namespace _Main.Scripts.Infrastructure.Postprocessing
                 StopCoroutine(_coroutine);
             
             _coroutine = StartCoroutine(Normal(time));
+        }
+
+        private void ForceSetNormal(PlayerLostMindEvent mindEvent)
+        {
+            _screamerVolume.weight = 0;
         }
 
         private IEnumerator Scream(float time)

@@ -40,7 +40,8 @@ namespace _Main.Scripts.UI
 
         private void OnDestroy()
         {
-            _inputService.OpenBook -= InputServiceOnOpenBook;
+            if (_inputService != null)
+                _inputService.OpenBook -= InputServiceOnOpenBook;
             
             _playerBookWindow.Destruct();
         }

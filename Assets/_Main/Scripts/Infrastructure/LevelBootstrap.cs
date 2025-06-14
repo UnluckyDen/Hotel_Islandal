@@ -4,7 +4,10 @@ using _Main.Scripts.Infrastructure.Level;
 using _Main.Scripts.Player.Movement.Way;
 using _Main.Scripts.ScriptableObjects;
 using _Main.Scripts.Services;
+using _Main.Scripts.Utils.GlobalEvents.Events;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using EventProvider = _Main.Scripts.Utils.GlobalEvents.EventProvider;
 
 namespace _Main.Scripts.Infrastructure
 {
@@ -20,6 +23,7 @@ namespace _Main.Scripts.Infrastructure
 
         private LevelTiles _levelTiles;
         private Coroutine _changeLevelCoroutine;
+        private Player.Player _currentPlayer;
 
         private void Start() => Init();
 
@@ -29,19 +33,27 @@ namespace _Main.Scripts.Infrastructure
         {
             _elevator.Init();
 
+            _currentPlayer = Instantiate(_player);
+
             ChangeLevel();
             
-            _player.Init(_wayController, InputService.Instance);
+            _currentPlayer.Init(_wayController, InputService.Instance);
             _elevator.LevelConditionsComplete += ElevatorOnLevelConditionsComplete;
+            
+            EventProvider.Instance.Subscribe<PlayerLostMindEvent>(ForceReload);
         }
 
         private void Destruct()
-        { 
+        {
             _elevator.LevelConditionsComplete -= ElevatorOnLevelConditionsComplete;
             _levelTiles.ResidentsDistributor.Destruct();
             _elevator.Destruct();
             
-            _player.Destruct();
+            _currentPlayer.Destruct();
+
+            EventProvider.Instance.UnSubscribe<PlayerLostMindEvent>(ForceReload);
+            
+            _currentPlayer.Destruct();
         }
 
         private void ChangeLevel()
@@ -68,15 +80,13 @@ namespace _Main.Scripts.Infrastructure
         public void UnloadLevel()
         {
             _levelTiles?.ResidentsDistributor.Destruct();
-            
-            _levelBuilder.DestroyCurrentLevel();
+
             _wayController.DestroyCurrentPaths();
+            _levelBuilder.DestroyCurrentLevel();
         }
 
-        private void ElevatorOnLevelConditionsComplete()
-        {
+        private void ElevatorOnLevelConditionsComplete() =>
             ChangeLevel();
-        }
 
         private IEnumerator ChangeLevelCoroutine()
         {
@@ -90,6 +100,12 @@ namespace _Main.Scripts.Infrastructure
             LoadLevel();
             
             yield break;
+        }
+
+        private void ForceReload(PlayerLostMindEvent playerLostMindEvent)
+        {
+            _levelController.UpdateCurrentLevel(0);
+            SceneManager.LoadScene("MainScene");
         }
     }
 }
