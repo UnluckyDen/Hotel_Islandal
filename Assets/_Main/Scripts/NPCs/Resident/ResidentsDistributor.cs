@@ -83,7 +83,24 @@ namespace _Main.Scripts.NPCs.Resident
 
             residentContexts.RandomShuffleListElements();
 
+            if (IsValid(residentContexts)) 
+                return residentContexts;
+            
+            while (IsValid(residentContexts))
+                residentContexts.RandomShuffleListElements();
+
             return residentContexts;
+        }
+        
+        private bool IsValid(List<ResidentContext> list)
+        {
+            for (int i = 0; i < list.Count - 1; i++)
+            {
+                if (list[i].ResidentCondition == ResidentConditionType.HaveOrder 
+                    && list[i + 1].ResidentCondition == ResidentConditionType.HaveOrder)
+                    return false;
+            }
+            return true;
         }
     }
 
