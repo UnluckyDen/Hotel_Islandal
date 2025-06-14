@@ -408,7 +408,7 @@ TextureImporter:
         width: 443
         height: 249
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -417,6 +417,28 @@ TextureImporter:
       bones: []
       spriteID: 7c049048329724380abe36afded62037
       internalID: -197483403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BookFlip_Lock
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 595
+        width: 39
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9c3a2c4dd34c4848a81ef3cd5f93037
+      internalID: -1421847141
       vertices: []
       indices: 
       edges: []
@@ -447,7 +469,7 @@ TextureImporter:
       BookFlip_CoverR: 172631476
       BookFlip_Face: -1078759766
       BookFlip_IconFrame: 779095640
-      BookFlip_L: -35652619
+      BookFlip_Lock: -1421847141
       BookFlip_PageBookMark: 626131582
       BookFlip_PageL: 170566006
       BookFlip_PageR: -1014802087
