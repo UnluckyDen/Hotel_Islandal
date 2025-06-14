@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using _Main.Scripts.Analytics;
 using _Main.Scripts.Cooking.Foods;
@@ -8,7 +9,6 @@ using _Main.Scripts.NPCs.Resident.Clues;
 using _Main.Scripts.NPCs.Resident.Screamers;
 using _Main.Scripts.PortableDevices.Coins;
 using _Main.Scripts.ScriptableObjects;
-using _Main.Scripts.UI;
 using Unity.Mathematics;
 using UnityEngine;
 
@@ -37,6 +37,7 @@ namespace _Main.Scripts.NPCs.Resident.ResidentRealizations
         
         private Player.Player _player;
         private bool _playerOpenDoor;
+        private const float ResidentAwaitOrderTime = 2f;
 
         public virtual void SetContext(ResidentConditionType condition, Food orderedFood)
         {
@@ -96,7 +97,7 @@ namespace _Main.Scripts.NPCs.Resident.ResidentRealizations
             {
                 case ResidentConditionType.HaveOrder when _player != null:
                     _residentDoor.OpenDoor();
-                    _residentSound.MakeOrder(_orderedFood);
+                    _residentSound.MakeOrder(_orderedFood, AwaitOrder);
                     return;
                 
                 case ResidentConditionType.Aggressive when _player != null:
@@ -105,8 +106,6 @@ namespace _Main.Scripts.NPCs.Resident.ResidentRealizations
                 
                 case ResidentConditionType.NonActive:
                     break;
-                default:
-                    throw new ArgumentOutOfRangeException();
             }
         }
         
@@ -149,6 +148,15 @@ namespace _Main.Scripts.NPCs.Resident.ResidentRealizations
             }
             
             OnPlayerZoneOut(player);
+        }
+
+        private void AwaitOrder() => 
+            StartCoroutine(AwaitOrderCoroutine());
+
+        private IEnumerator AwaitOrderCoroutine()
+        {
+            yield return new WaitForSeconds(ResidentAwaitOrderTime);
+            _residentDoor.CloseDoor();
         }
     }
 }

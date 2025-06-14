@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using _Main.Scripts.Cooking.Foods;
@@ -28,9 +29,9 @@ namespace _Main.Scripts.NPCs.Resident
                 _audioSource.PlayOneShot(_residentConditionHintSettings.GetPair(residentCondition).AudioClips.RandomElementFromList());
         }
 
-        public void MakeOrder(Food food)
+        public void MakeOrder(Food food, Action afterMakeOrder = null)
         {
-            StartCoroutine(SpellOrder(PrepareSpell(food)));
+            StartCoroutine(SpellOrder(PrepareSpell(food), afterMakeOrder));
         }
 
         private List<AudioClip> PrepareSpell(Food food)
@@ -49,7 +50,7 @@ namespace _Main.Scripts.NPCs.Resident
             return audioClips;
         }
 
-        private IEnumerator SpellOrder(List<AudioClip> audioClips)
+        private IEnumerator SpellOrder(List<AudioClip> audioClips, Action afterMakeOrder)
         {
             foreach (AudioClip clip in audioClips)
             {
@@ -65,6 +66,8 @@ namespace _Main.Scripts.NPCs.Resident
                 if (_delayBetweenClips > 0f)
                     yield return new WaitForSeconds(_delayBetweenClips);
             }
+            
+            afterMakeOrder?.Invoke();
         }
     }
 }
