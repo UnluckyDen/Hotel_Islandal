@@ -1,0 +1,2 @@
+### Play on itch - https://unluckyden.itch.io/hotel-islandal
+Moonlight seeps through the cracked stained glass, shadows in the corridors breathe in unison with the creaking floorboards... You’re part of this place now. Your task is to serve them. You’ve already heard them, haven’t you? Those sounds behind the doors—some beckon, others warn. But remember: not all the inhabitants of this hotel rent rooms. Some... simply dwell in the dark.
